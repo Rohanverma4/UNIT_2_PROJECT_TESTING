@@ -310,8 +310,8 @@ body {
 }
 #navbar > ul {
 	display: flex;
-	/* border: 1px solid black; */
 	width: min-content;
+	align-items: center;
 	position: absolute;
 	right: 0;
 	gap: 10px;
@@ -477,7 +477,7 @@ body {
 #cartIcon {
 	color: rgb(255, 255, 255);
 	font-size: 30px;
-	line-height: 15px;
+	line-height: 30px;
 	font-weight: 0;
 }
 #demoGraphics {
@@ -548,10 +548,14 @@ body {
 	width: 90px;
 	border: 1px solid white;
 	border-radius: 7px;
+	height: 20px;
+	padding: 10px;
 	margin-top: 0;
 	background-color: #16ac99;
 	color: white;
 	font-weight: 600;
+	line-height: 15px;
+	position: relative;
 }
 #myBtn:hover {
 	cursor: pointer;
