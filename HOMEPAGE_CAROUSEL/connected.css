@@ -285,21 +285,20 @@ body {
 #navbar {
 	display: flex;
 	padding: 10px;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	justify-content: space-around;
 	/* position: fixed; */
 	/* top: 0; */
-	background-color: aqua;
+	background-color: #16ac99;
+
 	width: 100%;
-	position: relative;
+	position: fixed;
 	left: 0;
 	right: 0;
-	margin-bottom: 10px;
+	z-index: 1030;
 	height: 80px;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
 }
 #navbar > img {
 	width: 100px;
