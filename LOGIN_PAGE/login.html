@@ -67,11 +67,13 @@
 
             }
             #referral{
-                margin-top: 22px;
-                height:35px;
-                margin-left:70px;
+                margin-top: 16px;
+                height:45px;
+                margin-left:45px;
                 background-color: none;
-                
+                border-radius: 5px;
+                border:2px solid #e9ecef;
+                width: 225px;
             }
            
             #button1{
@@ -84,6 +86,25 @@
                 border-radius: 5px;
                 font-size: 20px;
             }
+            .invalidNumber{
+                color:rgb(200, 31, 31);
+                font-size: 17px;
+                font-family: 'Barlow', sans-serif;
+                margin: 0%;
+                text-align: left;
+                margin-left: 35px;
+                margin-top: 7px;
+            }
+            .reqNumber{
+                color:rgb(46, 30, 30);
+                font-size: 17px;
+                font-family: 'Barlow', sans-serif;
+                margin: 0%;
+                text-align: left;
+                margin-left: 45px;
+                margin-top: 0px;
+
+            }
         </style>
     </head>
     <body>
@@ -93,16 +114,19 @@
          <img id="logo" src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy.png" alt="">
           <!--login and sign tag  -->
  <h2>Login/Signup</h2>
- 
+    
  <!-- input tag -->
 <div>
      <span >91+</span>
      <input id="number" type="number" placeholder="Enter your Mobile Number">
     </div>
+    <div class="requiredNumber"></div>
+    <div class="invalidNumber"></div>
+
     <!-- referral code -->
-    <div>
+    <div class="referralDiv">
         <button id="refer">referral code?</button>
-        <input id="referral" type="text" placeholder="referral code">
+        <!-- <input id="referral" type="text" placeholder="referral code"> -->
     </div>
         <div>
          <!-- submit button -->
@@ -115,3 +139,7 @@
 </div>
     </body>
 </html>
+
+<script src="login.js">
+
+</script>
