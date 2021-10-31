@@ -5,14 +5,56 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Unit2_Project</title>
-		<link rel="stylesheet" href="connected.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css"
 		/>
+		<link rel="stylesheet" href="connected.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 	</head>
 	<body>
 		<!-- TOP CONTAINER -->
+
+		<nav id="navbar">
+			<img
+				src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
+			/>
+			<ul>
+				<li>
+					<select id="location">
+						<option value="New Delhi">New Delhi</option>
+						<option value="Mumbai">Mumbai</option>
+						<option value="Chennai">Chennai</option>
+						<option value="Patna">Patna</option>
+						<option value="Kolkata">Kolkata</option>
+					</select>
+				</li>
+				<li>
+					<select id="user">
+						<option value="My Profile">My Profile</option>
+						<option value="My Orders">My Orders</option>
+						<option value="My Wallet">My Wallet</option>
+						<option value="Change Password">Change Password</option>
+						<option value="Log Out">Log Out</option>
+					</select>
+				</li>
+
+				<li><img src="../IMAGES/shopping_cart_black_24dp.svg" /></li>
+			</ul>
+		</nav>
+		<div id="container">
+			<div id="search-box">
+				<input
+					type="text"
+					class="search"
+					placeholder="Search medicines.E.g.amlong,dolo,etc"
+				/>
+				<button type="submit" class="search-btn">Search</button>
+
+				<button id="load" onclick="load">upload prescription</button>
+			</div>
+		</div>
+
 		<div id="carousel_container_1">
 			<section class="carousel" aria-label="Gallery">
 				<ol class="carousel__viewport">
@@ -81,31 +123,21 @@
 			</section>
 		</div>
 		<!-- //BOTTOM CAROUSEL -->
-		<div id="carousel_container_2">
+		<div id="carousal_container_2">
 			<div
 				class="gallery js-flickity"
 				data-flickity-options='{ "wrapAround": true }'
 			>
 				<div class="gallery-cell">
-					<img
-						src="https://via.placeholder.com/300x150"
-						alt="placeholder image"
-					/>
+					<img src="https://via.placeholder.com/350x150" alt="img" />
 				</div>
 				<div class="gallery-cell">
-					<img
-						src="https://via.placeholder.com/300x150"
-						alt="placeholder image"
-					/>
+					<img src="https://via.placeholder.com/350x150" alt="img" />
 				</div>
 				<div class="gallery-cell">
-					<img
-						src="https://via.placeholder.com/300x150"
-						alt="placeholder image"
-					/>
+					<img src="https://via.placeholder.com/350x150" alt="img" />
 				</div>
 			</div>
 		</div>
 	</body>
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
