@@ -320,7 +320,14 @@ body {
 }
 
 /*Copied Stuff*/
-
+#loginSignupHref a {
+	text-decoration: none;
+	color: rgb(39, 39, 39);
+}
+#loginSignupHref a:visited {
+	color: rgb(94, 94, 94);
+	text-decoration: none;
+}
 #container {
 	height: 300px;
 
@@ -445,4 +452,9 @@ body {
 }
 #searchIcon {
 	color: white;
+}
+#copyRight {
+	text-align: center;
+	color: rgb(31, 31, 31);
+	font-weight: 600;
 }
