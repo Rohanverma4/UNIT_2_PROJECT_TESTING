@@ -325,16 +325,17 @@ body {
 	color: rgb(39, 39, 39);
 }
 #loginSignupHref a:visited {
-	color: rgb(94, 94, 94);
+	color: rgb(44, 44, 44);
 	text-decoration: none;
 }
 #container {
 	height: 300px;
-
+	/* border: 1px solid red; */
 	margin: auto;
 	margin-right: 0;
 	background-color: #16ac99;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 20px;
@@ -344,7 +345,9 @@ body {
 
 #search-box {
 	margin: auto;
+	margin-bottom: 0;
 	width: 800px;
+	/* border: 1px solid black; */
 }
 .search {
 	height: 70px;
@@ -457,4 +460,48 @@ body {
 	text-align: center;
 	color: rgb(31, 31, 31);
 	font-weight: 600;
+}
+#cartIcon {
+	color: rgb(31, 31, 31);
+	font-size: 30px;
+	line-height: 15px;
+	font-weight: 0;
+}
+#demoGraphics {
+	/* border: 1px solid grey; */
+	padding: 10px;
+	display: flex;
+	width: 800px;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+}
+.medsAndCustomersText {
+	/* border: 1px solid red; */
+	color: white;
+	padding: 20px;
+}
+.medsAndCustomersText > h3 {
+	margin: 0;
+	font-weight: 500;
+}
+.medsAndCustomersText > p {
+	margin: 0;
+	margin-top: 5px;
+}
+.insideMedsAndCustomerBox {
+	/* border: 1px solid rgb(0, 0, 0); */
+	display: flex;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+}
+.insideMedsAndCustomerBox > img {
+	width: 100px;
+	height: 100px;
+}
+.verticalLine {
+	border: 1px solid rgb(173, 173, 173);
+	height: 100px;
+	margin-top: 10px;
 }

@@ -17,16 +17,19 @@
 				margin: auto;
 				background-color: teal;
 				display: flex;
+				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				border: 1px solid red;
 			}
 			#search-box {
 				margin: auto;
-				width: 800px;
+				width: fit-content;
+				border: 1px solid red;
 			}
 			.search {
 				height: 70px;
-				width: 50%;
+				width: 700px;
 				border-radius: 5px 0px 0px 5px;
 				border: none;
 				padding-left: 10px;
@@ -63,6 +66,41 @@
 				cursor: pointer;
 				box-shadow: rgba(255, 255, 255, 0.25) 0px 10px 10px;
 			}
+			#demoGraphics {
+				/* border: 1px solid grey; */
+				padding: 10px;
+				display: flex;
+				width: 800px;
+				justify-content: space-around;
+				margin-bottom: 20px;
+			}
+			.medsAndCustomersText {
+				/* border: 1px solid red; */
+				color: white;
+				padding: 20px;
+			}
+			.medsAndCustomersText > h3 {
+				margin: 0;
+				font-weight: 500;
+			}
+			.medsAndCustomersText > p {
+				margin: 0;
+				margin-top: 5px;
+			}
+			.insideMedsAndCustomerBox {
+				/* border: 1px solid rgb(0, 0, 0); */
+				display: flex;
+				padding: 10px;
+				justify-content: center;
+				align-items: center;
+			}
+			.insideMedsAndCustomerBox > img {
+				width: 100px;
+				height: 100px;
+			}
+			.verticalLine {
+				border: 1px solid rgb(173, 173, 173);
+			}
 		</style>
 	</head>
 	<body>
@@ -78,6 +116,27 @@
 				</button>
 
 				<button id="load" onclick="load">upload prescription</button>
+			</div>
+			<div id="demoGraphics">
+				<div class="medsAndCustomers" id="meds">
+					<div class="insideMedsAndCustomerBox">
+						<img src="https://via.placeholder.com/50" alt="pill image" />
+						<div class="medsAndCustomersText">
+							<h3>35,000+</h3>
+							<p>Products</p>
+						</div>
+					</div>
+				</div>
+				<div class="verticalLine"></div>
+				<div class="medsAndCustomers" id="customers">
+					<div class="insideMedsAndCustomerBox">
+						<img src="https://via.placeholder.com/50" alt="customer image" />
+						<div class="medsAndCustomersText">
+							<h3>10 lakhs+</h3>
+							<p>customers</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

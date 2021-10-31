@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Unit2_Project</title>
+		<title>Landing Page</title>
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -37,7 +37,7 @@
 					<a href="../login.html/login.html">Login/Signup</a>
 				</li>
 
-				<li><i class="material-icons">shopping_cart</i></li>
+				<li><i id="cartIcon" class="material-icons">shopping_bag</i></li>
 			</ul>
 		</nav>
 		<div id="container">
@@ -48,12 +48,44 @@
 					placeholder="Search medicines.E.g.amlong,dolo,etc"
 				/>
 				<button type="submit" class="search-btn">
-					<i class="material-icons">search</i>
+					<i id="searchIcon" class="material-icons">search</i>
 				</button>
 
 				<button id="load" onclick="load">upload prescription</button>
 			</div>
-		</div>
+			<!-- 
+				-----------------------------------------
+				-
+				-----------------------------------------
+				HARD CODED DATA - BUT TO BE MADE DYNAMIC
+			 -->
+			<div id="demoGraphics">
+				<div class="medsAndCustomers" id="meds">
+					<div class="insideMedsAndCustomerBox">
+						<img src="https://via.placeholder.com/50" alt="pill image" />
+						<div class="medsAndCustomersText">
+							<h3>35,000+</h3>
+							<p>Products</p>
+						</div>
+					</div>
+				</div>
+				<div class="verticalLine"></div>
+				<div class="medsAndCustomers" id="customers">
+					<div class="insideMedsAndCustomerBox">
+						<img src="https://via.placeholder.com/50" alt="customer image" />
+						<div class="medsAndCustomersText">
+							<h3>10 lakhs+</h3>
+							<p>customers</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 
+				-
+				-----------------------------------------
+				-----------------------------------------
+				
+			 --></div>
 
 		<div id="carousel_container_1">
 			<section class="carousel" aria-label="Gallery">
