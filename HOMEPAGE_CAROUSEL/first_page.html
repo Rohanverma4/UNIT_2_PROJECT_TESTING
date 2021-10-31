@@ -14,6 +14,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css"
 		/>
 		<link rel="stylesheet" href="connected.css" />
+		<link rel="shortcut icon" href="../IMAGES/favicon.ico" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 	</head>
 	<body>
@@ -25,13 +26,114 @@
 			/>
 			<ul>
 				<li>
-					<select id="location">
+					<!-- <select id="location">
 						<option value="New Delhi">New Delhi</option>
 						<option value="Mumbai">Mumbai</option>
 						<option value="Chennai">Chennai</option>
 						<option value="Patna">Patna</option>
 						<option value="Kolkata">Kolkata</option>
-					</select>
+					</select> -->
+					<button id="myBtn">Location</button>
+
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<span class="close">&times;</span>
+								<h2>Modal Header</h2>
+							</div>
+							<div class="modal-body">
+								<form id="modalForm">
+									<input type="text" placeholder="Enter your city" />
+									<label for="nd">
+										<input
+											id="nd"
+											type="radio"
+											name="location"
+											value="New Delhi"
+										/>
+										New Delhi
+									</label>
+
+									<label for="mumbai">
+										<input
+											id="mumbai"
+											type="radio"
+											name="location"
+											value="Mumbai"
+										/>
+										Mumbai
+									</label>
+
+									<label for="bengaluru">
+										<input
+											id="bengaluru"
+											type="radio"
+											name="location"
+											value="Bengaluru"
+										/>
+										Bengaluru
+									</label>
+
+									<label for="kolkata">
+										<input
+											id="kolkata"
+											type="radio"
+											name="location"
+											value="Kolkata"
+										/>
+										Kolkata
+									</label>
+
+									<label for="chennai">
+										<input
+											d="chennai"
+											type="radio"
+											name="location"
+											value="Chennai"
+										/>
+										Chennai
+									</label>
+
+									<label for="noida">
+										<input
+											id="noida"
+											type="radio"
+											name="location"
+											value="Noida"
+										/>
+										Noida
+									</label>
+
+									<label for="pune">
+										<input
+											id="pune"
+											type="radio"
+											name="location"
+											value="Pune"
+										/>
+										Pune
+									</label>
+
+									<label for="hyderabad">
+										<input
+											id="hyderabad"
+											type="radio"
+											name="location"
+											value="Hyderabad"
+										/>
+										Hyderabad
+									</label>
+
+									<input type="submit" id="applyModalLocation" value="Apply" />
+								</form>
+							</div>
+							<div class="modal-footer">
+								<h3>Modal Footer</h3>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li id="loginSignupHref">
 					<a href="../login.html/login.html">Login/Signup</a>
@@ -261,8 +363,10 @@
 			</div>
 		</footer>
 	</body>
+	<!-- Trigger/Open The Modal -->
+	<!-- Trigger/Open The Modal -->
 </html>
-
+<script src="connected.js"></script>
 <!-- <select id="user">
 		<option value="My Profile">My Profile</option>
 		<option value="My Orders">My Orders</option>
