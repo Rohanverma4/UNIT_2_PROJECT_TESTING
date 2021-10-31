@@ -382,6 +382,9 @@ body {
 	cursor: pointer;
 	box-shadow: rgba(255, 255, 255, 0.25) 0px 10px 10px;
 }
+footer {
+	font-family: "Roboto", sans-serif;
+}
 #contactInfo {
 	display: flex;
 	width: 100%;
@@ -389,7 +392,6 @@ body {
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 10px;
-	font-family: "Roboto", sans-serif;
 }
 #contactInfo > .insidecontactInfo {
 	height: 200px;
@@ -418,6 +420,20 @@ body {
 	margin: 5px 0 10px 0;
 	color: rgb(39, 39, 39);
 	font-weight: 500;
+}
+#aboutPara {
+	width: 80%;
+	margin: auto;
+}
+#aboutPara > p {
+	color: rgb(102, 102, 102);
+	margin: 5px 0 30px 0;
+	font-size: 14px;
+	line-height: 1.5rem;
+}
+#aboutPara > h3 {
+	color: rgb(39, 39, 39);
+	margin-bottom: 10px;
 }
 html,
 body {
