@@ -1,8 +1,12 @@
-/* body,
-html {
-	padding: 0;
-	margin: 0;
-} */
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
 @keyframes tonext {
 	75% {
 		left: 0;
@@ -285,12 +289,8 @@ body {
 #navbar {
 	display: flex;
 	padding: 10px;
-	/* border: 1px solid red; */
 	justify-content: space-around;
-	/* position: fixed; */
-	/* top: 0; */
 	background-color: #16ac99;
-
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -315,4 +315,74 @@ body {
 	gap: 10px;
 	margin-right: 20px;
 	/* margin: auto; */
+}
+
+/*Copied Stuff*/
+
+#container {
+	height: 300px;
+	width: 100%;
+	margin: 0;
+	background-color: #16ac99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+#search-box {
+	margin: auto;
+	width: 800px;
+}
+.search {
+	height: 70px;
+	width: 70%;
+	border-radius: 5px 0px 0px 5px;
+	border: none;
+	padding-left: 10px;
+}
+.search::placeholder {
+	font-size: 20px;
+	opacity: 1;
+	color: grey;
+}
+.search-btn {
+	height: 70px;
+	width: 70px;
+	border-bottom: 10px;
+	background-color: rgb(249, 174, 66);
+	border: none;
+}
+#load {
+	width: 100px;
+	height: 70px;
+	display: inline-block;
+	border-radius: 0px 5px 5px 0;
+	border: none;
+}
+#search-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#load:hover,
+.search-btn:hover {
+	cursor: pointer;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#load:active,
+.search-btn:active {
+	cursor: pointer;
+	box-shadow: rgba(255, 255, 255, 0.25) 0px 10px 10px;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
 }
