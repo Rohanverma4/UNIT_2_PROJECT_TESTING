@@ -1,8 +1,8 @@
-body,
+/* body,
 html {
 	padding: 0;
 	margin: 0;
-}
+} */
 @keyframes tonext {
 	75% {
 		left: 0;
@@ -251,7 +251,7 @@ body {
 .gallery-cell {
 	width: 66.5%;
 	height: 200px;
-	margin-right: 5px;
+	margin-right: 10px;
 	background: #8c8;
 }
 
@@ -270,9 +270,11 @@ body {
 	/* border: 1px solid black; */
 }
 
-#carousel_container_2 {
+#carousal_container_2 {
 	width: 80%;
 	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 50px;
 }
 .gallery-cell > img {
 	width: 100%;
@@ -290,12 +292,20 @@ body {
 	background-color: aqua;
 	width: 100%;
 	position: relative;
+	left: 0;
+	right: 0;
 	margin-bottom: 10px;
+	height: 80px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 #navbar > img {
 	width: 100px;
-	/* position: absolute;
-	left: 0; */
+	position: absolute;
+	left: 0;
+	margin-left: 20px;
 }
 #navbar > ul {
 	display: flex;
@@ -303,6 +313,7 @@ body {
 	width: min-content;
 	position: absolute;
 	right: 0;
-
+	gap: 10px;
+	margin-right: 20px;
 	/* margin: auto; */
 }
