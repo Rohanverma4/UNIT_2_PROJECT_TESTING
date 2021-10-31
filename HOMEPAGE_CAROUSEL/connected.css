@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html,
 body {
 	width: 100%;
@@ -5,6 +6,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	overflow-x: hidden;
+	font-family: "Roboto", sans-serif;
 }
 
 @keyframes tonext {
@@ -253,7 +255,7 @@ body {
 }
 
 .gallery-cell {
-	width: 66.5%;
+	width: 67%;
 	height: 200px;
 	margin-right: 10px;
 	background: #8c8;
@@ -321,8 +323,9 @@ body {
 
 #container {
 	height: 300px;
-	width: 100%;
-	margin: 0;
+
+	margin: auto;
+	margin-right: 0;
 	background-color: #16ac99;
 	display: flex;
 	align-items: center;
@@ -331,6 +334,7 @@ body {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+
 #search-box {
 	margin: auto;
 	width: 800px;
@@ -377,6 +381,59 @@ body {
 .search-btn:active {
 	cursor: pointer;
 	box-shadow: rgba(255, 255, 255, 0.25) 0px 10px 10px;
+}
+footer {
+	font-family: "Roboto", sans-serif;
+}
+#contactInfo {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+#contactInfo > .insidecontactInfo {
+	height: 200px;
+	width: 250px;
+	padding: 10px;
+}
+#contactInfo > .insidecontactInfo:nth-last-child(1) {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+#contactInfo > .insidecontactInfo:nth-last-child(1) > img {
+	width: 45px;
+	height: 45px;
+}
+#contactInfo > .insidecontactInfo > a {
+	text-decoration: none;
+	color: rgb(102, 102, 102);
+	margin: 0;
+}
+#contactInfo p {
+	margin: 0;
+	margin-bottom: 5px;
+}
+#contactInfo h2 {
+	margin: 5px 0 10px 0;
+	color: rgb(39, 39, 39);
+	font-weight: 500;
+}
+#aboutPara {
+	width: 80%;
+	margin: auto;
+}
+#aboutPara > p {
+	color: rgb(102, 102, 102);
+	margin: 5px 0 30px 0;
+	font-size: 14px;
+	line-height: 1.5rem;
+}
+#aboutPara > h3 {
+	color: rgb(39, 39, 39);
+	margin-bottom: 10px;
 }
 html,
 body {
