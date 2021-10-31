@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <style>
+        #container{
+            border: 1px solid red;
+            height: 300px;
+            width: 100%;
+            margin: auto;
+            background-color: teal;
+        }
+        #search-box{
+            margin: auto;
+            margin-top: 110px;
+        }
+        .search{
+            height: 70px;
+            width: 50%;
+            margin-left: 350px;
+            border-radius: 5px;
+            
+        }
+        .search-btn{
+            height: 80px;
+            width: 70px;
+            border-radius: 5px;
+            border-bottom: 10px;
+            background-color: rgb(249,174,66);
+        }
+        .load{
+            width: 100px;
+            height: 90px;
+            display:inline-block;
+            border-radius: 5px;
+        }
+        #upload{
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="search-box">
+            <input type="text" class="search" placeholder="Search medicines.E.g.amlong,dolo,etc"/>
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <div id="upload">
+                <button class="load" onclick="load">upload prescription</button>
+            </div>
+
+        </div>
+    </div>  
+</body>
+</html>
