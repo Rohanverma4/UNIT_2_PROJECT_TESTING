@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        body{
+    background-image: url(https://www.pulseplus.in/content/images/icons/bg.png);
+
+
+}
+ 
+ #box{
+     background-color: white ;
+     border: 1px solid rgb(148, 146, 146);
+     width: 40%;
+    margin: auto;
+    margin-top: 150px;
+     border-radius: 7px; 
+     display: flex;
+     flex-direction: column;
+     text-align: center;  
+ }
+ 
+ input{
+     height: 35px;
+     width: 80%;
+     margin-left: 30px;
+     color: rgb(104, 103, 103);
+ } 
+ #refbox{
+     border: 1px solid red;
+     height: 50px;
+     width: 70%;
+     margin: auto;
+     display: flex;
+ }
+ #refbox>input{
+     border: 1px solid red;
+     height: 20px;
+     width: 40%;
+    
+ }
+ button{
+     background-color: orange;
+     height: 48px;
+     width: 82%;
+     margin-left: 40px;
+     margin-top: 20px;
+ }
+ #sms{
+     display: flex;
+     margin: auto;
+ }
+ #verify{
+     margin-top: 15px;
+ }
+ h2{
+     text-align: start;
+     margin-left: 60px;
+ }
+ p{
+     text-align: start;
+     margin-left: 60px; 
+ }
+ #box>div{
+     margin-top: 15px;
+ }
+ .checkMassage{
+      color:rgb(200, 31, 31);
+      font-size: 17px;
+      font-weight: bold;
+      font-family: 'Barlow', sans-serif;
+ }
+    </style>
+</head>
+<body>
+    <!-- main box -->
+    <div id = "box">
+        <div>
+            <!-- logo image -->
+            <img src = "https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy.png">
+        </div>
+        <div>
+            <!-- mobile number input -->
+            <h2><label>Verify Mobile Number</label></h2>
+            <div class="notify"></div>
+            <input class="putNumber" type = "text" placeholder="Enter your mobile number">
+        </div>
+        <div>
+            <!-- otp input -->
+            <p><label>Enter 4 digit OTP code recieved in your mobile number</label></p>
+            <input class="otp" type = "number" placeholder="OTP Code">
+        </div>
+        <div><button class="btn">VERIFY</button></div>
+        <a href=""><div id = "verify">Verify later & continue shopping</div></a>
+        <div id = "sms">
+            <!-- <h3>Haven't recieved SMS yet? </h3>
+            <a href=""><h3>Generate OTP Again</h3></a> -->
+        </div>   
+    </div>
+</body>
+</html>
+
+<script src="signup.js"></script>
