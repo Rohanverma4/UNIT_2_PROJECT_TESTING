@@ -93,7 +93,7 @@ li {
 .carousel {
 	position: relative;
 	padding-top: 75%;
-	filter: drop-shadow(0 0 10px #0003);
+	filter: drop-shadow(0 0 10px rgb(90, 90, 90));
 	perspective: 100px;
 	height: 400px;
 }
@@ -255,7 +255,7 @@ body {
 }
 
 .gallery-cell {
-	width: 65%;
+	width: 66%;
 	height: 200px;
 	margin: 0;
 	background: #8c8;
@@ -305,6 +305,11 @@ consult a doc and lab test section
 	font-weight: 600;
 	border-radius: 5px;
 }
+.insideConsultAndLab button:hover {
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .insideConsultAndLab h2 {
 	color: grey;
 }
@@ -466,6 +471,7 @@ NAVBAR SIDE PANEL TESTING
 	height: 50px;
 	position: absolute;
 	left: 20px;
+	bottom: 10px;
 	margin-left: 20px;
 }
 #navbar > ul {
@@ -631,13 +637,15 @@ NAVBAR SIDE PANEL TESTING
 	display: block;
 	position: relative;
 }
+
 #cartIcon {
 	color: rgb(255, 255, 255);
-	font-size: 30px;
+	font-size: 40px;
 	line-height: 30px;
 	/* border: 1px solid black; */
 	font-weight: 0;
 	line-height: normal;
+	/* border: 1px solid red; */
 }
 #cartCounter {
 	/* border: 1px solid black; */
@@ -645,12 +653,13 @@ NAVBAR SIDE PANEL TESTING
 	right: 0;
 	background-color: tomato;
 	border-radius: 50%;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	text-align: center;
 	font-size: 13px;
 	color: white;
 	font-weight: 600;
+	line-height: 20px;
 }
 
 /*Copied Stuff*/
@@ -796,6 +805,7 @@ body {
 }
 #searchIcon {
 	color: white;
+	font-size: 40px;
 }
 #copyRight {
 	text-align: center;
@@ -866,35 +876,24 @@ body {
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-/* .modal-footer {
-	padding: 2px 16px;
-	background-color: #d1602c;
-	color: white;
-} */
 @media only screen and (max-width: 700px) {
 	.openbtn {
 		display: block;
 	}
 	#navbar {
 		display: flex;
-		/* position: relative; */
 		align-items: start;
 		justify-content: center;
-		/* border: 1px solid red; */
 	}
 	#navbar > img {
-		width: 90px;
-		height: 45px;
+		width: 100px;
+		height: 50px;
 		position: absolute;
-		left: 300px;
+		left: 40%;
 		margin-left: 20px;
 	}
-	#myBtn {
-		display: none;
-	}
-	#loginSignupHref a {
-		display: none;
-	}
+	#loginSignupHref a,
+	#myBtn,
 	footer {
 		display: none;
 	}
@@ -912,23 +911,14 @@ body {
 		overflow-x: hidden;
 		overflow-y: scroll;
 		scrollbar-width: none;
-		/* position: fixed; */
 		width: 100%;
-		/* border: 1px solid red; */
 	}
 	#demoGraphics {
 		display: flex;
 		justify-content: center;
 		gap: 50px;
 	}
-	/* .medsAndCustomers {
-		border: 1px solid red;
-	}
-	.insideMedsAndCustomerBox {
-		border: 1px solid rgb(0, 0, 0);
-	} */
 	#search-box {
-		/* border: 1px solid black; */
 		width: 500px;
 	}
 	/*

@@ -20,154 +20,9 @@
 	<body>
 		<!-- TOP CONTAINER -->
 
-		<nav id="navbar">
-			<div id="mySidepanel" class="sidepanel">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<!-- COLLAPSE SIDE PANEL TESTING -->
+		<div id="navbarDiv"></div>
 
-				<h2>Welcome Guest</h2>
-				<a href="../LOGIN_PAGE/login.html"
-					><i class="material-icons">power_settings_new</i
-					><span id="logininsideSidePanel">Login/Signup</span></a
-				>
-				<a href="#"><i class="material-icons">lightbulb</i>About Pulse</a>
-				<a href="#">
-					<i class="material-icons">undo</i>Returns & refund Policy</a
-				>
-				<a href="#"> <i class="material-icons">lock</i>Privacy Policy</a>
-				<a href="#">
-					<i class="material-icons">local_shipping</i>Shipping Policy</a
-				>
-				<a href="#">
-					<i class="material-icons">description</i>Terms & Condition</a
-				>
-				<a href="#"> <i class="material-icons">search</i>Browse by A-Z</a>
-			</div>
-			<button class="openbtn" onclick="openNav()">☰</button>
-
-			<img
-				src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
-			/>
-			<!-- COLLAPSE SIDE PANEL TESTING -->
-			<!-- COLLAPSE SIDE PANEL TESTING -->
-			<ul>
-				<li>
-					<button id="myBtn">
-						<i class="material-icons">location_on</i
-						><span
-							style="position: absolute; right: 0; top: 0; margin-right: 5px"
-							>Location</span
-						>
-					</button>
-
-					<!-- The Modal -->
-					<div id="myModal" class="modal">
-						<!-- Modal content -->
-						<div class="modal-content">
-							<div class="modal-header">
-								<span class="close">&times;</span>
-								<img src="../IMAGES/select-city-header.png" />
-							</div>
-							<div class="modal-body">
-								<form id="modalForm">
-									<input type="text" placeholder="Enter your city" />
-									<label for="nd">
-										<input
-											id="nd"
-											type="radio"
-											name="location"
-											value="New Delhi"
-										/>
-										New Delhi
-									</label>
-
-									<label for="mumbai">
-										<input
-											id="mumbai"
-											type="radio"
-											name="location"
-											value="Mumbai"
-										/>
-										Mumbai
-									</label>
-
-									<label for="bengaluru">
-										<input
-											id="bengaluru"
-											type="radio"
-											name="location"
-											value="Bengaluru"
-										/>
-										Bengaluru
-									</label>
-
-									<label for="kolkata">
-										<input
-											id="kolkata"
-											type="radio"
-											name="location"
-											value="Kolkata"
-										/>
-										Kolkata
-									</label>
-
-									<label for="chennai">
-										<input
-											d="chennai"
-											type="radio"
-											name="location"
-											value="Chennai"
-										/>
-										Chennai
-									</label>
-
-									<label for="noida">
-										<input
-											id="noida"
-											type="radio"
-											name="location"
-											value="Noida"
-										/>
-										Noida
-									</label>
-
-									<label for="pune">
-										<input
-											id="pune"
-											type="radio"
-											name="location"
-											value="Pune"
-										/>
-										Pune
-									</label>
-
-									<label for="hyderabad">
-										<input
-											id="hyderabad"
-											type="radio"
-											name="location"
-											value="Hyderabad"
-										/>
-										Hyderabad
-									</label>
-
-									<input type="submit" id="applyModalLocation" value="Apply" />
-								</form>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li id="loginSignupHref">
-					<a href="../LOGIN_PAGE/login.html">Login/Signup</a>
-				</li>
-
-				<li>
-					<a id="cartAnchor" href="#">
-						<span id="cartCounter">0</span>
-						<i id="cartIcon" class="material-icons">shopping_bag</i>
-					</a>
-				</li>
-			</ul>
-		</nav>
 		<div id="container">
 			<div id="search-box">
 				<input
@@ -180,7 +35,7 @@
 				</button>
 
 				<button id="load" onclick="load">
-					<i id="cartIcon" class="material-icons">photo_camera</i>
+					<i class="material-icons">photo_camera</i>
 					<p>upload prescription</p>
 				</button>
 			</div>
@@ -456,6 +311,7 @@
 	<!-- Trigger/Open The Modal -->
 </html>
 <script src="connected.js"></script>
+<script src="../temp.js"></script>
 <!-- <select id="user">
 		<option value="My Profile">My Profile</option>
 		<option value="My Orders">My Orders</option>
