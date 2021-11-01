@@ -26,14 +26,22 @@
 			/>
 			<ul>
 				<li>
-					<!-- <select id="location">
-						<option value="New Delhi">New Delhi</option>
-						<option value="Mumbai">Mumbai</option>
-						<option value="Chennai">Chennai</option>
-						<option value="Patna">Patna</option>
-						<option value="Kolkata">Kolkata</option>
-					</select> -->
-					<button id="myBtn">Location</button>
+					<button id="myBtn">
+						<i
+							style="
+								font-size: 15px;
+								position: absolute;
+								left: 0;
+								top: 0;
+								margin-left: 5px; ;
+							"
+							class="material-icons"
+							>location_on</i
+						><span
+							style="position: absolute; right: 0; top: 0; margin-right: 5px"
+							>Location</span
+						>
+					</button>
 
 					<!-- The Modal -->
 					<div id="myModal" class="modal">
@@ -139,7 +147,12 @@
 					<a href="../login.html/login.html">Login/Signup</a>
 				</li>
 
-				<li><i id="cartIcon" class="material-icons">shopping_bag</i></li>
+				<li>
+					<a id="cartAnchor" href="#">
+						<span id="cartCounter">0</span>
+						<i id="cartIcon" class="material-icons">shopping_bag</i>
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<div id="container">
@@ -153,7 +166,10 @@
 					<i id="searchIcon" class="material-icons">search</i>
 				</button>
 
-				<button id="load" onclick="load">upload prescription</button>
+				<button id="load" onclick="load">
+					<i id="cartIcon" class="material-icons">photo_camera</i>
+					<p>upload prescription</p>
+				</button>
 			</div>
 			<!-- 
 				-----------------------------------------
@@ -262,6 +278,33 @@
 				</aside>
 			</section>
 		</div>
+		<!-- 
+			-----------
+			CONSULT A DOCTOR AND BOOK A LAB TEST SECTION
+			-----------
+		 -->
+		<div id="consultAndLab">
+			<div class="insideConsultAndLab">
+				<img
+					src="https://www.pulseplus.in/content/images/icons/slide-doc.png"
+					alt="some doc and lab image"
+				/>
+				<div class="bookDocAndSearchLab">
+					<h2>Consult a <span class="greyAndBoldText">Doctor Online</span></h2>
+					<button>BOOK FREE CONSULTATION</button>
+				</div>
+			</div>
+			<div class="insideConsultAndLab">
+				<img
+					src="https://www.pulseplus.in/content/images/icons/slide-lab.png"
+					alt="some doc and lab image"
+				/>
+				<div class="bookDocAndSearchLab">
+					<h2>Book a <span class="greyAndBoldText">Lab Test</span></h2>
+					<button>SEARCH TEST PACKAGES</button>
+				</div>
+			</div>
+		</div>
 		<!-- //BOTTOM CAROUSEL -->
 		<div id="carousal_container_2">
 			<div
@@ -311,6 +354,7 @@
 						src="https://www.pulseplus.in/content/images/icons/facebook.png"
 						alt="facebook icon"
 					/>
+
 					<img src="https://www.pulseplus.in/content/images/icons/insta.png" />
 					<img
 						src="https://www.pulseplus.in/content/images/icons/twitter.png"
@@ -318,16 +362,16 @@
 				</div>
 			</div>
 			<!-- 
+				---------------------------------------------
 				-
-				-
-				-
-				-PARTNERS IMAGES SECTION BELOW - USE MAPPING
+				---------------------------------------------
+				- PARTNERS IMAGES SECTION BELOW - USE MAPPING
 			--->
 			<div id="partnersImages"></div>
 			<!--
+				---------------------------------------------
 				-
-				-
-				-
+				---------------------------------------------
 				- PARTNERS IMAGES SECTION ABOVE - USE MAPPING
 			-->
 			<div id="aboutPara">
