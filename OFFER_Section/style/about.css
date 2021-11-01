@@ -1,0 +1,30 @@
+#aboutPara {
+	width: 80%;
+	margin:20px auto;
+    font-family: 'Roboto', sans-serif;
+    color: #656464;
+    font-size: 1.4rem;
+}
+#aboutPara > p {
+	color: rgb(102, 102, 102);
+	margin: 5px 0 30px 0;
+	font-size: 14px;
+	line-height: 1.5rem;
+}
+#aboutPara > h3 {
+	color: rgb(39, 39, 39);
+	margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#copyRight{
+    color: black;
+}
+
+#aboutPara > p{
+    color: rgb(151, 151, 151);
+}
+
+#copyRight{
+    text-align: center;
+}
