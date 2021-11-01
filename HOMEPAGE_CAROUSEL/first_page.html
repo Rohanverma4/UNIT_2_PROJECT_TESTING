@@ -21,22 +21,38 @@
 		<!-- TOP CONTAINER -->
 
 		<nav id="navbar">
+			<div id="mySidepanel" class="sidepanel">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+				<h2>Welcome Guest</h2>
+				<a href="../LOGIN_PAGE/login.html"
+					><i class="material-icons">power_settings_new</i
+					><span id="logininsideSidePanel">Login/Signup</span></a
+				>
+				<a href="#"><i class="material-icons">lightbulb</i>About Pulse</a>
+				<a href="#">
+					<i class="material-icons">undo</i>Returns & refund Policy</a
+				>
+				<a href="#"> <i class="material-icons">lock</i>Privacy Policy</a>
+				<a href="#">
+					<i class="material-icons">local_shipping</i>Shipping Policy</a
+				>
+				<a href="#">
+					<i class="material-icons">description</i>Terms & Condition</a
+				>
+				<a href="#"> <i class="material-icons">search</i>Browse by A-Z</a>
+			</div>
+			<button class="openbtn" onclick="openNav()">☰</button>
+
 			<img
 				src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
 			/>
+			<!-- COLLAPSE SIDE PANEL TESTING -->
+			<!-- COLLAPSE SIDE PANEL TESTING -->
 			<ul>
 				<li>
 					<button id="myBtn">
-						<i
-							style="
-								font-size: 15px;
-								position: absolute;
-								left: 0;
-								top: 0;
-								margin-left: 5px; ;
-							"
-							class="material-icons"
-							>location_on</i
+						<i class="material-icons">location_on</i
 						><span
 							style="position: absolute; right: 0; top: 0; margin-right: 5px"
 							>Location</span
@@ -49,7 +65,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<span class="close">&times;</span>
-								<h2>Modal Header</h2>
+								<img src="../IMAGES/select-city-header.png" />
 							</div>
 							<div class="modal-body">
 								<form id="modalForm">
@@ -137,14 +153,11 @@
 									<input type="submit" id="applyModalLocation" value="Apply" />
 								</form>
 							</div>
-							<div class="modal-footer">
-								<h3>Modal Footer</h3>
-							</div>
 						</div>
 					</div>
 				</li>
 				<li id="loginSignupHref">
-					<a href="../login.html/login.html">Login/Signup</a>
+					<a href="../LOGIN_PAGE/login.html">Login/Signup</a>
 				</li>
 
 				<li>
@@ -322,6 +335,38 @@
 				</div>
 			</div>
 		</div>
+		<!--  
+		---------------------
+		---------------------
+		Features box
+		- -->
+		<div id="featuresBox">
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/trust.png" alt="placeholder image" />
+				<h5>Genuine</h5>
+				<p>Wide Range of Wellness & OTC Products</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/save.png" alt="placeholder image" />
+				<h5>Save up to 50%*</h5>
+				<p>Flat Discount & Cashback on Medicine</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/secure.png" alt="placeholder image" />
+				<h5>Trust</h5>
+				<p>100% Secure Payments</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/refill.png" alt="placeholder image" />
+				<h5>Easy Monthly Refills</h5>
+				<p>Subscribe for hassle free monthly refills</p>
+			</div>
+		</div>
+		<!--  
+		Features box
+		---------------------
+		---------------------
+		- -->
 		<footer>
 			<div id="contactInfo">
 				<div class="insidecontactInfo">
