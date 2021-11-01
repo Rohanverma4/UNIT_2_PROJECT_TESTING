@@ -931,4 +931,62 @@ body {
 		/* border: 1px solid black; */
 		width: 500px;
 	}
+	/*
+	-
+	-
+	consult field
+	-
+	*/
+	#consultAndLab {
+		/* border: 1px solid red; */
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+		gap: 50px;
+		align-items: center;
+		font-family: "Roboto", sans-serif;
+		/* border: 1px solid black; */
+		width: 90%;
+		margin: auto;
+	}
+	#consultAndLab img {
+		width: 120px;
+		height: 130px;
+	}
+
+	#consultAndLab > .insideConsultAndLab {
+		/* border: 1px solid green; */
+		display: flex;
+
+		justify-content: center;
+		width: 400px;
+		align-items: center;
+		gap: 20px;
+	}
+	.insideConsultAndLab button {
+		border: 1px solid #16ac99;
+		color: #16ac99;
+		width: 200px;
+		background-color: white;
+		font-weight: 600;
+		border-radius: 5px;
+		margin: 0;
+	}
+	.insideConsultAndLab h2 {
+		color: grey;
+		text-align: right;
+		font-size: 20px;
+	}
+	.insideConsultAndLab .greyAndBoldText {
+		color: rgb(31, 31, 31);
+	}
+	.bookDocAndSearchLab {
+		/* border: 1px solid red; */
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
