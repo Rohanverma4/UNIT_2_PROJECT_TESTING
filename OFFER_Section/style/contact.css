@@ -1,0 +1,44 @@
+
+#contactInfo {
+	display: flex;
+	width: 90%;
+	justify-content: space-evenly;
+    padding: 0 3rem;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    margin: auto;
+    background-color: white;
+}
+#contactInfo > .insidecontactInfo {
+	height: 200px;
+	width: 250px;
+	padding: 10px;
+}
+#contactInfo > .insidecontactInfo:nth-last-child(1) {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+#contactInfo > .insidecontactInfo:nth-last-child(1) > img {
+	width: 45px;
+	height: 45px;
+}
+#contactInfo > .insidecontactInfo > a {
+	text-decoration: none;
+	color: rgb(153, 153, 153);
+	margin: 0;
+}
+#contactInfo p {
+	margin: 0;
+	margin-bottom: 5px;
+    font-size: .9rem;
+}
+#contactInfo h2 {
+	margin: 5px 0 10px 0;
+	color: rgb(39, 39, 39);
+	font-weight: 500;
+    font-size: 1rem;
+    font-weight: bold;
+}
