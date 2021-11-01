@@ -653,30 +653,6 @@ NAVBAR SIDE PANEL TESTING
 	font-weight: 600;
 }
 
-@media only screen and (max-width: 700px) {
-	.openbtn {
-		display: block;
-	}
-	#navbar {
-		display: flex;
-		align-items: start;
-		justify-content: center;
-		/* border: 1px solid red; */
-	}
-	#navbar > img {
-		width: 90px;
-		height: 45px;
-		position: absolute;
-		left: 300px;
-		margin-left: 20px;
-	}
-	#myBtn {
-		display: none;
-	}
-	#loginSignupHref a {
-		display: none;
-	}
-}
 /*Copied Stuff*/
 
 #container {
@@ -895,3 +871,64 @@ body {
 	background-color: #d1602c;
 	color: white;
 } */
+@media only screen and (max-width: 700px) {
+	.openbtn {
+		display: block;
+	}
+	#navbar {
+		display: flex;
+		/* position: relative; */
+		align-items: start;
+		justify-content: center;
+		/* border: 1px solid red; */
+	}
+	#navbar > img {
+		width: 90px;
+		height: 45px;
+		position: absolute;
+		left: 300px;
+		margin-left: 20px;
+	}
+	#myBtn {
+		display: none;
+	}
+	#loginSignupHref a {
+		display: none;
+	}
+	footer {
+		display: none;
+	}
+	#featuresBox {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		gap: 40px;
+	}
+	#featuresBox > div {
+		border: none;
+	}
+	#container {
+		display: flex;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		/* position: fixed; */
+		width: 100%;
+		/* border: 1px solid red; */
+	}
+	#demoGraphics {
+		display: flex;
+		justify-content: center;
+		gap: 50px;
+	}
+	/* .medsAndCustomers {
+		border: 1px solid red;
+	}
+	.insideMedsAndCustomerBox {
+		border: 1px solid rgb(0, 0, 0);
+	} */
+	#search-box {
+		/* border: 1px solid black; */
+		width: 500px;
+	}
+}
