@@ -35,3 +35,11 @@ MODAL ONLY
 -
 ----------
 */
+// COLLAPSE SIDE PANEL TESTING
+function openNav() {
+	document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+	document.getElementById("mySidepanel").style.width = "0";
+}
