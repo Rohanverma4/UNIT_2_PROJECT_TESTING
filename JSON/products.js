@@ -78,3 +78,30 @@ var products = [
 		},
 	},
 ];
+
+var mySecondCarousel = document.querySelector("#carousal_container_2");
+
+function appendProducts(products) {
+	products.map((item) => {
+		var mainDiv = document.createElement("div");
+		var textDiv = document.createElement("div");
+		var h5Tag = document.createElement("h5");
+		var priceTag = document.createElement("p");
+		var imgTag = document.createElement("img");
+		var button = document.createElement("button");
+		//set attributes
+		imgTag.setAttribute("src", item.img_src);
+		imgTag.setAttribute("class", "galleryCellImg");
+		h5Tag.textContent = item.name;
+		priceTag.textContent = `Price: ${item.price}`;
+		textDiv.setAttribute("class", "galleryTextDiv");
+		button.textContent = "Buy Now";
+		mainDiv.setAttribute("class", "gallery-cell");
+		textDiv.append(h5Tag, priceTag, button);
+		mainDiv.append(imgTag, textDiv);
+		mySecondCarousel.append(mainDiv);
+	});
+}
+// window.addEventListener("load", () => {
+// 	appendProducts(products);
+// });
