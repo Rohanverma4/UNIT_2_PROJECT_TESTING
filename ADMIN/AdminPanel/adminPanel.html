@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="connected.css" />
 		<link rel="stylesheet" href="sidePanel.css" />
+		<link rel="stylesheet" href="productForm.css" />
+		<link rel="stylesheet" href="userDetails.css" />
+		<link rel="stylesheet" href="adminProfile.css" />
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -26,11 +29,14 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
 				>&times;</a
 			>
+			<a href="#">Dashboard</a>
 			<a href="#">Products</a>
-			<a href="#">Services</a>
-			<a href="#">Clients</a>
+			<a href="#">Users</a>
+			<a href="#">Admin Profile</a>
 			<a href="#">Contact</a>
-			<a id="logout" href="#"><i class="material-icons">search</i>Logout</a>
+			<a id="logout" href="#"
+				><i class="material-icons">power_settings_new</i>Logout</a
+			>
 		</div>
 
 		<span
@@ -43,12 +49,13 @@
 				text-align: center;
 				border-radius: 5px;
 				position: fixed;
-				top: 10px;
-				left: 5px;
+				top: 15px;
+				left: 10px;
 			"
 			onclick="openNav()"
 			>&#9776;</span
 		>
+		<div id="container"></div>
 	</body>
 </html>
 <script>
@@ -60,3 +67,4 @@
 		document.getElementById("mySidenav").style.width = "0";
 	}
 </script>
+<script src="connected.js"></script>

@@ -1,0 +1,19 @@
+#productForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	gap: 20px;
+	border: 1px solid red;
+	width: 400px;
+	margin: auto;
+	position: relative;
+}
+#productForm input,
+#productForm select {
+	margin-left: 10px;
+}
+#productForm select {
+	width: 200px;
+}
