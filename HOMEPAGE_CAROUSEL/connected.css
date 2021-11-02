@@ -481,27 +481,34 @@ NAVBAR SIDE PANEL TESTING
 }
 /* Modal Content */
 #myBtn {
-	width: 90px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: 1px solid white;
-	border-radius: 7px;
-	height: 20px;
-	padding: 15px;
+	border-radius: 5px;
+	height: 25px;
+	/* padding: 15px; */
 	margin-top: 0;
 	background-color: #16ac99;
 	color: rgb(255, 255, 255);
 	font-weight: 600;
+	width: 100px;
+	min-width: 50px;
 
-	position: relative;
-	line-height: 25px;
+	/* position: relative; */
+
 	font-weight: 0;
 }
 #myBtn > i {
-	font-size: 20px;
-	position: absolute;
+	font-size: 15px;
+	/* position: absolute; */
+	display: inline-block;
 	left: 0;
 	line-height: 0;
-	margin-left: 5px;
+	margin-right: 5px;
 }
+
 #myBtn:hover {
 	cursor: pointer;
 }

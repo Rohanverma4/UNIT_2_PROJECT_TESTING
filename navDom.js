@@ -40,11 +40,7 @@ var myNavbar = `
 			<ul>
 				<li>
 					<button id="myBtn">
-						<i class="material-icons">location_on</i
-						><span
-							style="position: absolute; right: 0; top: 0; margin-right: 5px"
-							>Location</span
-						>
+						<i class="material-icons">location_on</i><span>Location</span>
 					</button>
 
 					<!-- The Modal -->
@@ -185,29 +181,28 @@ window.onclick = function (event) {
 };
 
 //FOR SHYAMAL
-<<<<<<< HEAD
+
 // location select section
 
-var form = document.querySelector("form");
+var form = document.getElementById("modalForm");
 console.log(form);
-form.addEventListener("submit",function(event){
-
+form.addEventListener("submit", function (event) {
 	event.preventDefault();
-
-
+	// var locationBox = document.getElementById("myBtn");
+	// console.log(locationBox);
 	var locationName = document.getElementsByName("location");
-	
-	for(var i = 0 ; i < locationName.length ; i++){
-		if(locationName[i].checked){
-			document.getElementById("locationBox").textContent = locationName[i].value;
-
-			document.getElementById("applyModalLocation").addEventListener("click",function (event){
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			})
+	console.log(locationName);
+	for (var i = 0; i < locationName.length; i++) {
+		if (locationName[i].checked) {
+			document.querySelector("#myBtn > span").textContent =
+				locationName[i].value;
 		}
 	}
-	
 });
-
+document
+	.getElementById("applyModalLocation")
+	.addEventListener("click", function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	});
