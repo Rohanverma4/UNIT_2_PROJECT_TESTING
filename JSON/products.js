@@ -99,14 +99,14 @@ function appendProducts(products) {
 		mainDiv.setAttribute("class", "gallery-cell");
 		textDiv.append(h5Tag, priceTag, button);
 		mainDiv.append(imgTag, textDiv);
-		var flkty = new Flickity(mainDiv, {
-			cellAlign: "left",
-			contain: true,
-		});
-		// mySecondCarousel.append(flkty);
-		console.log(flkty);
+		// var flkty = new Flickity(mainDiv, {
+		// 	cellAlign: "left",
+		// 	contain: true,
+		// });
+		mySecondCarousel.append(mainDiv);
+		// console.log(flkty);
 	});
 }
-mySecondCarousel.addEventListener("click", () => {
-	appendProducts(products);
-});
+// window.addEventListener("load", () => {
+// 	appendProducts(products);
+// });
