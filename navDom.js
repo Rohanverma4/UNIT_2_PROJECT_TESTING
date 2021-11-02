@@ -185,6 +185,7 @@ window.onclick = function (event) {
 };
 
 //FOR SHYAMAL
+<<<<<<< HEAD
 // location select section
 
 var form = document.querySelector("form");
@@ -208,4 +209,5 @@ form.addEventListener("submit",function(event){
 		}
 	}
 	
-})
+});
+

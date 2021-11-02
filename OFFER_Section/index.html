@@ -1,163 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://kit.fontawesome.com/626d910004.js" crossorigin="anonymous"></script> -->
-    <title>pulseplusOffers</title>
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/contact.css">
-    <link rel="stylesheet" href="./style/patnar.css">
-    <link rel="stylesheet" href="./style/about.css">
-    <link rel="stylesheet" href="./style/moddleToggle.css">
-    <!-- End CSS Link Section -->
-</head>
-<body>
-    <div class="container">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <script src="https://kit.fontawesome.com/626d910004.js" crossorigin="anonymous"></script> -->
+		<title>pulseplusOffers</title>
+		<!-- CSS Link -->
+		<link rel="stylesheet" href="./style/style.css" />
+		<link rel="stylesheet" href="./style/contact.css" />
+		<link rel="stylesheet" href="./style/patnar.css" />
+		<link rel="stylesheet" href="./style/about.css" />
+		<link rel="stylesheet" href="./style/moddleToggle.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<!-- End CSS Link Section -->
+	</head>
+	<body>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+			}
+			@media only screen and (max-width: 700px) {
+				#contactInfo {
+					display: none;
+				}
+				#aboutPara {
+					display: none;
+				}
+				#partnerSection {
+					display: none;
+				}
+			}
+		</style>
+		<div id="navbarDiv"></div>
+		<div class="container">
+			<!-- Navbar Section -->
+			<!-- <div class="navbar">
+				<div class="logo">
+					<img
+						src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
+						alt="logo"
+					/>
+				</div>
+				<div class="cartArea flex">
+					<div class="location">
+						<button id="locationBtn">
+							<span><i class="fas fa-map-marker icons"></i></span>New Delhi
+						</button>
+					</div>
+					<div class="login">
+						<p><a href="#"> Login/Signup</a></p>
+					</div>
+					<div class="cartIcon">
+						<img
+							src="https://www.pulseplus.in/content/images/icons/cart.svg"
+							alt="logo"
+						/>
+					</div>
+				</div>
+			</div> -->
 
-        <!-- Navbar Section -->
-        <div class="navbar">
-            <div class="logo">
-                <img src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png" alt="logo">
-            </div>
-            <div class="cartArea flex">
-                <div class="location">
-                    <button id="locationBtn"><span><i class="fas fa-map-marker icons"></i></span>New Delhi</button>
-                </div>
-                <div class="login">
-                    <p><a href="#"> Login/Signup</a></p>
-                </div>
-                <div class="cartIcon">
-                    <img src="https://www.pulseplus.in/content/images/icons/cart.svg" alt="logo" >
-                </div>
-            </div>
-        </div>
+			<!-- End Navbar Section -->
 
-        <!-- End Navbar Section -->
+			<!-- Start body Section -->
+			<div id="offerSection">
+				<div class="offerHeadingText">
+					<h3>Avaliable Offers</h3>
+				</div>
+				<div class="box">
+					<div class="bannerImg">
+						<img
+							src="https://www.pulseplus.in/content/images/offers/20flatoff-banner.jpg"
+							alt="bannerImg"
+						/>
+					</div>
+					<div class="couponCode">
+						<h3>COUPON CODE: FLAT15</h3>
+					</div>
+					<div class="offerHeading">
+						<h1>GET 15% OFF ON MEDICINES</h1>
+						<p>Use Code FLAT15 & Get 15% Off. Valid on orders above ₹1500</p>
+					</div>
+					<div class="termBtn">
+						<button id="termBtn1">Terms & Conditions</button>
+						<div class="termPara">
+							<div class="box">
+								<ul>
+									<li>15% discount on all allopathic medicines</li>
+									<li>
+										Minimum medicines value of the Rs.1500 is required to get
+										this offer
+									</li>
+									<li>
+										Discount is valid only on allopathic medicines, and not on
+										speciality products. Coupon code is mentioned in all
+										applicable product pages. If the coupon code is not
+										mentioned in the product page, then the offer is not valid
+										on that product.
+									</li>
+									<li>
+										The offer is valid unlimited times during the offer period
+									</li>
+									<li>
+										This offer cannot be combined with other existing offers.
+									</li>
+									<li>
+										This offer is not redeemable for cash or credit, and cannot
+										be exchanged for any other product.
+									</li>
+									<li>
+										Pulse Pharmacy reserves the right to change, withdraw,
+										modify or vary the terms and conditions of the offer at its
+										sole discretion at any time and the same will be binding on
+										the customer at all times.
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4>How do you get it?</h4>
+								<ul>
+									<li>Add products at www.pulseplus.in</li>
+									<li>Click "Apply Coupon" in the Cart Page</li>
+									<li>Choose FLAT15 Coupon code</li>
+									<li>Customer care no incase of queries: +91-7795-600-600.</li>
+									<li>
+										Offer is valid in location where Pulse Pharmacy delivers &
+										is subject to order verification & clearence
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="bannerImg">
+						<img
+							src="https://www.pulseplus.in/content/images/offers/25offer-banner.jpg"
+							alt="bannerImg"
+						/>
+					</div>
+					<div class="couponCode">
+						<h3>COUPON CODE: FLAT15</h3>
+					</div>
+					<div class="offerHeading">
+						<h1>GET 15% OFF ON MEDICINES</h1>
+						<p>Use Code FLAT15 & Get 15% Off. Valid on orders above ₹1500</p>
+					</div>
+					<div class="termBtn">
+						<button id="termBtn2">Terms & Conditions</button>
+						<div class="termPara2">
+							<div class="box">
+								<ul>
+									<li>15% discount on all allopathic medicines</li>
+									<li>
+										Minimum medicines value of the Rs.1500 is required to get
+										this offer
+									</li>
+									<li>
+										Discount is valid only on allopathic medicines, and not on
+										speciality products. Coupon code is mentioned in all
+										applicable product pages. If the coupon code is not
+										mentioned in the product page, then the offer is not valid
+										on that product.
+									</li>
+									<li>
+										The offer is valid unlimited times during the offer period
+									</li>
+									<li>
+										This offer cannot be combined with other existing offers.
+									</li>
+									<li>
+										This offer is not redeemable for cash or credit, and cannot
+										be exchanged for any other product.
+									</li>
+									<li>
+										Pulse Pharmacy reserves the right to change, withdraw,
+										modify or vary the terms and conditions of the offer at its
+										sole discretion at any time and the same will be binding on
+										the customer at all times.
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4>How do you get it?</h4>
+								<ul>
+									<li>Add products at www.pulseplus.in</li>
+									<li>Click "Apply Coupon" in the Cart Page</li>
+									<li>Choose FLAT15 Coupon code</li>
+									<li>Customer care no incase of queries: +91-7795-600-600.</li>
+									<li>
+										Offer is valid in location where Pulse Pharmacy delivers &
+										is subject to order verification & clearence
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="couponPartnersbox">
+				<div class="couponHeading">
+					<h3>Our Coupon Patners</h3>
+				</div>
+				<div class="couponPartersImg">
+					<div class="couponPartners">
+						<img
+							src="https://www.pulseplus.in/Content/images/partners/indiashoppers_logo.png"
+							alt="partnerlogo"
+						/>
+					</div>
+					<div class="couponPartners">
+						<img
+							src="https://www.pulseplus.in/Content/images/partners/couponz_guru_logo.png"
+							alt="partnerlogo"
+						/>
+					</div>
+					<div class="couponPartners">
+						<img
+							src="https://www.pulseplus.in/Content/images/partners/couponsji_logo.png"
+							alt="partnerlogo"
+						/>
+					</div>
+				</div>
+			</div>
+			<!-- End body Section -->
 
-        <!-- Start body Section -->
-        <div id="offerSection">
-            <div class="offerHeadingText">
-                <h3>Avaliable Offers</h3>
-            </div>
-            <div class="box">
-                <div class="bannerImg">
-                    <img src="https://www.pulseplus.in/content/images/offers/20flatoff-banner.jpg" alt="bannerImg">
-                </div>
-                <div class="couponCode">
-                    <h3>COUPON CODE: FLAT15</h3>
-                </div>
-                <div class="offerHeading">
-                    <h1>GET 15% OFF ON MEDICINES</h1>
-                    <p>Use Code FLAT15 & Get 15% Off. Valid on orders above ₹1500</p>
-                </div>
-                <div class="termBtn">
-                    <button id="termBtn1">Terms & Conditions</button>
-                    <div class="termPara">
-                        <div class="box">
-                            <ul>
-                                <li>15% discount on all allopathic medicines</li>
-                                <li>Minimum medicines value of the Rs.1500 is required to get this offer</li>
-                                <li>Discount is valid only on allopathic medicines, and not on speciality products. Coupon code is mentioned in all applicable product pages. If the coupon code is not mentioned in the product page, then the offer is not valid on that product.</li>
-                                <li>The offer is valid unlimited times during the offer period</li>
-                                <li>This offer cannot be combined with other existing offers.</li>
-                                <li>This offer is not redeemable for cash or credit, and cannot be exchanged for any other product.</li>
-                                <li>Pulse Pharmacy reserves the right to change, withdraw, modify or vary the terms and conditions of the offer at its sole discretion at any time and the same will be binding on the customer at all times.</li>
-                            </ul>
-                        </div>
-                        <div class="box">
-                            <h4>How do you get it?</h4>
-                            <ul>
-                                <li>Add products at www.pulseplus.in</li>
-                                <li>Click "Apply Coupon" in the Cart Page</li>
-                                <li>Choose FLAT15 Coupon code</li>
-                                <li>Customer care no incase of queries: +91-7795-600-600.</li>
-                                <li>Offer is valid in location where Pulse Pharmacy delivers & is subject to order verification & clearence</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="bannerImg">
-                    <img src="https://www.pulseplus.in/content/images/offers/25offer-banner.jpg" alt="bannerImg">
-                </div>
-                <div class="couponCode">
-                    <h3>COUPON CODE: FLAT15</h3>
-                </div>
-                <div class="offerHeading">
-                    <h1>GET 15% OFF ON MEDICINES</h1>
-                    <p>Use Code FLAT15 & Get 15% Off. Valid on orders above ₹1500</p>
-                </div>
-                <div class="termBtn">
-                    <button id="termBtn2">Terms & Conditions</button>
-                    <div class="termPara2">
-                        <div class="box">
-                            <ul>
-                                <li>15% discount on all allopathic medicines</li>
-                                <li>Minimum medicines value of the Rs.1500 is required to get this offer</li>
-                                <li>Discount is valid only on allopathic medicines, and not on speciality products. Coupon code is mentioned in all applicable product pages. If the coupon code is not mentioned in the product page, then the offer is not valid on that product.</li>
-                                <li>The offer is valid unlimited times during the offer period</li>
-                                <li>This offer cannot be combined with other existing offers.</li>
-                                <li>This offer is not redeemable for cash or credit, and cannot be exchanged for any other product.</li>
-                                <li>Pulse Pharmacy reserves the right to change, withdraw, modify or vary the terms and conditions of the offer at its sole discretion at any time and the same will be binding on the customer at all times.</li>
-                            </ul>
-                        </div>
-                        <div class="box">
-                            <h4>How do you get it?</h4>
-                            <ul>
-                                <li>Add products at www.pulseplus.in</li>
-                                <li>Click "Apply Coupon" in the Cart Page</li>
-                                <li>Choose FLAT15 Coupon code</li>
-                                <li>Customer care no incase of queries: +91-7795-600-600.</li>
-                                <li>Offer is valid in location where Pulse Pharmacy delivers & is subject to order verification & clearence</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="couponPartnersbox">
-            <div class="couponHeading">
-                <h3>Our Coupon Patners</h3>
-            </div>
-            <div class="couponPartersImg">
-                <div class="couponPartners">
-                    <img src="https://www.pulseplus.in/Content/images/partners/indiashoppers_logo.png" alt="partnerlogo">
-                </div>
-                <div class="couponPartners">
-                    <img src="https://www.pulseplus.in/Content/images/partners/couponz_guru_logo.png" alt="partnerlogo">
-                </div>
-                <div class="couponPartners">
-                    <img src="https://www.pulseplus.in/Content/images/partners/couponsji_logo.png" alt="partnerlogo">
-                </div>
-            </div>
-        </div>
-        <!-- End body Section -->
+			<!-- start contact section -->
+			<div id="contactInfo"></div>
 
+			<div id="partnerSection"></div>
+			<!-- end contact section -->
 
-        <!-- start contact section -->
-        <div id="contactInfo">
+			<!-- Footer section  start -->
+			<div id="aboutPara"></div>
 
-        </div>
-
-        <div id="partnerSection">
-
-        </div>
-        <!-- end contact section -->
-
-        <!-- Footer section  start -->
-        <div id="aboutPara">
-
-        </div>
-
-        <!-- Footer section end -->
-    </div>
-</body>
+			<!-- Footer section end -->
+		</div>
+	</body>
 </html>
 
 <!-- javaScript link -->
@@ -166,3 +255,4 @@
 <script src="./js/patnar.js"></script>
 <script src="./js/about.js"></script>
 <script src="./js/navbar.js"></script>
+<script src="../navDom.js"></script>
