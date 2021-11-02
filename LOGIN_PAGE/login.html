@@ -9,39 +9,43 @@
              */
 			body {
 				background-image: url(https://www.pulseplus.in/content/images/icons/bg.png);
+				font-family: 'Roboto', sans-serif;;
 			}
 			#box {
 				width: 480px;
-				height: 400px;
-				border: 1px solid black;
+				height: 450px;
+				border: 1px solid rgb(221, 221, 221);
 				margin: auto;
 				margin-top: 150px;
 				display: flex;
 				background-color: white;
 				text-align: center;
 				flex-direction: column;
+				border-radius: 4px;
 			}
 			#logo {
 				width: 100px;
-				height: 60px;
-				margin-left: 38%;
-				margin-top: 20px;
+				/* margin-left: 38%; */
+				/* margin-top: 20px; */
+				margin:15px  auto;
 			}
 			h2 {
 				color: #4e4848;
+				font-weight: normal;
 			}
-			span {
+			#phoneCode {
 				display: inline-block;
 				width: 35px;
 				background-color: #e9ecef;
-				border: 2px solid #e9ecef;
-				height: 27px;
+				border: 1px solid #e9ecef;
+				/* height: 27px; */
 				vertical-align: top;
 				margin: auto;
 				margin-left: 10px;
 				border-radius: 5px;
 				text-align: center;
-				padding-top: 10px;
+				padding: 10px;
+				color: rgb(167, 167, 167);
 			}
 			#number {
 				display: inline-block;
@@ -49,9 +53,17 @@
 				margin-right: 23px;
 				height: 40px;
 				border-radius: 5px;
-				border: 2px solid #e9ecef;
+				border: 1px solid #e9ecef;
 				margin-right: 0px;
+				font-size: 1.1rem;
+				padding: 0px 10px;
 			}
+
+			#number:hover , #number:focus{
+				border: 1px solid skyblue;
+			}
+
+
 			#refer {
 				float: left;
 				margin-left: 30px;
@@ -66,6 +78,12 @@
 				height: 35px;
 				margin-left: 70px;
 				background-color: none;
+				padding: 0px 10px;
+				border: 1px solid #e9ecef;
+			}
+
+			#referral:hover{
+				border: 1px solid skyblue;
 			}
 
 			#button1 {
@@ -77,6 +95,28 @@
 				border: none;
 				border-radius: 5px;
 				font-size: 20px;
+			}
+
+			#nextBtn{
+				margin-top: 35px;
+				margin-bottom: 20px;
+			}
+
+			#termPolicy{
+				font-size: 13px;
+				text-align: left;
+				margin-left: 24px;
+				color: gray;
+			}
+
+			#termPolicy span{
+				margin-left: 5px;
+				
+			}
+
+			#termPolicy span>a{
+				list-style: none;
+				text-decoration: none;
 			}
 			/* 
             USE DIFFERENT CSS FILE
@@ -119,7 +159,7 @@
                     USE SELECT TAG FOR COUNTRY CODE ----
                     USE AT LEAST 10
                  -->
-				<span>91+</span>
+				<span id="phoneCode">91+</span>
 				<!-- 
                     USE SELECT TAG FOR COUNTRY CODE ----
                     USE AT LEAST 10
@@ -143,9 +183,9 @@
                 TO IT SO THAT ITS VISIBLE ONCE
                 CLICKED
              -->
-			<div>
-				<button id="refer">referral code?</button>
-				<input id="referral" type="text" placeholder="referral code" />
+			<div >
+				<button id="refer">Referral Code?</button>
+				<input id="referral" type="text" placeholder="Referral Code" />
 			</div>
 			<!-- 
                 USE INITIAL DISPLAY TO NONE
@@ -156,15 +196,13 @@
                 -
                 ------------------            
              -->
-			<div>
+			<div id="nextBtn">
 				<!-- submit button -->
 				<button id="button1">Next</button>
 			</div>
 			<!-- policy tag -->
-			<div>
-				<div>By clicking next, you agree with our</div>
-
-				<a href="https://www.pulseplus.in/privacypolicy">Privacy policy</a>
+			<div id="termPolicy">
+				<p>By clicking next, you agree with our<span><a href="https://www.pulseplus.in/privacypolicy">Privacy policy</a></span></p>
 			</div>
 		</div>
 	</body>
