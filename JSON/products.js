@@ -99,9 +99,14 @@ function appendProducts(products) {
 		mainDiv.setAttribute("class", "gallery-cell");
 		textDiv.append(h5Tag, priceTag, button);
 		mainDiv.append(imgTag, textDiv);
-		mySecondCarousel.append(mainDiv);
+		var flkty = new Flickity(mainDiv, {
+			cellAlign: "left",
+			contain: true,
+		});
+		// mySecondCarousel.append(flkty);
+		console.log(flkty);
 	});
 }
-// window.addEventListener("load", () => {
-// 	appendProducts(products);
-// });
+mySecondCarousel.addEventListener("click", () => {
+	appendProducts(products);
+});
