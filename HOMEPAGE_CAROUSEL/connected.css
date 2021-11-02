@@ -274,7 +274,53 @@ body {
 	border-radius: 5px;
 	counter-increment: gallery-cell;
 }
+#carousal_container_2 .gallery-cell {
+	background: rgb(255, 255, 255);
+	display: flex;
+	/* border: 1px solid red; */
+	align-items: center;
+	justify-content: space-evenly;
+}
+#carousal_container_2 .gallery-cell:before {
+	content: none;
+}
+.galleryCellImg {
+	max-width: 30%;
+	max-height: 90%;
+}
+.galleryTextDiv {
+	/* border: 1px solid black; */
+	width: 60%;
+	height: 90%;
+	position: relative;
+	padding-left: 20px;
+}
+.galleryTextDiv > h5 {
+	margin: 0;
+	font-size: 18px;
+	color: rgb(22, 172, 153);
+}
+.galleryTextDiv > p {
+	margin: 10px 0 5px 0;
+	font-size: 12px;
+	color: rgb(85, 85, 85);
+}
 
+.galleryTextDiv > ul > li {
+	list-style: disc;
+	font-size: 13px;
+	color: rgb(85, 85, 85);
+}
+.galleryTextDiv button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: 1px solid rgb(22, 172, 153);
+	color: rgb(22, 172, 153);
+	padding: 2px 12px;
+	font-weight: 600;
+	border-radius: 5px;
+}
 /* 
 consult a doc and lab test section
 */

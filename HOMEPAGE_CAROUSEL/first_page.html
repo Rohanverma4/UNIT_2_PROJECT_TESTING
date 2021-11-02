@@ -15,6 +15,7 @@
 		/>
 		<link rel="stylesheet" href="connected.css" />
 		<link rel="shortcut icon" href="../IMAGES/favicon.ico" />
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 	</head>
 	<body>
@@ -89,7 +90,6 @@
 			<div class="gallery-cell"></div>
 			<div class="gallery-cell"></div>
 			<div class="gallery-cell"></div>
-			<div class="gallery-cell"></div>
 		</div>
 		<!-- 
 			-----------
@@ -121,10 +121,26 @@
 		<!-- //BOTTOM CAROUSEL -->
 		<!-- <div id="carousal_container_2"> -->
 		<div
+			id="carousal_container_2"
 			class="gallery js-flickity"
-			data-flickity-options='{ "wrapAround": true, "autoPlay": 3000 }'
+			data-flickity-options='{ "wrapAround": true, "autoPlay": false }'
 		>
-			<div class="gallery-cell"></div>
+			<div class="gallery-cell">
+				<img
+					class="galleryCellImg"
+					src="../IMAGES/PRODUCT_IMAGES/novy_oil.jpg"
+				/>
+				<div class="galleryTextDiv">
+					<h5>My Product</h5>
+					<p>Price: 900</p>
+					<ul>
+						<li>Pure ayurvedic</li>
+						<li>Good Product</li>
+						<li>Some weird Stuff</li>
+					</ul>
+					<button>Buy Now</button>
+				</div>
+			</div>
 			<div class="gallery-cell"></div>
 			<div class="gallery-cell"></div>
 			<div class="gallery-cell"></div>
@@ -253,10 +269,4 @@
 </html>
 <script src="connected.js"></script>
 <script src="../navDom.js"></script>
-<!-- <select id="user">
-		<option value="My Profile">My Profile</option>
-		<option value="My Orders">My Orders</option>
-		<option value="My Wallet">My Wallet</option>
-		<option value="Change Password">Change Password</option>
-		<option value="Log Out">Log Out</option>
-	</select> -->
+<script src="../JSON/products.js"></script>
