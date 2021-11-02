@@ -198,11 +198,5 @@ form.addEventListener("submit", function (event) {
 				locationName[i].value;
 		}
 	}
+	modal.style.display = "none";
 });
-document
-	.getElementById("applyModalLocation")
-	.addEventListener("click", function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	});
