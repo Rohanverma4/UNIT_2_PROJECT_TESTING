@@ -57,7 +57,7 @@ var myNavbar = `
 							</div>
 							<div class="modal-body">
 								<form id="modalForm">
-									<input type="text" placeholder="Enter your city" />
+									<input type="text" placeholder="Enter your city"/>
 									<label for="nd">
 										<input
 											id="nd"
@@ -185,4 +185,29 @@ window.onclick = function (event) {
 };
 
 //FOR SHYAMAL
-console.log(document.querySelector("form"));
+<<<<<<< HEAD
+// location select section
+
+var form = document.querySelector("form");
+console.log(form);
+form.addEventListener("submit",function(event){
+
+	event.preventDefault();
+
+
+	var locationName = document.getElementsByName("location");
+	
+	for(var i = 0 ; i < locationName.length ; i++){
+		if(locationName[i].checked){
+			document.getElementById("locationBox").textContent = locationName[i].value;
+
+			document.getElementById("applyModalLocation").addEventListener("click",function (event){
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			})
+		}
+	}
+	
+});
+
