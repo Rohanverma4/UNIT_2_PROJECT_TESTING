@@ -567,7 +567,7 @@ NAVBAR SIDE PANEL TESTING
 	border: 1px solid #888;
 	width: 30%;
 	/* height:  */
-	height: 450px;
+	height: 600px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;
@@ -582,12 +582,13 @@ NAVBAR SIDE PANEL TESTING
 	flex-wrap: wrap;
 }
 #modalForm input[type="text"] {
-	width: 100%;
-	border: none;
-	border-bottom: 1px solid grey;
-	border-top: 1px solid grey;
-	margin: none;
+	width: 26.3%;
 	padding: 10px;
+	border: 1px solid #c9c9c9;
+	/* justify-content: center; */
+	position:fixed;
+	margin-left: 34px;
+	margin-bottom: 16rem;
 }
 #modalForm input[type="text"]::placeholder {
 	opacity: 1;
@@ -595,7 +596,11 @@ NAVBAR SIDE PANEL TESTING
 	color: grey;
 }
 #modalForm label {
-	margin: 10px;
+	background-color: #f3f3f3;
+	width: 88%;
+	margin:1px auto;
+	padding: 10px;
+	border-bottom: 0.7px solid #e7e7e7;
 }
 #applyModalLocation {
 	width: 100%;
@@ -654,7 +659,15 @@ NAVBAR SIDE PANEL TESTING
 .modal-header {
 	background-color: #ffffff;
 	color: white;
+	margin-right: 19px;
+    margin-top: 10px;
 }
+
+.modal-header .close:hover{
+	color:red;
+}
+
+
 .modal-header img {
 	width: 100%;
 	height: 100%;
