@@ -54,7 +54,8 @@ var myPanelTemplate = `
 			`;
 
 var myFormTemplate = `
-<form id="productForm">
+<h3>Product Form</h3>
+			<form id="productForm">
 				<label for="productName"
 					>Product Name:
 					<input
@@ -102,61 +103,82 @@ var myFormTemplate = `
 				</label>
 				<input type="submit" value="Submit Details" />
 			</form>
+		
 `;
 var myUserDetails = `
-<table id="userTable">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>User Id</th>
-						<th>Date of Joining</th>
-						<th>Orders</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
+<h3>User Details</h3>
+			<div id="userTableDiv">
+				<table id="userTable">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>User Id</th>
+							<th>Date of Joining</th>
+							<th>Orders</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Aman</td>
+							<td>12221</td>
+							<td>3/Nov/2021</td>
+							<td>nil</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 `;
 var myAdminCredForm = `
-<form id="adminProfile">
-				<label for="adminUserName">
-					Admin Username:
+<div id="adminProfileView">
+				<div id="imgAndName">
+					<img src="https://via.placeholder.com/60" alt="profile image" />
+					<h2 id="adminName">Hi, Abc</h2>
+				</div>
+				<form id="adminProfile">
+					<label for="adminUserName">
+						Admin Username:
+						<input
+							type="text"
+							id="adminUserName"
+							placeholder="Update Admin	Name"
+						/>
+					</label>
+					<label for="adminPassword">
+						Admin Password:
+						<input
+							type="pasword"
+							id="adminPassword"
+							placeholder="Update Admin	Password"
+						/>
+					</label>
+					<label for="adminRetypePassword">
+						Retype Password:
+						<input
+							type="pasword"
+							id="adminRetypePassword"
+							placeholder="Update Admin	Password"
+						/>
+					</label>
+					<label for="adminImage">
+						Admin Image Update:
+						<input
+							type="text"
+							id="adminImage"
+							placeholder="Update Admin Image"
+						/>
+					</label>
 					<input
-						type="text"
-						id="adminUserName"
-						placeholder="Update Admin	Name"
+						type="submit"
+						id="submitAdminDetails"
+						value="Update Credentials"
 					/>
-				</label>
-				<label for="adminPassword">
-					Admin Password:
-					<input
-						type="pasword"
-						id="adminPassword"
-						placeholder="Update Admin	Password"
-					/>
-				</label>
-				<label for="adminRetypePassword">
-					Retype Password:
-					<input
-						type="pasword"
-						id="adminRetypePassword"
-						placeholder="Update Admin	Password"
-					/>
-				</label>
-				<label for="adminImage">
-					Admin Image Update:
-					<input type="text" id="adminImage" placeholder="Update Admin Image" />
-				</label>
-				<input
-					type="submit"
-					id="submitAdminDetails"
-					value="Update Credentials"
-				/>
-			</form>
+				</form>
+			</div>
 `;
 // document.getElementById("container").innerHTML = myAdminCredForm;
 
 //All SIDE PANEL ACCESSES
-// document.getElementById("container").innerHTML = myUserDetails;
+// document.getElementById("container").innerHTML = myFormTemplate;
 
 var myDashboardHref = document.getElementById("dashBoard");
 myDashboardHref.addEventListener("click", () => {

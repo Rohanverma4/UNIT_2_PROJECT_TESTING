@@ -1,10 +1,21 @@
 #container {
-	border: 1px solid rgb(160, 160, 160);
+	border: 1px solid rgb(255, 255, 255);
 	background-color: rgb(237, 241, 241);
 	border-radius: 20px;
-	width: 70%;
+	width: max-content;
 	margin: auto;
 	height: 450px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#container > h3 {
+	padding: 10px;
+	margin: 0 0 5px 0;
+	background-color: greenyellow !important;
+	border-radius: 20px 20px 0 0;
+	text-align: center;
+	color: rgb(29, 29, 29);
 }
 #detailsContainer {
 	display: flex;
@@ -17,8 +28,8 @@
 	/* border: 1px solid red; */
 	border-radius: 10px;
 	background-color: thistle;
-	width: 20%;
-	height: 150px;
+	width: 15%;
+	height: 120px;
 	display: flex !important;
 	flex-direction: row;
 	justify-content: center;
@@ -47,18 +58,18 @@
 }
 #overviewH2 {
 	text-align: center;
-	color: rgb(255, 255, 255);
-	background-color: rgb(180, 99, 67);
+	color: rgb(29, 29, 29);
+	background-color: greenyellow;
 	border-radius: 20px 20px 0 0;
 	margin-top: 0;
 	padding: 20px;
 }
 #dashboardTableDiv {
-	border: 1px solid rgb(160, 160, 160);
-	height: 170px;
-	border-radius: 10px;
-	width: 81.5%;
-	margin: auto;
+	border: 1px solid rgb(255, 255, 255);
+	height: 42%;
+	border-radius: 20px;
+	width: 99%;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
