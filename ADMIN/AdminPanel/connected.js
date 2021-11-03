@@ -30,6 +30,27 @@ var myPanelTemplate = `
 					</div>
 				</div>
 			</div>
+			<div id="dashboardTableDiv">
+				<h4>Recent Users</h4>
+				<table id="dashBoardTable">
+					<thead>
+						<tr>
+							<th>User Name</th>
+							<th>User Number</th>
+							<th>Date of Joining</th>
+							<th>Order Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Aman</td>
+							<td>12221</td>
+							<td>3/Nov/2021</td>
+							<td>nil</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			`;
 
 var myFormTemplate = `
@@ -133,3 +154,35 @@ var myAdminCredForm = `
 			</form>
 `;
 // document.getElementById("container").innerHTML = myAdminCredForm;
+
+//All SIDE PANEL ACCESSES
+// document.getElementById("container").innerHTML = myUserDetails;
+
+var myDashboardHref = document.getElementById("dashBoard");
+myDashboardHref.addEventListener("click", () => {
+	document.getElementById("container").innerHTML = "";
+	document.getElementById("container").innerHTML = myPanelTemplate;
+});
+
+var myProductsHref = document.getElementById("productsBoard");
+myProductsHref.addEventListener("click", () => {
+	document.getElementById("container").innerHTML = "";
+	document.getElementById("container").innerHTML = myFormTemplate;
+});
+
+var myUserDetailsHref = document.getElementById("allUsers");
+myUserDetailsHref.addEventListener("click", () => {
+	document.getElementById("container").innerHTML = "";
+	document.getElementById("container").innerHTML = myUserDetails;
+});
+
+var myAdminProfileHref = document.getElementById("adminHref");
+myAdminProfileHref.addEventListener("click", () => {
+	document.getElementById("container").innerHTML = "";
+	document.getElementById("container").innerHTML = myAdminCredForm;
+});
+
+var logOutHref = document.getElementById("logout");
+logOutHref.addEventListener("click", () => {
+	window.location.href = "/ADMIN/AdminLogin/admin.html";
+});
