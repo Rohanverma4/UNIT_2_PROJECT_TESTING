@@ -201,7 +201,8 @@
 	#partnerSection,
 	#aboutPara,
 	#contactInfo,
-	#productDetails > h4 {
+	#productDetails > h4,
+	#myBtn {
 		display: none;
 	}
 	.Addtocart {

@@ -23,4 +23,20 @@ setTimeout(() => {
 			modal.style.display = "none";
 		}
 	};
+	var form = document.getElementById("modalForm");
+	console.log(form);
+	form.addEventListener("submit", function (event) {
+		event.preventDefault();
+		// var locationBox = document.getElementById("myBtn");
+		// console.log(locationBox);
+		var locationName = document.getElementsByName("location");
+		console.log(locationName);
+		for (var i = 0; i < locationName.length; i++) {
+			if (locationName[i].checked) {
+				document.querySelector("#myBtn > span").textContent =
+					locationName[i].value;
+			}
+		}
+		modal.style.display = "none";
+	});
 }, 0.1);
