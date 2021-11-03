@@ -5,7 +5,7 @@ body {
 }
 #container {
 	width: 25%;
-	margin: 10% auto;
+	margin: 10% auto 0 auto;
 	border: 1px solid rgb(180, 180, 180);
 }
 #container > h1 {
