@@ -89,12 +89,12 @@ var myFormTemplate = `
 					/>
 				</label>
 				<label for="productUrl"
-					>Product Details:
+					>Product Image Url:
 					<input type="text" id="productUrl" placeholder="Enter product Url" />
 				</label>
 
 				<label for="productAvaliability"
-					>Product Details:
+					>Product Availability:
 					<select id="productAvaliability">
 						<option>-----</option>
 						<option value="yes">yes</option>
