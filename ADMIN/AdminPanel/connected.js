@@ -175,7 +175,7 @@ var myAdminCredForm = `
 				</form>
 			</div>
 `;
-// document.getElementById("container").innerHTML = myAdminCredForm;
+document.getElementById("container").innerHTML = myPanelTemplate;
 
 //All SIDE PANEL ACCESSES
 // document.getElementById("container").innerHTML = myFormTemplate;
