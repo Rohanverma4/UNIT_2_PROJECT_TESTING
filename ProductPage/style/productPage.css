@@ -1,0 +1,241 @@
+#body {
+	background-color: rgb(245, 248, 250);
+}
+#search-box {
+	/* border: 1px solid rgb(110, 69, 69); */
+	width: 45%;
+	height: 40px;
+	display: flex;
+	justify-content: flex-start;
+}
+.search {
+	height: 40px;
+	width: 60%;
+}
+.search::placeholder {
+	opacity: 1;
+	font-size: 15px;
+}
+.search-btn {
+	height: 40px;
+	border-radius: 0 5px 5px 0;
+}
+#searchIcon {
+	font-size: 30px;
+}
+#navbar {
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+.openbtn {
+	height: 30px;
+}
+.openbtn:hover {
+	background-color: rgb(22, 172, 153);
+}
+#productSection {
+	/* border: 1px solid red; */
+	width: 80%;
+	margin: auto;
+	height: 380px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#productSection > div {
+	margin-top: 50px;
+	/* border: 1px solid black; */
+	height: 70%;
+}
+#ImgAndDetails {
+	width: 35%;
+	padding: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 10px;
+	position: relative;
+	/* border: 1px solid red; */
+
+	background-color: rgb(255, 255, 255);
+}
+#descDiv {
+	/* border: 1px solid black; */
+	width: 70%;
+	height: 200px;
+	padding-left: 10px;
+}
+#descDiv h2 {
+	color: rgb(22, 172, 153);
+	margin: 0 0 5px 0;
+}
+#descDiv p {
+	margin: 0 0 5px 0;
+	color: rgb(90, 90, 90);
+	font-size: 15px;
+	margin-left: 10px;
+}
+#descDiv ul {
+	margin: 0;
+	color: rgb(29, 29, 29);
+}
+#ImgAndDetails #termsAndCondition {
+	position: absolute;
+	margin: 0;
+
+	color: grey;
+	font-size: 10px;
+	bottom: 0;
+}
+#descDiv li::before {
+	content: "→ ";
+	color: grey;
+}
+#price {
+	font-size: 20px;
+}
+#priceAndAddToCart {
+	width: 24%;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	padding-left: 10px;
+}
+#priceAndAddToCart p {
+	margin: 10px 0;
+}
+.Addtocart {
+	position: absolute;
+	bottom: 10px;
+	width: 200px;
+	right: 10px;
+	background-color: rgb(249, 174, 66);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	font-size: 15px;
+	font-weight: 600;
+	color: white;
+	padding: 12px;
+	border-radius: 5px;
+	border: none;
+}
+#discount {
+	color: red;
+}
+.rgb90 {
+	color: rgb(90, 90, 90);
+}
+#lineThroughText {
+	text-decoration: line-through;
+	color: rgb(29, 29, 29);
+}
+
+#inStock {
+	color: rgb(22, 172, 153);
+}
+#zipCode {
+	padding: 7px 0;
+	border-radius: 5px;
+	border: 1px solid rgb(90, 90, 90);
+	padding-left: 10px;
+}
+
+#go {
+	padding: 7px 10px;
+	border-radius: 5px;
+	border: none;
+	font-size: 15px;
+	background-color: rgb(216, 216, 216);
+}
+#productDetails {
+	/* border: 1px solid grey; */
+	border-radius: 10px 10px 0 0;
+	height: 150px;
+
+	width: 70%;
+	margin: auto;
+}
+#productDetails > h4 {
+	margin: 0;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 10px 10px 0 0;
+	width: 100%;
+	background-color: rgb(22, 172, 153);
+	color: white;
+	font-weight: 100;
+}
+#productDetails > p {
+	font-size: 14px;
+	margin: 3px 5px;
+	color: rgb(15, 15, 15);
+}
+#productDetails > p > span {
+	color: rgb(53, 53, 53);
+}
+#secondCartButton {
+	display: none;
+}
+@media only screen and (max-width: 700px) {
+	#navbar {
+		height: 130px;
+	}
+	#plusPlusImg {
+		position: absolute;
+		top: 10px;
+	}
+	#navbar > ul {
+		position: absolute;
+		top: 0;
+	}
+	#search-box {
+		/* border: 1px solid black; */
+		width: 95%;
+	}
+	.search {
+		width: 90%;
+	}
+	#partnerSection,
+	#aboutPara,
+	#contactInfo,
+	#productDetails > h4 {
+		display: none;
+	}
+	.Addtocart {
+		position: fixed;
+		display: block !important;
+		bottom: 0;
+		width: 100%;
+		margin: 0;
+		right: 0;
+		z-index: 1;
+	}
+	#productSection {
+		/* border: 1px solid red; */
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: flex-start;
+		width: 100%;
+		padding: 0;
+		margin-top: 20%;
+	}
+	#productSection > div {
+		/* border: 1px solid black; */
+		width: 100%;
+		padding: 20px;
+		margin: 0;
+	}
+	#productDetails {
+		/* border: 1px solid black; */
+		margin: 15% 0 0 0;
+		width: 100%;
+		border-radius: 0;
+	}
+	#productDetails > p {
+		margin-left: 20px;
+	}
+}

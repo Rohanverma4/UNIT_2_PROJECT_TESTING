@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
+		<link rel="stylesheet" href="./style/patnar.css" />
+		<link rel="stylesheet" href="./style/productPage.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<title>Document</title>
+	</head>
+	<style></style>
+	<body>
+		<div id="navBar"></div>
+		<div id="productSection">
+			<div id="ImgAndDetails">
+				<img src="https://via.placeholder.com/100x200" />
+				<div id="descDiv">
+					<h2>Product Name</h2>
+					<p>Vendor Name</p>
+					<ul>
+						<li>desc 1</li>
+						<li>desc 2</li>
+						<li>desc 3</li>
+					</ul>
+				</div>
+				<p id="termsAndCondition">
+					*Product images are for illustrative purposes only and may differ from
+					the actual product.
+				</p>
+			</div>
+			<div id="priceAndAddToCart">
+				<p id="price">Rs 108</p>
+				<p id="discount">10% off</p>
+				<p class="rgb90" id="discountIll">
+					MRP: <span id="lineThroughText">Rs 120</span>
+				</p>
+				<p class="rgb90" id="isAvailable">
+					Availability: <span id="inStock">In Stock</span>
+				</p>
+				<p class="rgb90" id="estimatedDelivery">Estimated Delivery:</p>
+				<input type="text" id="zipCode" placeholder="Enter Zip Code" />
+				<input type="button" id="go" value="Go" />
+				<button class="Addtocart">Add to Cart</button>
+			</div>
+		</div>
+		<div id="productDetails">
+			<h4>Product Details</h4>
+			<p id="sku">SKU: <span>PC-41799</span></p>
+			<p id="productDescription">
+				Product Description:
+				<span> Novy Pain Oil is manufactured by Fugle Pharma</span>
+			</p>
+			<p id="packingType">Packing: <span>Bottle</span></p>
+			<p id="condition">Condition: <span>New</span></p>
+			<p id="seller">Sold By: <span>Pulse Pharmacy</span></p>
+		</div>
+		<div id="bottomSection"></div>
+		<button id="secondCartButton" class="Addtocart">Add To Cart</button>
+	</body>
+</html>
+<script src="./js/productPage.js"></script>
+<script src="./js/patnar.js"></script>
+<script>
+	function openNav() {
+		document.getElementById("mySidepanel").style.width = "250px";
+	}
+
+	function closeNav() {
+		document.getElementById("mySidepanel").style.width = "0";
+	}
+</script>
