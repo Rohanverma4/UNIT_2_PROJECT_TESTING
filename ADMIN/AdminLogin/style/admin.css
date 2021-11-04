@@ -2,46 +2,67 @@
 
 body {
 	font-family: "Roboto", sans-serif;
-}
-#container {
-	width: 25%;
-	margin: 10% auto 0 auto;
-	border: 1px solid rgb(180, 180, 180);
-}
-#container > h1 {
+	background-image:url("../image/bgImg.png");
 	text-align: center;
-	color: rgb(80, 80, 80);
-}
-#container form {
 	display: flex;
-	padding: 20px;
-	/* width: 100%; */
-	flex-direction: column;
 	justify-content: center;
-	gap: 30px;
-	align-items: center;
 }
-#container input {
-	padding: 5px;
+
+#container {
+	border: 1px solid teal;
+	padding: 35px;
+	min-width: 545px;
+	border-radius: 4px;
+	margin-top: 6%;
+}
+
+.heading{
+	color: teal;
+	font-size: 22px;
+}
+
+#loginForm{
+	display: flex;
+	flex-direction: column;
+	/* border: 1px solid red; */
+}
+
+input[type="text"]{
+	padding: 15px;
+	margin: 10px;
+	font-size: 18px;
 	text-align: center;
-	margin-left: 10px;
-	width: 60%;
 }
-#container label {
-	font-size: 15px;
-	color: rgb(31, 31, 31);
+
+input[type="password"]{
+	padding: 15px;
+	margin: 10px;
+	font-size: 18px;
+	text-align: center;
 }
-#submit {
-	width: 30%;
-	height: 40px;
+
+.saveUserPassword{
+	display: flex;
 	padding: 10px;
-	font-size: 15px;
-	font-weight: 600;
-	color: rgb(29, 29, 29);
-	border: none;
-	background-color: greenyellow;
 }
-#submit:hover {
-	cursor: pointer;
-	background-color: rosybrown;
+
+
+.submitBtn{
+	margin-top: 20px;
 }
+
+input[type="submit"]{
+	width: 140px;
+	padding: 10px;
+	font-size: 18px;
+	background-color: teal;
+	color: white;
+	border: 2px solid teal;
+	border-radius: 4px;
+}
+
+input[type="submit"]:hover{
+	background-color: white;
+	color: teal;
+}
+

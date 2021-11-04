@@ -9,23 +9,36 @@
 	</head>
 	<body>
 		<div id="container">
-			<h1>Login</h1>
-			<form action="GET">
-				<label for="username"
-					>Username:
-					<input type="text" id="username" placeholder="Enter Username" />
-				</label>
-				<label for="password"
-					>Password:
-					<input type="password" id="password" placeholder="Enter Password" />
-				</label>
-				<label for="saveUserCreds">
-					Save User Credentials:
-					<input type="checkbox" id="saveUserCreds" />
-				</label>
 
-				<input id="submit" type="submit" value="Login" />
-			</form>
+			<div class="logo">
+				<img src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy.png" alt="logo">
+			</div>
+			<div class="heading">
+				<p>Admin Log in/Sign In</p>
+			</div>
+			
+			<div class="formElm">
+				<form action="GET" id="loginForm">
+
+					<!-- <span>User Name</span> -->
+					<input type="text" id="username" placeholder="Enter User Name" />
+
+
+					<!-- <span>Password</span> -->
+					<input type="password" id="password" placeholder="Enter Password" />
+
+					<div class="saveUserPassword">
+						<label>Remember me</label>
+					    <input type="checkbox" name="" id="">
+					</div>
+					
+					<div class="submitBtn">
+						<input id="submit" type="submit" value="Login" />
+					</div>
+					
+				</form>
+			</div>
+
 		</div>
 	</body>
 </html>
