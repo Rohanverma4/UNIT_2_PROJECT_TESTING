@@ -103,7 +103,6 @@ var myFormTemplate = `
 				</label>
 				<input type="submit" value="Submit Details" />
 			</form>
-		
 `;
 var myUserDetails = `
 <h3>User Details</h3>
