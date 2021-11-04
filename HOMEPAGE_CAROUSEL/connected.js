@@ -4,42 +4,29 @@
 ----------
 MODAL ONLY
 */
-// // Get the modal
-// var modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks the button, open the modal
-// btn.onclick = function () {
-// 	modal.style.display = "block";
-// };
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-// 	modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-// 	if (event.target == modal) {
-// 		modal.style.display = "none";
-// 	}
-// };
-// /*
-// MODAL ONLY
-// ----------
-// -
-// ----------
-// */
-// // COLLAPSE SIDE PANEL TESTING
-// function openNav() {
-// 	document.getElementById("mySidepanel").style.width = "250px";
-// }
-
-// function closeNav() {
-// 	document.getElementById("mySidepanel").style.width = "0";
-// }
+var carouselOneContainer = document.querySelector(".gallery-one");
+var images = [
+	"../IMAGES/20flatoff-banner.jpg",
+	"../IMAGES/25offer-banner.jpg",
+	"../IMAGES/asian_paints_banner.jpg",
+];
+function appendOffers(images) {
+	images.map((singleImg) => {
+		var myImageTag = document.createElement("img");
+		myImageTag.setAttribute("src", singleImg);
+		var mainDiv = document.createElement("div");
+		mainDiv.setAttribute("class", "gallery-cell");
+		mainDiv.append(myImageTag);
+		carouselOneContainer.append(mainDiv);
+	});
+}
+$(document).ready(function () {
+	appendOffers(images);
+	$(".gallery-one").flickity({
+		// options
+		cellAlign: "left",
+		wrapAround: true,
+		lazyLoad: true,
+		groupCells: 2,
+	});
+});
