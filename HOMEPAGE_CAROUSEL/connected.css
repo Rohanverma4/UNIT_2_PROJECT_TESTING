@@ -32,7 +32,7 @@ li {
 body {
 	font-family: sans-serif;
 } */
-
+/* 
 .gallery {
 	background: #eee;
 	width: 60%;
@@ -45,31 +45,37 @@ body {
 	margin-right: 10px;
 	background: #8c8;
 	counter-increment: gallery-cell;
-}
+} */
 
 /* cell number */
-.gallery-cell:before {
+/* .gallery-cell:before {
 	display: block;
 	text-align: center;
 	line-height: 200px;
 	font-size: 80px;
 	color: white;
-}
-#carousel_container_1 {
+} */
+/* #carousel_container_1 {
 	border: 1px solid red;
 	width: 60%;
 	margin: auto;
-}
-#carousel_container_1 .gallery-cell {
+} */
+/* #carousel_container_1 .gallery-cell {
 	width: 100%;
 	margin-right: 10px;
 	background: #8c8;
 	border-radius: 5px;
+<<<<<<< Updated upstream:HOMEPAGE_CAROUSEL/connected.css
 }
 #carousel_container_1 .gallery-cell img {
+=======
+	counter-increment: gallery-cell;
+} */
+/* #carousel_container_1 .gallery-cell img {
+>>>>>>> Stashed changes:home page/connected.css
 	max-width: 66%;
 	height: auto;
-}
+} */
 #carousal_container_2 .gallery-cell {
 	background: rgb(255, 255, 255);
 	display: flex;
