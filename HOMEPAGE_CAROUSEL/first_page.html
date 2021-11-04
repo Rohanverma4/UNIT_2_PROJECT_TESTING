@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Landing Page</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css"
+		/>
+		<link rel="stylesheet" href="connected.css" />
+		<link rel="shortcut icon" href="../IMAGES/favicon.ico" />
+	</head>
+
+	<body>
+		<!-- TOP CONTAINER -->
+
+		<!-- COLLAPSE SIDE PANEL TESTING -->
+		<div id="navbarDiv"></div>
+
+		<div id="container">
+			<div id="search-box">
+				<input
+					type="text"
+					class="search"
+					placeholder="Search medicines.E.g.amlong,dolo,etc"
+				/>
+				<button type="submit" class="search-btn">
+					<i id="searchIcon" class="material-icons">search</i>
+				</button>
+
+				<button id="load" onclick="load">
+					<i class="material-icons">photo_camera</i>
+					<p>upload prescription</p>
+				</button>
+			</div>
+			<!-- 
+				-----------------------------------------
+				-
+				-----------------------------------------
+				HARD CODED DATA - BUT TO BE MADE DYNAMIC
+			 -->
+			<div id="demoGraphics">
+				<div class="medsAndCustomers" id="meds">
+					<div class="insideMedsAndCustomerBox">
+						<img
+							src="https://www.pulseplus.in/content/images/icons/home_icon_gen_meds.svg"
+							alt="pill image"
+						/>
+						<div class="medsAndCustomersText">
+							<h3>35,000+</h3>
+							<p>Products</p>
+						</div>
+					</div>
+				</div>
+				<div class="verticalLine"></div>
+				<div class="medsAndCustomers" id="customers">
+					<div class="insideMedsAndCustomerBox">
+						<img
+							src="https://www.pulseplus.in/content/images/icons/home_icon_cust.svg"
+							alt="customer image"
+						/>
+						<div class="medsAndCustomersText">
+							<h3>10 lakhs+</h3>
+							<p>customers</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 
+				-
+				-----------------------------------------
+				-----------------------------------------
+				
+			 --></div>
+
+		<div
+			id="carousel_container_1"
+			class="gallery js-flickity"
+			data-flickity-options='{ "wrapAround": true }'
+			data-flickity
+		>
+			<div class="gallery-cell">
+				<img src="Carousel/image/banner-1.jpg" alt="" />
+			</div>
+			<div class="gallery-cell">
+				<img src="Carousel/image/banner-2.jpg" alt="" />
+			</div>
+			<div class="gallery-cell">
+				<img src="Carousel/image/banner-3.jpg" alt="" />
+			</div>
+			<div class="gallery-cell">
+				<img src="Carousel/image/banner-4.jpg" alt="" />
+			</div>
+		</div>
+
+		<!-- 
+			-----------
+			CONSULT A DOCTOR AND BOOK A LAB TEST SECTION
+			-----------
+		 -->
+		<div id="consultAndLab">
+			<div class="insideConsultAndLab">
+				<img
+					src="https://www.pulseplus.in/content/images/icons/slide-doc.png"
+					alt="some doc and lab image"
+				/>
+				<div class="bookDocAndSearchLab">
+					<h2>Consult a <span class="greyAndBoldText">Doctor Online</span></h2>
+					<button>BOOK FREE CONSULTATION</button>
+				</div>
+			</div>
+			<div class="insideConsultAndLab">
+				<img
+					src="https://www.pulseplus.in/content/images/icons/slide-lab.png"
+					alt="some doc and lab image"
+				/>
+				<div class="bookDocAndSearchLab">
+					<h2>Book a <span class="greyAndBoldText">Lab Test</span></h2>
+					<button>SEARCH TEST PACKAGES</button>
+				</div>
+			</div>
+		</div>
+		<!-- //BOTTOM CAROUSEL -->
+
+		<div id="carousal_container_2" class="gallery-two"></div>
+
+		<!--  
+		---------------------
+		---------------------
+		Features box
+		- -->
+		<div id="featuresBox">
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/trust.png" alt="placeholder image" />
+				<h5>Genuine</h5>
+				<p>Wide Range of Wellness & OTC Products</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/save.png" alt="placeholder image" />
+				<h5>Save up to 50%*</h5>
+				<p>Flat Discount & Cashback on Medicine</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/secure.png" alt="placeholder image" />
+				<h5>Trust</h5>
+				<p>100% Secure Payments</p>
+			</div>
+			<div class="insideFeaturesBox">
+				<img src="../IMAGES/refill.png" alt="placeholder image" />
+				<h5>Easy Monthly Refills</h5>
+				<p>Subscribe for hassle free monthly refills</p>
+			</div>
+		</div>
+		<!--  
+		Features box
+		---------------------
+		---------------------
+		- -->
+		<footer>
+			<div id="contactInfo">
+				<div class="insidecontactInfo">
+					<h2>INFORMATION</h2>
+					<a href="#">
+						<p>About Pulse Pharmacy</p>
+					</a>
+					<a href="#">
+						<p>Terms & Conditions</p>
+					</a>
+					<a href="#">
+						<p>Offers</p>
+					</a>
+					<a href="#">
+						<p>Blog</p>
+					</a>
+					<a href="#">
+						<p>Apply for API</p>
+					</a>
+				</div>
+				<div class="insidecontactInfo">
+					<h2>BUY ONLINE</h2>
+					<a href="#">
+						<p>Browse by Category</p>
+					</a>
+					<a href="#">
+						<p>Browse by A-Z</p>
+					</a>
+					<a href="#">
+						<p>Upload Prescription</p>
+					</a>
+					<a href="#">
+						<p>Returns & Refund Policy</p>
+					</a>
+					<a href="#">
+						<p>Shipping Policy</p>
+					</a>
+				</div>
+				<div class="insidecontactInfo">
+					<h2>CONTACT</h2>
+					<a href="#">
+						<p id="whatsApp_line">About Pulse Pharmacy</p>
+					</a>
+					<a href="#">
+						<p>sales@puslepharmacy.in</p>
+					</a>
+					<a href="#">
+						<p>7795600600</p>
+					</a>
+					<a href="#">
+						<p>194, NSR Rd, Saibaba Colony, Coimbatore - 641041</p>
+					</a>
+				</div>
+				<div class="insidecontactInfo">
+					<img
+						src="https://www.pulseplus.in/content/images/icons/facebook.png"
+						alt="facebook icon"
+					/>
+
+					<img src="https://www.pulseplus.in/content/images/icons/insta.png" />
+					<img
+						src="https://www.pulseplus.in/content/images/icons/twitter.png"
+					/>
+				</div>
+			</div>
+			<!-- 
+				---------------------------------------------
+				-
+				---------------------------------------------
+				- PARTNERS IMAGES SECTION BELOW - USE MAPPING
+			--->
+			<div id="partnersImages"></div>
+			<!--
+				---------------------------------------------
+				-
+				---------------------------------------------
+				- PARTNERS IMAGES SECTION ABOVE - USE MAPPING
+			-->
+			<div id="aboutPara">
+				<h3>About Pulse Pharmacy</h3>
+				<p>
+					About Pulse Pharmacy Pulse Pharmacy is a leading Online Pharmacy in
+					India that offers prescription medicines, OTC products & generic
+					medications all over India. Our aim at Pulse Pharmacy is to ensure
+					health to all the individuals, and deliver healthcare commerce in a
+					personalized way. We make simple and user-friendly way for people to
+					buy the prescribed medicines online from anywhere in India and can buy
+					at any time at best deals and prices.<br />
+					Pulse Pharmacy simplifies the search for needed medicines and toorder
+					medicines onlines. Our priority is to satisfy the customer and to
+					build the trust factor by providing medicines packed by qualified &
+					experienced pharmacists from our own & operated outlets.<br /><br />
+					In our current world, life-saving medications became costly and, so we
+					have opened a gate to an opportunity that saves your money on
+					medications. You can buy or order medicines particularly generic
+					medicine, OTC medicine & prescription medicines at a cheaper price at
+					the convenience of your home. Pulse Pharmacy is the best Online
+					Pharmacy in India, that delivers medicines from 100% owned and
+					operated outlets.<br /><br />
+					You can use the brand name to search the medicine you prefer to order
+					medicine online.<br />
+					<br />
+					Note: We don't process requests for Schedule X and other habit forming
+					drugs, due to compliance with Drugs and Cosmetics Act of India. You
+					need to upload a valid prescription from a registered medical
+					practitioner while placing an order for Schedule H and H1 drugs
+				</p>
+				<p id="copyRight">© 2021 Pulse Pharmacy. All Rights Reserved</p>
+			</div>
+		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+	</body>
+	<!-- Trigger/Open The Modal -->
+	<!-- Trigger/Open The Modal -->
+</html>
+<script src="connected.js"></script>
+<script src="../navDom.js"></script>
+<script src="../JSON/products.js"></script>
