@@ -110,3 +110,12 @@ function appendProducts(products) {
 // window.addEventListener("load", () => {
 // 	appendProducts(products);
 // });
+
+$(document).ready(function () {
+	appendProducts(products);
+	$(".gallery-two").flickity({
+		cellAlign: "left",
+		wrapAround: true,
+		lazyLoad: true,
+	});
+});
