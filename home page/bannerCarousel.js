@@ -42,7 +42,6 @@ var slides = `
 
 document.querySelector(".carousel").innerHTML = slides;
 
-
 var slides = document.querySelector(".slides");
 var allSlides = Array.from(slides.children);
 
@@ -53,60 +52,52 @@ var allSlides = Array.from(slides.children);
 var indicatorSection = document.querySelector(".navbar");
 var indicatorBtn = Array.from(indicatorSection.children);
 
-
 // Side width
 var slideWidth = allSlides[0].getBoundingClientRect().width;
 // console.log(slideWidth);
 
-
 //Arrange the slides next to one another
 allSlides.forEach((slide, index) => {
-    slide.style.left = slideWidth * index + "px";
+	slide.style.left = slideWidth * index + "px";
 });
 
-
 var moveTheSlide = (slides, currentSlide, targetSlide) => {
-    slides.style.transform = "translateX(-" + targetSlide.style.left + ")";
+	slides.style.transform = "translateX(-" + targetSlide.style.left + ")";
 
-    //move to the next slide
-    currentSlide.classList.remove("currentSlide");
-    targetSlide.classList.add("currentSlide");
-}
+	//move to the next slide
+	currentSlide.classList.remove("currentSlide");
+	targetSlide.classList.add("currentSlide");
+};
 
 var moveTheIndicator = (indicators, currentIndicator, targetIndicator) => {
-    indicators.style.transform = "translateX(-" + targetIndicator.style.left + ")";
+	indicators.style.transform =
+		"translateX(-" + targetIndicator.style.left + ")";
 
-    currentIndicator.classList.remove("currentIndicator");
-    targetIndicator.classList.add("currentIndicator");
-}
+	currentIndicator.classList.remove("currentIndicator");
+	targetIndicator.classList.add("currentIndicator");
+};
 
 // //Previous Button
 var preBtn = document.querySelector("#preBtn");
 preBtn.addEventListener("click", function () {
-    var currentSlide = slides.querySelector(".currentSlide");
-    var previousSlide = currentSlide.previousElementSibling;
-    moveTheSlide(slides, currentSlide, previousSlide)
-    // console.log(preBtn);
-})
+	var currentSlide = slides.querySelector(".currentSlide");
+	var previousSlide = currentSlide.previousElementSibling;
+	moveTheSlide(slides, currentSlide, previousSlide);
+	// console.log(preBtn);
+});
 
 // //Next Button
 var nextBtn = document.querySelector("#nextBtn");
 nextBtn.addEventListener("click", function () {
-    var currentSlide = slides.querySelector(".currentSlide");
-    // console.log(currentSlide);
-    var nextSlide = currentSlide.nextElementSibling;
-    moveTheSlide(slides, currentSlide, nextSlide);
+	var currentSlide = slides.querySelector(".currentSlide");
+	// console.log(currentSlide);
+	var nextSlide = currentSlide.nextElementSibling;
+	moveTheSlide(slides, currentSlide, nextSlide);
 
-
-    //indicatior
-    var currentIndicator = indicatorBtn.querySelector("currentIndicator");
-    var nextIndicator = currentIndicator.nextElementSibling;
-    moveTheIndicator(indicatorBtn, currentIndicator, nextIndicator);
-})
-
-
-
-
-
+	//indicatior
+	var currentIndicator = indicatorBtn.querySelector("currentIndicator");
+	var nextIndicator = currentIndicator.nextElementSibling;
+	moveTheIndicator(indicatorBtn, currentIndicator, nextIndicator);
+});
 
 // console.log(indicatorBtn);
