@@ -103,13 +103,15 @@ function appendProducts(products) {
 		// console.log(flkty);
 	});
 }
+// window.addEventListener("load", () => {
+// 	appendProducts(products);
+// });
 
 $(document).ready(function () {
 	appendProducts(products);
 	$(".gallery-two").flickity({
 		cellAlign: "left",
 		wrapAround: true,
-		autoPlay: 3000,
 		lazyLoad: true,
 	});
 });

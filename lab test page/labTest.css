@@ -261,4 +261,7 @@ Bottom Prices
 		align-items: center;
 		width: 70%;
 	}
+	#footerSection {
+		display: none;
+	}
 }

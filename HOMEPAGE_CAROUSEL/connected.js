@@ -9,6 +9,9 @@ var images = [
 	"../IMAGES/20flatoff-banner.jpg",
 	"../IMAGES/25offer-banner.jpg",
 	"../IMAGES/asian_paints_banner.jpg",
+	// "https://via.placeholder.com/200",
+	// "https://via.placeholder.com/200",
+	// "https://via.placeholder.com/200",
 ];
 function appendOffers(images) {
 	images.map((singleImg) => {
@@ -22,11 +25,22 @@ function appendOffers(images) {
 }
 $(document).ready(function () {
 	appendOffers(images);
-	$(".gallery-one").flickity({
-		// options
-		cellAlign: "left",
-		wrapAround: true,
-		lazyLoad: true,
-		groupCells: 2,
-	});
+	if (window.matchMedia("(max-width: 700px)").matches) {
+		$(".gallery-one").flickity({
+			// options
+			cellAlign: "left",
+			wrapAround: true,
+			lazyLoad: true,
+			autoPlay: 3000,
+		});
+	} else {
+		$(".gallery-one").flickity({
+			// options
+			cellAlign: "left",
+			wrapAround: true,
+			lazyLoad: true,
+			groupCells: 2,
+			autoPlay: 3000,
+		});
+	}
 });
