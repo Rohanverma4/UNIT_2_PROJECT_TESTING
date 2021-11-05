@@ -1,0 +1,151 @@
+﻿try {
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyATbgPQcSdBRKYOH0NmYKTyJE19Xf7FyAg",
+        authDomain: "pulse-pharmacy-ae846.firebaseapp.com",
+        databaseURL: "https://pulse-pharmacy-ae846.firebaseio.com",
+        projectId: "pulse-pharmacy-ae846",
+        storageBucket: "pulse-pharmacy-ae846.appspot.com",
+        messagingSenderId: "632265055305"
+    };
+    var firebaseMessaging;
+    firebase.initializeApp(config);
+
+    if (!detectIE()) {
+        // Retrieve Firebase Messaging object.
+        firebaseMessaging = firebase.messaging();
+        firebaseMessaging.usePublicVapidKey('BNJuikXXN8owArCXC3ahcEWPWOOnEon0uDo7FC8jRadF0CeFha80QIR53B0wv-4LreYhIymlM4K-jpg4LpvOZdk');
+
+        var currPage = window.location.href;
+
+        if (currPage.indexOf('/cart') > 0 || currPage.indexOf('/order') > 0) {
+            firebaseMessaging.requestPermission().then(function () {
+                console.log('Notification permission granted.');
+                // TODO(developer): Retrieve an Instance ID token for use with FCM.
+                if (isTokenSentToServer())
+                    console.log('Token already created');
+                else
+                    getRegToken();
+
+            }).catch(function (err) {
+                console.log('Unable to get permission to notify.', err);
+            });
+        }
+
+        firebaseMessaging.onMessage(function (payload) {
+            console.log('Message received. ' + payload.data.title);
+            notificationtitle = payload.data.title;
+            notificationdata = {
+                body: payload.data.body,
+                icon: payload.data.icon
+            };
+
+            var notification = new Notification(notificationtitle, notificationdata);
+        });
+
+        // Callback fired if Instance ID token is updated.
+        firebaseMessaging.onTokenRefresh(function () {
+            firebaseMessaging.getToken().then(function (refreshedToken) {
+                console.log('Token refreshed.');
+                // Indicate that the new Instance ID token has not yet been sent to the
+                // app server.
+                setTokenSentToServer(false);
+                // Send Instance ID token to app server.
+                sendTokenToServer(refreshedToken);
+            }).catch(function (err) {
+                console.log('Unable to retrieve refreshed token ', err);
+                showToken('Unable to retrieve refreshed token ', err);
+            });
+        });
+    }
+}
+catch (err) {
+    console.log('An error occurred while initializing firebase', err);
+}
+
+function getRegToken() {
+    try {
+        // Get Instance ID token. Initially this makes a network call, once retrieved
+        // subsequent calls to getToken will return from cache.
+        firebaseMessaging.getToken().then(function (currentToken) {
+            if (currentToken) {
+                sendTokenToServer(currentToken);
+                console.log(currentToken);
+            } else {
+                console.log('No Instance ID token available. Request permission to generate one.');
+                setTokenSentToServer(false);
+            }
+        }).catch(function (err) {
+            console.log('An error occurred while retrieving token. ', err);
+            showToken('Error retrieving Instance ID token. ', err);
+            setTokenSentToServer(false);
+        });
+    }
+    catch (err) {
+        console.log('An error occurred while retrieving token. ', err);
+        setTokenSentToServer(false);
+    }
+}
+
+function setTokenSentToServer(sent) {
+    window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+}
+
+function setCustIdTokenSentToServer(sent) {
+    window.localStorage.setItem('custIdSentToServer', sent ? '1' : '0');
+}
+
+function sendCustIdTokenToServer() {
+    try {
+        if ($('#RegisteredUserMobileNumber').val().length > 0 &&
+            window.localStorage.getItem('custIdSentToServer') !== '1') {
+                setTokenSentToServer(false);
+                getRegToken();
+        }
+    }
+    catch (err) {
+        console.log('An error occured', err);
+    }
+}
+
+function sendTokenToServer(currentToken) {
+    if (!isTokenSentToServer()) {
+        console.log('Sending token to server...');
+        $.ajax({
+            url: "../api/Notification/SaveNotificationToken",
+            type: "POST",
+            contentType: "application/json",
+            processData: false,
+            data: JSON.stringify({ Token: currentToken, SourceDetails: FindBrowserName() }),
+            success: function (data) {
+                if (data === true)
+                    setCustIdTokenSentToServer(1);
+
+                console.log('Token saved in db');
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+
+        setTokenSentToServer(true);
+    } else {
+        console.log('Token already sent to server so won\'t send it again ' +
+            'unless it changes');
+    }
+}
+
+function isTokenSentToServer() {
+    return window.localStorage.getItem('sentToServer') === '1';
+}
+
+function showToken(currentToken) {
+    // Show token in console and UI.
+    var tokenElement = document.querySelector('#token');
+    if (tokenElement != null)
+        tokenElement.textContent = currentToken;
+}
+
+$(document).ready(function () {
+    sendCustIdTokenToServer();
+});
