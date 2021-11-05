@@ -1,0 +1,88 @@
+.gallery {
+	background: #eee;
+	width: 60%;
+	margin: 20px auto 50px auto;
+}
+
+.gallery-cell {
+	width: 66%;
+	height: 200px;
+	margin-right: 10px;
+}
+
+/* cell number */
+.gallery-cell:before {
+	display: block;
+	text-align: center;
+	line-height: 200px;
+	font-size: 80px;
+	color: white;
+}
+#carousel_container_1 {
+	width: 70%;
+	margin: auto;
+	border: 1px solid rgb(201, 201, 201);
+	border-radius: 10px;
+}
+
+/* #carousel_container_1 img {
+	max-width: 100%;
+} */
+#carousel_container_1 .gallery-cell {
+	width: 50%;
+	height: 250px !important;
+	/* border: 1px solid red; */
+	margin-right: 10px;
+	border-radius: 5px;
+}
+#carousal_container_2 {
+	width: 60%;
+	margin: 50px auto;
+}
+#carousal_container_2 .gallery-cell {
+	background: rgb(255, 255, 255);
+	display: flex;
+	/* border: 1px solid red; */
+	align-items: center;
+	justify-content: space-evenly;
+}
+#carousal_container_2 .gallery-cell:before {
+	content: none;
+}
+.galleryCellImg {
+	max-width: 30%;
+	max-height: 90%;
+}
+.galleryTextDiv {
+	/* border: 1px solid black; */
+	width: 60%;
+	height: 90%;
+	position: relative;
+	padding-left: 20px;
+}
+.galleryTextDiv > h5 {
+	margin: 0;
+	font-size: 18px;
+	color: rgb(22, 172, 153);
+}
+.galleryTextDiv > p {
+	margin: 10px 0 5px 0;
+	font-size: 12px;
+	color: rgb(85, 85, 85);
+}
+
+.galleryTextDiv > ul > li {
+	list-style: disc;
+	font-size: 13px;
+	color: rgb(85, 85, 85);
+}
+.galleryTextDiv button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: 1px solid rgb(22, 172, 153);
+	color: rgb(22, 172, 153);
+	padding: 2px 12px;
+	font-weight: 600;
+	border-radius: 5px;
+}
