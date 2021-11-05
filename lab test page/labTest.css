@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+	font-family: "Roboto", sans-serif;
+}
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+#popularBoxes {
+	/* border: 1px solid rgb(255, 255, 255); */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#popularBoxes h2 {
+	color: rgb(70, 70, 70);
+}
+#popularBoxes .inPopularButtons {
+	border: 1px solid rgb(201, 201, 201);
+	color: rgb(70, 70, 70);
+	border-radius: 10px;
+	padding: 10px;
+	background-color: white;
+	font-size: 15px;
+	margin: 0 5px;
+}
+.inPopularButtons:hover {
+	cursor: pointer;
+	background-color: rgb(22, 172, 153) !important;
+	color: white !important;
+}
+#masterHealthCheckups {
+	/* border: 1px solid red; */
+	margin: 50px 0;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+#masterHealthCheckups h1 {
+	color: rgb(22, 172, 153);
+	font-weight: 100;
+	margin: 5px 0;
+}
+#masterHealthCheckups h1 + p {
+	color: grey;
+	font-size: 15px;
+}
+#masterTextSection {
+	width: 40%;
+}
+#smallImages {
+	display: flex;
+	gap: 10px;
+	margin-top: 50px;
+}
+#smallImages > div {
+	/* border: 1px solid red; */
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+#smallImages > div img {
+	max-width: 60%;
+	height: auto;
+}
+#smallImages > div > p {
+	color: rgb(51, 51, 51);
+	text-align: center;
+	font-size: 13px;
+}
+
+/*
+
+Bottom Prices
+
+*/
+#bottomBoxes {
+	display: flex;
+	margin: 20px auto;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	/* border: 1px solid black; */
+	height: fit-content;
+}
+
+#bottomBoxes > div {
+	/* border: 1px solid red; */
+	width: 25%;
+	height: 100%;
+}
+.testDescAndPrices h2 {
+	background-color: rgb(22, 172, 153);
+	background-image: url("./images/health-checkup.png");
+	margin: 0;
+	font-size: 18px;
+	padding: 20px 0;
+	text-align: center;
+	color: white;
+}
+.testDescAndPrices .lowerDiv h4,
+.testDescAndPrices .upperDiv h4 {
+	margin: 15px 5px 10px 10px;
+	color: rgb(61, 61, 61);
+	font-weight: 600;
+}
+.testDescAndPrices .upperDiv p {
+	margin: 5px 20px;
+	font-size: 14px;
+	color: rgb(70, 70, 70);
+}
+.testDescAndPrices hr {
+	width: 90%;
+	color: rgb(199, 199, 199);
+}
+
+.testDescAndPrices ul li {
+	font-size: 12px;
+	margin: 5px 0;
+	color: rgb(51, 51, 51);
+}
+.lowerFooterDiv {
+	/* height: 60px; */
+	background-color: rgb(227, 227, 227);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	align-items: center;
+}
+.lowerFooterDiv button {
+	background-color: rgb(249, 174, 66);
+	padding: 8px 15px;
+	border: none;
+	border-radius: 5px;
+	font-weight: 600;
+	color: white;
+}
+.lowerFooterDiv h3 {
+	color: rgb(29, 29, 29);
+}
+.lowerFooterDiv p {
+	font-size: 15px;
+	color: rgb(56, 56, 56);
+	text-decoration: line-through;
+}
+/* 
+
+Bottom Prices
+
+ */
+
+#coloredImages {
+	border-top: 1px solid rgb(199, 199, 199);
+	border-bottom: 1px solid rgb(199, 199, 199);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	margin-bottom: 50px;
+}
+#coloredImages > div {
+	/* border: 1px solid red; */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
+	border-right: 1px solid rgb(199, 199, 199);
+}
+#coloredImages > div:nth-last-child(1) {
+	border-right: none;
+}
+#coloredImages > div h3 {
+	color: rgb(70, 70, 70);
+	width: 90%;
+	text-align: center;
+}
+#coloredImages > div img {
+	max-width: 50%;
+	height: auto;
+	margin: 0;
+}
+@media only screen and (max-width: 700px) {
+	body {
+		overflow-x: hidden;
+	}
+	#coloredImages {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-columns: auto auto;
+	}
+	#coloredImages .coloredImageAndText {
+		/* border: 1px solid red; */
+		height: max-content;
+		border: none;
+	}
+	#coloredImages .coloredImageAndText img {
+		max-width: 30%;
+		height: auto;
+	}
+	#bottomBoxes {
+		display: block;
+	}
+	#bottomBoxes div {
+		width: 100%;
+		margin: 10px;
+	}
+	.testDescAndPrices h2 {
+		background-color: rgb(22, 172, 153);
+		background-image: url("./images/health-checkup.png");
+		margin: 0;
+		font-size: 18px;
+		padding: 20px 0;
+		text-align: center;
+		width: 100%;
+		color: white;
+	}
+	.lowerFooterDiv {
+		/* height: 60px; */
+
+		display: flex;
+		justify-content: center;
+		gap: 10%;
+		padding: 0 20px;
+		align-items: center;
+	}
+	#masterTextSection {
+		/* border: 1px solid red; */
+		width: 100%;
+	}
+	#masterTextSection + img {
+		display: none;
+	}
+	#smallImages {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		/* border: 1px solid red; */
+		align-items: center;
+		justify-content: center;
+	}
+	#smallImages img {
+		max-width: 100%;
+		height: 100%;
+	}
+	#smallImages .smallImagesDiv {
+		/* border: 1px solid grey; */
+		width: 100%;
+	}
+	#popularButtons {
+		/* border: 1px solid red; */
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px;
+		gap: 5px;
+		justify-content: center;
+		align-items: center;
+		width: 70%;
+	}
+}
