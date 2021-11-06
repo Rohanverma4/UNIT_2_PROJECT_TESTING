@@ -89,7 +89,7 @@ Bottom Prices
 }
 
 #bottomBoxes > div {
-	/* border: 1px solid red; */
+	border: 1px solid rgb(199, 199, 199);
 	width: 25%;
 	height: 100%;
 }
