@@ -133,6 +133,5 @@ var navbarSection = `
     </li>
 </ul>`;
 
-
-// var navbar = document.querySelector(".navbar");
-// navbar.innerHTML = navbarSection;
+var navbar = document.querySelector(".navbar");
+navbar.innerHTML = navbarSection;

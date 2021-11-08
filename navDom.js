@@ -145,7 +145,7 @@ var myNavbar = `
 				</li>
 
 				<li>
-					<a id="cartAnchor" href="#">
+					<a id="cartAnchor" href="#" onclick="goToOrdersPage()">
 						<span id="cartCounter">0</span>
 						<i id="cartIcon" class="material-icons">shopping_bag</i>
 					</a>
@@ -200,3 +200,9 @@ form.addEventListener("submit", function (event) {
 	}
 	modal.style.display = "none";
 });
+function goToOrdersPage() {
+	var counter = document.getElementById("cartCounter");
+	if (counter.textContent == 0) {
+		window.location.href = "/ORDER_SECTION/myOrder.html";
+	}
+}

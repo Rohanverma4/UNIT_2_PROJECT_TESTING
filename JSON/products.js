@@ -89,6 +89,12 @@ function appendProducts(products) {
 		var priceTag = document.createElement("p");
 		var imgTag = document.createElement("img");
 		var button = document.createElement("button");
+		var ulDiv = document.createElement("ul");
+		for (let i = 0; i < item.features.length; i++) {
+			let liTag = document.createElement("li");
+			liTag.textContent = item.features[i];
+			ulDiv.append(liTag);
+		}
 		//set attributes
 		imgTag.setAttribute("src", item.img_src);
 		imgTag.setAttribute("class", "galleryCellImg");
@@ -96,10 +102,12 @@ function appendProducts(products) {
 		priceTag.textContent = `Price: ${item.price}`;
 		textDiv.setAttribute("class", "galleryTextDiv");
 		button.textContent = "Buy Now";
+		button.addEventListener("click", increaseCart);
 		mainDiv.setAttribute("class", "gallery-cell");
-		textDiv.append(h5Tag, priceTag, button);
+		textDiv.append(h5Tag, priceTag, ulDiv, button);
 		mainDiv.append(imgTag, textDiv);
 		mySecondCarousel.append(mainDiv);
+
 		// console.log(flkty);
 	});
 }
@@ -115,3 +123,8 @@ $(document).ready(function () {
 		lazyLoad: true,
 	});
 });
+
+function increaseCart() {
+	let counter = document.getElementById("cartCounter");
+	counter.textContent = +counter.textContent + 1;
+}

@@ -35,6 +35,9 @@
 	margin-right: 10px;
 	border-radius: 5px;
 }
+#carousel_container_1 .gallery-cell:hover {
+	cursor: pointer;
+}
 #carousal_container_2 {
 	width: 60%;
 	margin: 50px auto;
@@ -49,6 +52,7 @@
 #carousal_container_2 .gallery-cell:before {
 	content: none;
 }
+
 .galleryCellImg {
 	max-width: 30%;
 	max-height: 90%;
@@ -85,4 +89,14 @@
 	padding: 2px 12px;
 	font-weight: 600;
 	border-radius: 5px;
+}
+@media only screen and (max-width: 700px) {
+	#carousal_container_2 ul {
+		height: 40%;
+		overflow: hidden;
+	}
+	#carousal_container_2 {
+		width: 100%;
+		height: max-content;
+	}
 }

@@ -20,9 +20,21 @@ function appendOffers(images) {
 		var mainDiv = document.createElement("div");
 		mainDiv.setAttribute("class", "gallery-cell");
 		mainDiv.append(myImageTag);
+		mainDiv.addEventListener("click", () => {
+			goToOfferSection(singleImg);
+		});
 		carouselOneContainer.append(mainDiv);
 	});
 }
+function goToOfferSection(singleImg) {
+	let imgName = singleImg.split("/")[2];
+	if (imgName === "20flatoff-banner.jpg") {
+		window.location.href = "../OFFER_Section/index.html";
+	}
+
+	// window.location.href = "../OFFER_Section/index.html";
+}
+
 $(document).ready(function () {
 	appendOffers(images);
 	if (window.matchMedia("(max-width: 700px)").matches) {
