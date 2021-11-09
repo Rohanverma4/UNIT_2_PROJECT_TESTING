@@ -77,6 +77,25 @@ var products = [
 			"Sold by": "Pulse Pharmacy India Pvt. Ltd.",
 		},
 	},
+	{
+		name: "Acera Capsule",
+		img_src: "https://www.pulseplus.in/content/images/form/form-capsule-1.png",
+		price:  61.84,
+		features: [
+			"Acidity", 
+			"Peptic ulcer disease",
+			 "Gastroesophageal reflux disease (Acid reflux)"
+		],
+		available: true,
+		details: {
+			SKU: "PC-468",
+			"Product Description":
+				"Acera Capsule is manufactured by Ipca Laboratories Ltd",
+			Packing: "Strip",
+			Condition: "New",
+			"Sold by": "Pulse Pharmacy India Pvt. Ltd.",
+		},
+	},
 ];
 
 var mySecondCarousel = document.querySelector("#carousal_container_2");
