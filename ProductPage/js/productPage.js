@@ -265,7 +265,7 @@ var myNavbar = `
 					</li>
 
 					<li>
-						<a id="cartAnchor" href="#">
+						<a id="cartAnchor" href="#" onclick="goToOrdersPage()">
 							<span id="cartCounter">0</span>
 							<i id="cartIcon" class="material-icons">shopping_bag</i>
 						</a>
@@ -273,5 +273,130 @@ var myNavbar = `
 				</ul>
 			</nav>
 `;
+
+//Local Storages
+var toBeViewedProduct = JSON.parse(localStorage.getItem("viewSingleProduct"));
+let addedProductsInDom =
+	JSON.parse(localStorage.getItem("addedProducts")) || [];
+
+let counterNumber = localStorage.getItem("counter");
+
+setTimeout(() => {
+	let counter = document.getElementById("cartCounter");
+	if (counterNumber) counter.textContent = counterNumber;
+	else counter.textContent = 0;
+}, 10);
+
+//Select Tag
+var selectTag = document.getElementById("numProductsSelect");
+for (let i = 0; i <= 100; i++) {
+	var optionTag = `<option value="${i}">${i}</option>`;
+	selectTag.innerHTML += optionTag;
+}
+
 document.getElementById("bottomSection").innerHTML = footerSection;
 document.getElementById("navBar").innerHTML = myNavbar;
+document.getElementById("cartAnchor").addEventListener("click", () => {
+	var counter = document.getElementById("cartCounter");
+	if (counter.textContent == 0) {
+		window.location.href = "/ORDER_SECTION/myOrder.html";
+	} else {
+		window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
+	}
+});
+
+//Function To Display Product In productPage.html
+function displayProduct(product) {
+	var imageSection = document.querySelector("#productImage");
+	var productNameSection = document.querySelector("#descDiv > h2:nth-child(1)");
+	var vendorNameSection = document.querySelector("#descDiv p");
+	var ulTag = document.querySelector("#descDiv ul");
+	var priceTag = document.querySelector("#price");
+	var discountPercent = document.querySelector("#discount");
+	var lineThroughPrice = document.querySelector("#lineThroughText");
+	var availability = document.querySelector("#inStock");
+	var productSKU = document.querySelector("#sku > span");
+	var productDesc = document.querySelector("#productDescription > span");
+	var packingType = document.querySelector("#packingType > span");
+	var condition = document.querySelector("#condition > span");
+	var soldBy = document.querySelector("#seller > span");
+
+	//FOR LOOP FOR LI TAG
+	for (let i = 0; i < product.features.length; i++) {
+		let liTag = document.createElement("li");
+		liTag.textContent = product.features[i];
+		ulTag.append(liTag);
+	}
+
+	//Setting Attributes and Text Contents
+	if (product.available) {
+		availability.textContent = "In Stock";
+	} else if (!product.available) {
+		availability.style.color = "tomato";
+		availability.textContent = "Unavailable";
+	}
+
+	productSKU.textContent = product.details.SKU;
+	productDesc.textContent = product.details["Product Description"];
+	packingType.textContent = product.details.Packing;
+	condition.textContent = product.details.Condition;
+	soldBy.textContent = product.details["Sold by"];
+	lineThroughPrice.textContent = product.lineThroughMRP;
+	discountPercent.textContent = `${product.discountPercent}% off`;
+	priceTag.textContent = `Rs ${product.price}`;
+	vendorNameSection.textContent = product.vendorName;
+	productNameSection.textContent = product.name;
+	imageSection.setAttribute("src", product.img_src);
+}
+
+//Add to Cart Function
+document.querySelector(".Addtocart").addEventListener("click", () => {
+	addToCart(toBeViewedProduct);
+});
+function addToCart(something) {
+	addedProductsInDom.push(something);
+
+	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+
+	var noneDisplays = document.querySelectorAll(".noneDisplay");
+	for (let i = 0; i < noneDisplays.length; i++) {
+		noneDisplays[i].style.setProperty("display", "inline-block", "important");
+	}
+	var addToCartButtons = document.querySelectorAll(".Addtocart");
+	for (let i = 0; i < addToCartButtons.length; i++) {
+		addToCartButtons[i].textContent = "Checkout";
+		// addToCartButtons[i].classList.remove("Addtocart");
+		addToCartButtons[i].classList.add("checkoutClass");
+		document.querySelector(".checkoutClass").addEventListener("click", () => {
+			window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
+		});
+	}
+}
+//INVOKING FUNCTION
+//Go button functionality;
+document.getElementById("go").addEventListener("click", () => {
+	var zipCode = document.getElementById("zipCode").value;
+	if (!(zipCode == Number(zipCode))) {
+		alert("Zip Code Field Expects Only Number");
+	} else if (String(zipCode).length !== 6) {
+		alert("Zip Code Entered Incorrectly");
+	} else {
+		document
+			.getElementById("deliveryExpected")
+			.style.setProperty("display", "block");
+	}
+});
+
+//FUNCTION FOR CHECKOUT BUTTON
+
+displayProduct(toBeViewedProduct);
+
+//FUNCTION FOR CARTICON IN NAVBAR
+function goToOrdersPage() {
+	var counter = document.getElementById("cartCounter");
+	if (counter.textContent == 0) {
+		window.location.href = "/ORDER_SECTION/myOrder.html";
+	} else {
+		window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
+	}
+}

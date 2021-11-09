@@ -1,7 +1,12 @@
+//LOCAL STORAGES =>
+
 var products = [
 	{
 		name: "Novy Pain Oil",
+		vendorName: "Pugle Pharma",
 		img_src: "../IMAGES/PRODUCT_IMAGES/novy_oil.jpg",
+		discountPercent: 5,
+		lineThroughMRP: 148,
 		price: 99,
 		features: [
 			"100% Freshly Handpicked Herbs",
@@ -20,7 +25,10 @@ var products = [
 	},
 	{
 		name: "Conarcs Diabetic Ointment",
+		vendorName: "Conarcs",
 		img_src: "../IMAGES/PRODUCT_IMAGES/conarcs.jpg",
+		discountPercent: 5,
+		lineThroughMRP: 148,
 		price: 140,
 		features: [
 			"100% Natural Remedy",
@@ -40,7 +48,10 @@ var products = [
 	},
 	{
 		name: "Shigaa Anti Lice & Dandruff Oil",
+		vendorName: "Dhevi Herbal Products",
 		img_src: "../IMAGES/PRODUCT_IMAGES/shigaa.png",
+		discountPercent: 5,
+		lineThroughMRP: 148,
 		price: 110,
 		features: [
 			"No need of compulsory bathing & combing",
@@ -59,7 +70,10 @@ var products = [
 	},
 	{
 		name: "Pankajakasthuri Orthoherb Tablet 30'S",
+		vendorName: "Pankajakasthuri",
 		img_src: "../IMAGES/PRODUCT_IMAGES/pankajakasthuri.jpg",
+		discountPercent: 5,
+		lineThroughMRP: 148,
 		price: 145,
 		features: [
 			"Instant Joint Pain Relief",
@@ -103,13 +117,16 @@ function appendProducts(products) {
 		h5Tag.textContent = item.name;
 		priceTag.textContent = `Price: ${item.price}`;
 		textDiv.setAttribute("class", "galleryTextDiv");
-		button.textContent = "Buy Now";
+		button.textContent = "Add To Cart";
 		button.addEventListener("click", () => {
 			increaseCart(item);
 		});
 		mainDiv.setAttribute("class", "gallery-cell");
 		textDiv.append(h5Tag, priceTag, ulDiv, button);
 		mainDiv.append(imgTag, textDiv);
+		imgTag.addEventListener("click", () => {
+			goToProductPage(item);
+		});
 		mySecondCarousel.append(mainDiv);
 
 		// console.log(flkty);
@@ -130,7 +147,14 @@ $(document).ready(function () {
 
 function increaseCart(item) {
 	let counter = document.getElementById("cartCounter");
+
 	counter.textContent = +counter.textContent + 1;
+	localStorage.setItem("counter", counter.textContent);
 	addedProductsInDom.push(item);
 	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+}
+
+function goToProductPage(item) {
+	localStorage.setItem("viewSingleProduct", JSON.stringify(item));
+	window.location.href = "/ProductPage/productPage.html";
 }

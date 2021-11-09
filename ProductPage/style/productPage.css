@@ -40,7 +40,8 @@
 	/* border: 1px solid red; */
 	width: 80%;
 	margin: auto;
-	height: 380px;
+	margin-bottom: 50px;
+	height: max-content;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -58,8 +59,6 @@
 	align-items: flex-start;
 	gap: 10px;
 	position: relative;
-	/* border: 1px solid red; */
-
 	background-color: rgb(255, 255, 255);
 }
 #descDiv {
@@ -80,7 +79,10 @@
 }
 #descDiv ul {
 	margin: 0;
-	color: rgb(29, 29, 29);
+	color: rgb(61, 61, 61);
+	/* border: 1px solid black; */
+	padding-left: 20px;
+	font-size: 13px;
 }
 #ImgAndDetails #termsAndCondition {
 	position: absolute;
@@ -89,6 +91,11 @@
 	color: grey;
 	font-size: 10px;
 	bottom: 0;
+}
+#productImage {
+	/* border: 1px solid black; */
+	max-width: 25% !important;
+	height: auto;
 }
 #descDiv li::before {
 	content: "→ ";
@@ -102,15 +109,49 @@
 	background-color: rgb(255, 255, 255);
 	position: relative;
 	padding-left: 10px;
+	margin-top: 100px !important;
+	height: max-content !important;
+	/* border: 1px solid black; */
+}
+#priceAndAddToCart select {
+	padding: 3px 10px;
+	margin: 10px 0 10px 20px;
+	background-color: white;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+#priceAndAddToCart label {
+	color: rgb(29, 29, 29);
+}
+.noneDisplay {
+	display: none !important;
+}
+#priceAndAddToCart .addMoreButton {
+	border: 1px solid rgb(22, 172, 153);
+	border-radius: 5px;
+	color: rgb(22, 172, 153);
+	background-color: white;
+	font-weight: 600;
+	padding: 10px;
+	margin: 10px 0;
+	display: block;
+	width: 200px;
+}
+#deliveryExpected {
+	font-size: 13px;
+	color: rgb(29, 29, 29);
+	display: none;
+	color: green;
 }
 #priceAndAddToCart p {
 	margin: 10px 0;
 }
 .Addtocart {
-	position: absolute;
-	bottom: 10px;
+	/* position: absolute;
+	bottom: 10px; */
 	width: 200px;
-	right: 10px;
+	/* right: 10px; */
+	margin-top: 10px;
 	background-color: rgb(249, 174, 66);
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -121,6 +162,9 @@
 	padding: 12px;
 	border-radius: 5px;
 	border: none;
+}
+.Addtocart:hover {
+	cursor: pointer;
 }
 #discount {
 	color: red;
@@ -179,6 +223,7 @@
 #secondCartButton {
 	display: none;
 }
+
 @media only screen and (max-width: 900px) {
 	#navbar {
 		height: 130px;

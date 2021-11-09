@@ -22,15 +22,11 @@
 		<div id="navBar"></div>
 		<div id="productSection">
 			<div id="ImgAndDetails">
-				<img src="https://via.placeholder.com/100x200" />
+				<img id="productImage" src="https://via.placeholder.com/100x200" />
 				<div id="descDiv">
 					<h2>Product Name</h2>
 					<p>Vendor Name</p>
-					<ul>
-						<li>desc 1</li>
-						<li>desc 2</li>
-						<li>desc 3</li>
-					</ul>
+					<ul></ul>
 				</div>
 				<p id="termsAndCondition">
 					*Product images are for illustrative purposes only and may differ from
@@ -48,7 +44,14 @@
 				</p>
 				<p class="rgb90" id="estimatedDelivery">Estimated Delivery:</p>
 				<input type="text" id="zipCode" placeholder="Enter Zip Code" />
+
 				<input type="button" id="go" value="Go" />
+				<p id="deliveryExpected">Delivery Expected Between 10-15 days</p>
+				<label class="noneDisplay" for="numProductsSelect"
+					>bottle in cart:</label
+				>
+				<select class="noneDisplay" id="numProductsSelect"></select>
+				<button class="addMoreButton noneDisplay">+ ADD MORE</button>
 				<button class="Addtocart">Add to Cart</button>
 			</div>
 		</div>

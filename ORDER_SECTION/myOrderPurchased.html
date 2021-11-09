@@ -4,6 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
 		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/modalBox.css" />
 		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/navbarSidePanel.css" />
 		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
@@ -18,17 +22,17 @@
 	<style>
 		#wrapper {
 			display: flex;
-			gap: 10px;
 			padding: 10px;
 			margin-top: 7%;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
 		}
 		#productDiv {
-			border: 1px solid black;
-			height: fit-content;
-			width: 60%;
-
-			display: inline-grid;
-			grid-template-columns: auto auto;
+			/* border: 1px solid rgb(0, 0, 0); */
+			width: 50%;
+			display: flex;
+			flex-direction: column;
 			gap: 10px;
 			padding: 10px;
 		}
@@ -36,14 +40,15 @@
 			border: 1px solid rgb(180, 180, 180);
 			height: fit-content;
 			display: flex;
-			justify-content: center;
-			align-items: center;
+			justify-content: flex-start;
+			align-items: top;
 			gap: 20px;
 			padding: 10px;
+			position: relative;
 		}
 		#checkoutDiv {
 			display: flex;
-			border: 1px solid red;
+			/* border: 1px solid red; */
 			width: fit-content;
 		}
 		#productDiv > div > img {
@@ -54,24 +59,9 @@
 		#productDiv > div > div {
 			/* border: 1px solid red; */
 			position: relative;
+			width: fit-content;
 		}
-		#productDiv > div > div > button {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			padding: 5px 15px;
-			border: none;
-			background-color: rgb(249, 174, 66);
-			color: white;
-			font-weight: 600;
-			border-radius: 5px;
-		}
-		#productDiv > div ul {
-			font-size: 13px;
-			padding-left: 10px;
-			margin-bottom: 50px;
-			color: rgb(71, 71, 71);
-		}
+
 		.insideProductDiv h4 {
 			margin: 0;
 			color: rgb(29, 29, 29);
@@ -81,6 +71,48 @@
 			font-size: 15px;
 			color: rgb(71, 71, 71);
 		}
+		.insideProductDiv i {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			color: grey;
+		}
+		.insideProductDiv i:hover {
+			cursor: pointer;
+		}
+		#numOfItems {
+			/* border: 1px solid black; */
+			width: max-content;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			padding: 4.5px 10px;
+			background-color: gray;
+			color: white;
+			border-radius: 5px;
+		}
+		#checkoutDiv {
+			border: 1px solid rgb(199, 199, 199);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 25%;
+			position: relative;
+		}
+		#checkoutDiv button {
+			width: 100% !important;
+			padding: 10px 0;
+			font-size: 18px;
+		}
+		#checkoutDiv p {
+			position: relative;
+		}
+		#checkoutDiv p span {
+			position: absolute;
+			right: 0;
+			line-height: 22px;
+		}
 	</style>
 	<body>
 		<div id="navbarDiv"></div>
@@ -88,10 +120,20 @@
 			<div id="wrapper">
 				<div id="productDiv"></div>
 				<div id="checkoutDiv">
-					<h4>Total Price</h4>
+					<button id="applyCupon">Apply Cupon</button>
 					<div id="orderSummary">
 						<h3>Order Summary</h3>
+						<p id="itemsPrice">
+							Items <span class="checkoutDivSpan">845</span>
+						</p>
+						<p id="deliveryFees">
+							Delivery Fees <span class="checkoutDivSpan">15</span>
+						</p>
+						<p id="totalItemsPrice">
+							Total <span class="checkoutDivSpan">860</span>
+						</p>
 					</div>
+					<button id="proceed">Proceed</button>
 				</div>
 			</div>
 		</main>
@@ -105,41 +147,92 @@
 <script>
 	let products = JSON.parse(localStorage.getItem("addedProducts")) || [];
 	var productDiv = document.getElementById("productDiv");
-	console.log(products);
 
 	function appendProducts(products) {
+		productDiv.innerHTML = "";
+		//Total Number Of Elements
+		let totalElemsCounter = {};
+		for (let elem of products) {
+			totalElemsCounter[elem.name] = totalElemsCounter[elem.name]
+				? totalElemsCounter[elem.name] + 1
+				: 1;
+		}
+
+		products = products.sort((a, b) => {
+			if (a.name > b.name) return 1;
+			else if (a.name < b.name) return -1;
+			else return 0;
+		});
+		//Removing Duplicates Ones
+		for (let i = 0; i < products.length; i++) {
+			for (let j = i; j < products.length; j++) {
+				if (products[i].name === products[j].name) {
+					products.splice(i, 1);
+					// break;
+				}
+			}
+		}
+		let initialPrice = 0;
+		for (let i = 0; i < products.length; i++) {
+			initialPrice += products[i].price * totalElemsCounter[products[i].name];
+		}
+		//Appending Prices
+		var itemPrice = document.querySelector("#itemsPrice > span");
+		var deliveryFees = document.querySelector("#deliveryFees > span");
+		var totalPrice = document.querySelector("#totalItemsPrice > span");
+		itemPrice.textContent = initialPrice;
+		deliveryFees.textContent = initialPrice >= 500 ? 0 : 15;
+		totalPrice.textContent = initialPrice + Number(deliveryFees.textContent);
+
+		//Products Mapping
 		products.map((item) => {
 			var mainDiv = document.createElement("div");
 			var textDiv = document.createElement("div");
 			var h4Tag = document.createElement("h4");
 			var priceTag = document.createElement("p");
 			var imgTag = document.createElement("img");
-			var button = document.createElement("button");
-			var ulDiv = document.createElement("ul");
-			for (let i = 0; i < item.features.length; i++) {
-				let liTag = document.createElement("li");
-				liTag.textContent = item.features[i];
-				ulDiv.append(liTag);
-			}
+			var counterDiv = document.createElement("p");
+			var deleteIcon = document.createElement("i");
+
+			// Delete Icon EVENT LISTENER;
+			deleteIcon.addEventListener("click", () => {
+				deleteProduct(item, event);
+			});
+
 			//set attributes
+			deleteIcon.setAttribute("class", "material-icons");
+			deleteIcon.innerText += "delete";
+			counterDiv.textContent = `Total items: ${totalElemsCounter[item.name]}`;
+			counterDiv.setAttribute("id", "numOfItems");
 			imgTag.setAttribute("src", item.img_src);
 			imgTag.setAttribute("class", "galleryCellImg");
 			h4Tag.textContent = item.name;
 			priceTag.textContent = `Price: ${item.price}`;
 			textDiv.setAttribute("class", "galleryTextDiv");
-			button.textContent = "Buy Now";
-			button.addEventListener("click", () => {
-				increaseCart(item);
-			});
+
 			mainDiv.setAttribute("class", "insideProductDiv");
-			textDiv.append(h4Tag, priceTag, ulDiv, button);
-			mainDiv.append(imgTag, textDiv);
+			textDiv.append(h4Tag, priceTag);
+			mainDiv.append(imgTag, textDiv, counterDiv, deleteIcon);
 			productDiv.append(mainDiv);
 
 			// console.log(flkty);
 		});
+		function deleteProduct(item, event) {
+			event.target.parentNode.remove();
+			for (let i = 0; i < products.length; i++) {
+				if (products[i].name == item.name) {
+					products.splice(i, 1);
+					i--;
+				}
+			}
+			localStorage.setItem("addedProducts", JSON.stringify(products));
+			event.target.removeEventListener("click", deleteProduct);
+		}
 	}
+
 	appendProducts(products);
+
+	console.log(products);
 </script>
 <script src="../GLOBAL_FILES/js/navDom.js"></script>
 <script src="../GLOBAL_FILES/js/about.js"></script>
