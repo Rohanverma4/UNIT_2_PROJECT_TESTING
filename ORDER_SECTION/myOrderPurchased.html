@@ -4,11 +4,144 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/modalBox.css" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/navbarSidePanel.css" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
+		<link rel="stylesheet" href="../GLOBAL_FILES/style/patnar.css" />
+		<link rel="stylesheet" href="../GLOBAL_FILES/style/contact.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
 		<title>Pulse Pharmacy - Cart</title>
 	</head>
-	<body>
-		<div id="navbar"></div>
+	<style>
+		#wrapper {
+			display: flex;
+			gap: 10px;
+			padding: 10px;
+			margin-top: 7%;
+		}
+		#productDiv {
+			border: 1px solid black;
+			height: fit-content;
+			width: 60%;
 
-		<div id="footer"></div>
+			display: inline-grid;
+			grid-template-columns: auto auto;
+			gap: 10px;
+			padding: 10px;
+		}
+		#productDiv > div {
+			border: 1px solid rgb(180, 180, 180);
+			height: fit-content;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			padding: 10px;
+		}
+		#checkoutDiv {
+			display: flex;
+			border: 1px solid red;
+			width: fit-content;
+		}
+		#productDiv > div > img {
+			max-width: 80px;
+			height: 100px;
+		}
+
+		#productDiv > div > div {
+			/* border: 1px solid red; */
+			position: relative;
+		}
+		#productDiv > div > div > button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 5px 15px;
+			border: none;
+			background-color: rgb(249, 174, 66);
+			color: white;
+			font-weight: 600;
+			border-radius: 5px;
+		}
+		#productDiv > div ul {
+			font-size: 13px;
+			padding-left: 10px;
+			margin-bottom: 50px;
+			color: rgb(71, 71, 71);
+		}
+		.insideProductDiv h4 {
+			margin: 0;
+			color: rgb(29, 29, 29);
+		}
+		.insideProductDiv p {
+			margin: 5px 0 0 0;
+			font-size: 15px;
+			color: rgb(71, 71, 71);
+		}
+	</style>
+	<body>
+		<div id="navbarDiv"></div>
+		<main>
+			<div id="wrapper">
+				<div id="productDiv"></div>
+				<div id="checkoutDiv">
+					<h4>Total Price</h4>
+					<div id="orderSummary">
+						<h3>Order Summary</h3>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="contactInfo"></div>
+			<div id="partnerSection"></div>
+			<div id="aboutPara"></div>
+		</footer>
 	</body>
 </html>
+<script>
+	let products = JSON.parse(localStorage.getItem("addedProducts")) || [];
+	var productDiv = document.getElementById("productDiv");
+	console.log(products);
+
+	function appendProducts(products) {
+		products.map((item) => {
+			var mainDiv = document.createElement("div");
+			var textDiv = document.createElement("div");
+			var h4Tag = document.createElement("h4");
+			var priceTag = document.createElement("p");
+			var imgTag = document.createElement("img");
+			var button = document.createElement("button");
+			var ulDiv = document.createElement("ul");
+			for (let i = 0; i < item.features.length; i++) {
+				let liTag = document.createElement("li");
+				liTag.textContent = item.features[i];
+				ulDiv.append(liTag);
+			}
+			//set attributes
+			imgTag.setAttribute("src", item.img_src);
+			imgTag.setAttribute("class", "galleryCellImg");
+			h4Tag.textContent = item.name;
+			priceTag.textContent = `Price: ${item.price}`;
+			textDiv.setAttribute("class", "galleryTextDiv");
+			button.textContent = "Buy Now";
+			button.addEventListener("click", () => {
+				increaseCart(item);
+			});
+			mainDiv.setAttribute("class", "insideProductDiv");
+			textDiv.append(h4Tag, priceTag, ulDiv, button);
+			mainDiv.append(imgTag, textDiv);
+			productDiv.append(mainDiv);
+
+			// console.log(flkty);
+		});
+	}
+	appendProducts(products);
+</script>
+<script src="../GLOBAL_FILES/js/navDom.js"></script>
+<script src="../GLOBAL_FILES/js/about.js"></script>
+<script src="../GLOBAL_FILES/js/contact.js"></script>
+<script src="../GLOBAL_FILES/js/patnar.js"></script>

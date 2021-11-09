@@ -78,9 +78,11 @@ var products = [
 		},
 	},
 ];
+//LOCAL STORAGE
+let addedProductsInDom =
+	JSON.parse(localStorage.getItem("addedProducts")) || [];
 
 var mySecondCarousel = document.querySelector("#carousal_container_2");
-
 function appendProducts(products) {
 	products.map((item) => {
 		var mainDiv = document.createElement("div");
@@ -102,7 +104,9 @@ function appendProducts(products) {
 		priceTag.textContent = `Price: ${item.price}`;
 		textDiv.setAttribute("class", "galleryTextDiv");
 		button.textContent = "Buy Now";
-		button.addEventListener("click", increaseCart);
+		button.addEventListener("click", () => {
+			increaseCart(item);
+		});
 		mainDiv.setAttribute("class", "gallery-cell");
 		textDiv.append(h5Tag, priceTag, ulDiv, button);
 		mainDiv.append(imgTag, textDiv);
@@ -124,7 +128,9 @@ $(document).ready(function () {
 	});
 });
 
-function increaseCart() {
+function increaseCart(item) {
 	let counter = document.getElementById("cartCounter");
 	counter.textContent = +counter.textContent + 1;
+	addedProductsInDom.push(item);
+	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
 }

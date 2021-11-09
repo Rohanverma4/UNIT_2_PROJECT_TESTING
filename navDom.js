@@ -204,5 +204,7 @@ function goToOrdersPage() {
 	var counter = document.getElementById("cartCounter");
 	if (counter.textContent == 0) {
 		window.location.href = "/ORDER_SECTION/myOrder.html";
+	} else {
+		window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
 	}
 }
