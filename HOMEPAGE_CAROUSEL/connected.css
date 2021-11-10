@@ -217,6 +217,9 @@ consult a doc and lab test section
 	margin: auto;
 	margin-bottom: 0;
 	width: 1000px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	/* border: 1px solid black; */
 }
 .search {
@@ -238,30 +241,7 @@ consult a doc and lab test section
 	border-bottom: 10px;
 	background-color: rgb(249, 174, 66);
 	border: none;
-}
-#load {
-	width: 100px;
-	height: 70px;
-	display: inline-block;
 	border-radius: 0px 5px 5px 0;
-	border: none;
-	font-size: 12px;
-	padding: 3px;
-	color: rgb(0, 0, 0);
-}
-#load > i {
-	color: rgb(29, 29, 29);
-	margin-bottom: 0;
-	font-size: 30px;
-}
-#load p {
-	margin: 0;
-	color: rgb(29, 29, 29);
-}
-#search-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 #load:hover,
 .search-btn:hover {

@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
 		<link rel="stylesheet" href="../GLOBAL_FILES/style/patnar.css" />
 		<link rel="stylesheet" href="../GLOBAL_FILES/style/contact.css" />
+		<link rel="stylesheet" href="./ordersModal.css" />
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -113,14 +114,69 @@
 			right: 0;
 			line-height: 22px;
 		}
+		.selectTag {
+			position: absolute;
+			right: 10px;
+			top: 45%;
+			/* border: 1px solid black; */
+			background-color: tomato;
+			border-radius: 5px;
+			border: none;
+			padding: 5px 0;
+			color: white;
+
+			display: block;
+			max-height: min-content;
+		}
+		#cartAnchor {
+			display: none;
+		}
 	</style>
 	<body>
 		<div id="navbarDiv"></div>
 		<main>
+			<!-- Main code -->
 			<div id="wrapper">
 				<div id="productDiv"></div>
 				<div id="checkoutDiv">
 					<button id="applyCupon">Apply Cupon</button>
+					<!-- Modal Box Content -->
+					<div id="myOrdersModal" class="ordersModal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<h2>Choose Cupon</h2>
+							</div>
+							<div class="modal-body">
+								<ul id="cuponSelector">
+									<li>
+										<input type="radio" name="radioCupon" id="masai30" />
+										<label for="masai30">MASAI 30 (flat 30% off)</label
+										>
+									</li>
+									<li>
+										<input type="radio" name="radioCupon" id="masai50" />
+										<label for="masai50">MASAI 50 (flat 50% off)</label
+										>
+									</li>
+									<li>
+										<input type="radio" name="radioCupon" id="masai10" />
+										<label for="masai10">MASAI 10 (flat 10% off)</label
+										>
+									</li>
+								</ul>
+								<input
+									type="text"
+									id="inputCupon"
+									placeholder="Enter Your Cupon"
+								/>
+								<button id="applyCuponModal">Apply</button>
+								<button class="close">Close</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Main CONTENT -->
 					<div id="orderSummary">
 						<h3>Order Summary</h3>
 						<p id="itemsPrice">
@@ -148,34 +204,28 @@
 	let products = JSON.parse(localStorage.getItem("addedProducts")) || [];
 	var productDiv = document.getElementById("productDiv");
 
-	function appendProducts(products) {
-		productDiv.innerHTML = "";
-		//Total Number Of Elements
-		let totalElemsCounter = {};
-		for (let elem of products) {
-			totalElemsCounter[elem.name] = totalElemsCounter[elem.name]
-				? totalElemsCounter[elem.name] + 1
-				: 1;
-		}
+	// KEEPING IT GLOBALLY
+	let totalElemsCounter = {};
+	for (let elem of products) {
+		totalElemsCounter[elem.name] = totalElemsCounter[elem.name]
+			? totalElemsCounter[elem.name] + 1
+			: 1;
+	}
 
-		products = products.sort((a, b) => {
-			if (a.name > b.name) return 1;
-			else if (a.name < b.name) return -1;
-			else return 0;
-		});
-		//Removing Duplicates Ones
-		for (let i = 0; i < products.length; i++) {
-			for (let j = i; j < products.length; j++) {
-				if (products[i].name === products[j].name) {
-					products.splice(i, 1);
-					// break;
-				}
-			}
-		}
-		let initialPrice = 0;
-		for (let i = 0; i < products.length; i++) {
-			initialPrice += products[i].price * totalElemsCounter[products[i].name];
-		}
+	//FILTERING OUT UNIQUE VALUES
+	products = Array.from(new Set(products.map((a) => a.name))).map((name) => {
+		return products.find((a) => a.name === name);
+	});
+
+	let initialPrice = 0;
+	for (let i = 0; i < products.length; i++) {
+		initialPrice += products[i].price * totalElemsCounter[products[i].name];
+	}
+	localStorage.setItem("totalItemsPrice", initialPrice);
+
+	function appendProducts(products) {
+		//Total Number Of Elements
+
 		//Appending Prices
 		var itemPrice = document.querySelector("#itemsPrice > span");
 		var deliveryFees = document.querySelector("#deliveryFees > span");
@@ -193,6 +243,17 @@
 			var imgTag = document.createElement("img");
 			var counterDiv = document.createElement("p");
 			var deleteIcon = document.createElement("i");
+			var selectTag = document.createElement("select");
+
+			//VALUES INSIDE SELECT TAG
+			selectTag.innerHTML += `<option>Add More</option>`;
+			for (let i = 0; i < 100; i++) {
+				selectTag.innerHTML += `<option value="${i}">${i}</option>`;
+			}
+			//Select Tag event listener
+			selectTag.addEventListener("change", () => {
+				selectTagFunction(item, event);
+			});
 
 			// Delete Icon EVENT LISTENER;
 			deleteIcon.addEventListener("click", () => {
@@ -200,6 +261,7 @@
 			});
 
 			//set attributes
+			selectTag.setAttribute("class", "selectTag");
 			deleteIcon.setAttribute("class", "material-icons");
 			deleteIcon.innerText += "delete";
 			counterDiv.textContent = `Total items: ${totalElemsCounter[item.name]}`;
@@ -212,24 +274,54 @@
 
 			mainDiv.setAttribute("class", "insideProductDiv");
 			textDiv.append(h4Tag, priceTag);
-			mainDiv.append(imgTag, textDiv, counterDiv, deleteIcon);
+			mainDiv.append(imgTag, textDiv, counterDiv, selectTag, deleteIcon);
 			productDiv.append(mainDiv);
 
 			// console.log(flkty);
 		});
-		function deleteProduct(item, event) {
-			event.target.parentNode.remove();
+	}
+	//SELECT TAG EVENT FUNCTION
+	function selectTagFunction(item, event) {
+		let selectTagValue = event.target.value;
+		if (selectTagValue === "Add More") return;
+		if (selectTagValue == 0) {
+			let newProducts = products.filter((c) => c.name !== item.name);
+			localStorage.setItem("addedProducts", JSON.stringify(newProducts));
+			window.location.reload();
+		} else {
+			event.target.parentNode.childNodes[2].textContent = `Total items: ${selectTagValue}`;
+			totalElemsCounter[item.name] = +selectTagValue;
+			initialPrice = 0;
 			for (let i = 0; i < products.length; i++) {
-				if (products[i].name == item.name) {
-					products.splice(i, 1);
-					i--;
-				}
+				initialPrice += products[i].price * totalElemsCounter[products[i].name];
 			}
-			localStorage.setItem("addedProducts", JSON.stringify(products));
-			event.target.removeEventListener("click", deleteProduct);
+			document.querySelector("#itemsPrice > span").textContent = initialPrice;
+			document.querySelector("#deliveryFees > span").textContent =
+				initialPrice >= 500 ? 0 : 15;
+			document.querySelector("#totalItemsPrice > span").textContent =
+				initialPrice +
+				Number(document.querySelector("#deliveryFees > span").textContent);
 		}
+		localStorage.setItem("totalItemsPrice", initialPrice);
 	}
 
+	//DELETE ICON EVENT FUNCTION
+	function deleteProduct(item, event) {
+		// event.target.parentNode.remove();
+		let newProducts = products.filter((c) => c.name !== item.name);
+		console.log(`logger`);
+		console.log(products);
+		console.log(newProducts);
+		localStorage.setItem("addedProducts", JSON.stringify(newProducts));
+		// productDiv.innerHTML = "";
+		// setTimeout(() => {
+		// 	appendProducts(newProducts);
+		// }, 10);
+		window.location.reload();
+	}
+	document.getElementById("proceed").addEventListener("click", () => {
+		window.location.href = "/ORDER_SECTION/checkoutPage.html";
+	})
 	appendProducts(products);
 
 	console.log(products);
@@ -238,3 +330,4 @@
 <script src="../GLOBAL_FILES/js/about.js"></script>
 <script src="../GLOBAL_FILES/js/contact.js"></script>
 <script src="../GLOBAL_FILES/js/patnar.js"></script>
+<script src="ordersModalScript.js"></script>

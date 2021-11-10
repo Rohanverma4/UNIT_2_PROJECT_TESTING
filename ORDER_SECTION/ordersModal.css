@@ -1,0 +1,123 @@
+/* The Modal (background) */
+.ordersModal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.ordersModal .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: none;
+	border-radius: 10px;
+	width: 40%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* The Close Button */
+.ordersModal button.close {
+	color: rgb(255, 255, 255);
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0;
+	background-color: tomato;
+	border: none;
+	border-radius: 0 0 10px 10px;
+}
+
+.ordersModal .close:hover,
+.ordersModal .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ordersModal .modal-header {
+	background-color: rgb(249, 174, 66);
+	margin: 0;
+	border-radius: 10px 10px 0 0;
+	color: white;
+	text-align: center;
+
+	/* border: 1px solid black; */
+}
+.ordersModal .modal-header h2 {
+	padding: 10px 0;
+}
+.ordersModal .modal-body {
+	position: relative;
+}
+#inputCupon {
+	padding: 10px 0;
+	position: absolute;
+	bottom: 80px;
+	width: 100%;
+	text-align: center;
+	border: 1px solid grey;
+}
+#inputCupon::placeholder {
+	opacity: 1;
+	font-size: 18px;
+	color: grey;
+}
+#applyCuponModal {
+	position: absolute;
+	bottom: 40px;
+	background-color: rgb(22, 172, 153);
+	font-weight: 600;
+	color: white;
+	border: none;
+}
+#cuponSelector {
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 20px;
+	padding-left: 20px;
+	margin-bottom: 10%;
+}
+#cuponSelector label {
+	color: rgb(29, 29, 29);
+}

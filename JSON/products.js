@@ -96,6 +96,11 @@ var products = [
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
 
+console.log(addedProductsInDom);
+let counterNumberFromLS = localStorage.getItem("counter");
+localStorage.setItem("counter", addedProductsInDom.length);
+document.getElementById("cartCounter").textContent = addedProductsInDom.length;
+
 var mySecondCarousel = document.querySelector("#carousal_container_2");
 function appendProducts(products) {
 	products.map((item) => {

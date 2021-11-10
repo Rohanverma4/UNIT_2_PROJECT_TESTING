@@ -283,9 +283,12 @@ let counterNumber = localStorage.getItem("counter");
 
 setTimeout(() => {
 	let counter = document.getElementById("cartCounter");
-	if (counterNumber) counter.textContent = counterNumber;
-	else counter.textContent = 0;
+	counter.textContent = addedProductsInDom.length;
+	// if (counterNumber) counter.textContent = counterNumber;
+	// else counter.textContent = 0;
 }, 10);
+
+console.log(addedProductsInDom);
 
 //Select Tag
 var selectTag = document.getElementById("numProductsSelect");
@@ -293,9 +296,18 @@ for (let i = 0; i <= 100; i++) {
 	var optionTag = `<option value="${i}">${i}</option>`;
 	selectTag.innerHTML += optionTag;
 }
+//Select Tag Event listener
+selectTag.addEventListener("change", numItemsInCart);
+function numItemsInCart() {
+	let selectValue = selectTag.value;
+	for (let i = 0; i < selectValue; i++) {
+		addedProductsInDom.push(toBeViewedProduct);
+	}
+}
 
 document.getElementById("bottomSection").innerHTML = footerSection;
 document.getElementById("navBar").innerHTML = myNavbar;
+
 document.getElementById("cartAnchor").addEventListener("click", () => {
 	var counter = document.getElementById("cartCounter");
 	if (counter.textContent == 0) {
@@ -334,6 +346,7 @@ function displayProduct(product) {
 	} else if (!product.available) {
 		availability.style.color = "tomato";
 		availability.textContent = "Unavailable";
+		document.querySelector(".Addtocart").disabled = true;
 	}
 
 	productSKU.textContent = product.details.SKU;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<title>Checkout Page</title>
+	</head>
+	<body>
+		<h1>Delivery Address</h1>
+		<div id="deliveryAdresses"></div>
+		<form id="addNewAdress">
+			<label for="name">Name</label>
+			<input required id="name" type="text" placeholder="Enter Your Name" />
+			<label for="fullAddress"
+				>Flat Number, Building Name, Street/Locality</label
+			>
+			<textarea id="fullAddress" placeholder="Enter Full Adress"></textarea>
+			<label for="pincode">Pincode</label>
+			<input required id="pincode" type="text" placeholder="Enter Pincode" />
+			<label for="city">City</label>
+			<input required id="city" type="text" placeholder="Enter city" />
+			<label for="state">State</label>
+			<input required id="state" type="text" placeholder="Enter State" />
+			<label for="deliveryContactNumber">Delivery Contact Number</label>
+			<input
+				required
+				type="text"
+				id="deliveryContactNumber"
+				placeholder="Enter Contact Number"
+			/>
+			<p>Adress Type</p>
+			<label for="workAdress"
+				>Work<input type="radio" name="adressType" id="workAdress"
+			/></label>
+			<label for="homeAdress"
+				>Home<input type="radio" name="adressType" id="homeAdress"
+			/></label>
+			<label for="otherAdress"
+				>Other<input type="radio" name="adressType" id="otherAdress"
+			/></label>
+
+			<input type="submit" value="Add Adress" />
+		</form>
+		<button id="addAnotherAdress">Add Another Adress</button>
+		<div id="additionalNotesAndProceed">
+			<textarea
+				id="addNotes"
+				placeholder="add additional notes here"
+			></textarea>
+			<!--
+				--------
+				--------
+				 APPLY CUPON PART
+				--------
+			-------->
+			<hr />
+			<div id="orderSummary">
+				<h3>Order Summary</h3>
+				<p id="itemsPrice">Items <span class="checkoutDivSpan">845</span></p>
+				<p id="deliveryFees">
+					Delivery Fees <span class="checkoutDivSpan">15</span>
+				</p>
+				<p id="totalItemsPrice">
+					Total <span class="checkoutDivSpan">860</span>
+				</p>
+			</div>
+			<button id="proceed">Proceed</button>
+		</div>
+	</body>
+</html>
+<script src="checkoutPage.js"></script>
