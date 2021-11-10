@@ -44,3 +44,12 @@ $(document).ready(function () {
 		});
 	}
 });
+
+// WARniNG ADMIN PANEL RELATED CODE..
+  //** FOR KNOWING THE COUNT OF USER..  
+var visitorsCount = JSON.parse(localStorage.getItem("visitors"))||0;
+if (window.location.href.indexOf("first_page.html") > -1){
+	visitorsCount++;
+    //console.log(visitorsCount);
+	localStorage.setItem("visitors", JSON.stringify(visitorsCount));
+}

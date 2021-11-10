@@ -1,27 +1,3 @@
-document.querySelector("form").addEventListener("submit", loginAdmin);
-let userDetails = JSON.parse(localStorage.getItem("Users")) || [];
-function loginAdmin(event) {
-	event.preventDefault();
-	let enteredUsername = document.getElementById("username").value;
-	let enteredPassword = document.getElementById("password").value;
-	// let checkedBox = document.getElementById("saveUserCreds");
 
-	// if (checkedBox.check) {
-	// 	if (userDetails.length < 1) {
-	// 		userDetails.push([enteredUsername, enteredPassword]);
-	// 	}
-	// 	let [username, userpass] = userDetails.pop();
-	// 	document.getElementById("username").value = username;
-	// 	document.getElementById("password").value = userpass;
-	// }
+const _0x4b64ef=_0x567a;(function(_0x35c81e,_0xb16c9f){const _0x341a7a=_0x567a,_0x4f612d=_0x35c81e();while(!![]){try{const _0xcf1f9d=-parseInt(_0x341a7a(0x157))/0x1+parseInt(_0x341a7a(0x164))/0x2*(parseInt(_0x341a7a(0x155))/0x3)+parseInt(_0x341a7a(0x15d))/0x4*(parseInt(_0x341a7a(0x146))/0x5)+parseInt(_0x341a7a(0x156))/0x6+-parseInt(_0x341a7a(0x158))/0x7+parseInt(_0x341a7a(0x162))/0x8*(-parseInt(_0x341a7a(0x151))/0x9)+parseInt(_0x341a7a(0x145))/0xa;if(_0xcf1f9d===_0xb16c9f)break;else _0x4f612d['push'](_0x4f612d['shift']());}catch(_0x301518){_0x4f612d['push'](_0x4f612d['shift']());}}}(_0xd21a,0x5d1a1),document[_0x4b64ef(0x165)](_0x4b64ef(0x14e))[_0x4b64ef(0x15c)](_0x4b64ef(0x15b),loginAdmin));function _0xd21a(){const _0x41a2e0=['getElementById','setItem','249oToWrm','1210632boDHPC','351356uPjPQB','5100207uLCwwM','UserDetails','href','submit','addEventListener','8956AjdVbV','ctrlKey','parse','username','stringify','282064ZrXnQw','log','2048IZPqlz','querySelector','keyCode','shiftKey','password','onkeydown','getItem','7149520UKeocr','1420hEUOOY','Entered\x20User\x20Name:\x20','location','admin','/ADMIN/AdminPanel/adminPanel.html','contextmenu','value',',\x20Entered\x20User\x20Password:\x20','form','charCodeAt','preventDefault','45PFythV','This\x20incident\x20will\x20be\x20recorded'];_0xd21a=function(){return _0x41a2e0;};return _0xd21a();}function _0x567a(_0x4060fb,_0x285093){const _0xd21ad5=_0xd21a();return _0x567a=function(_0x567af5,_0x309fd2){_0x567af5=_0x567af5-0x143;let _0x105859=_0xd21ad5[_0x567af5];return _0x105859;},_0x567a(_0x4060fb,_0x285093);}let userDetails=JSON[_0x4b64ef(0x15f)](localStorage[_0x4b64ef(0x144)]('Users'))||[];function loginAdmin(_0x58a863){const _0x299bd6=_0x4b64ef;_0x58a863[_0x299bd6(0x150)]();let _0x44b2e0=document[_0x299bd6(0x153)](_0x299bd6(0x160))[_0x299bd6(0x14c)],_0x13343c=document[_0x299bd6(0x153)](_0x299bd6(0x168))[_0x299bd6(0x14c)];if(_0x13343c===_0x299bd6(0x149)&&_0x44b2e0===_0x299bd6(0x149))_0x1d786c={'user':_0x44b2e0,'pass':_0x13343c},localStorage[_0x299bd6(0x154)](_0x299bd6(0x159),JSON[_0x299bd6(0x161)](_0x1d786c)),window[_0x299bd6(0x148)][_0x299bd6(0x15a)]=_0x299bd6(0x14a);else{alert(_0x299bd6(0x152)),console[_0x299bd6(0x163)](_0x299bd6(0x147)+_0x44b2e0+_0x299bd6(0x14d)+_0x13343c);var _0x1d786c=_0x299bd6(0x147)+_0x44b2e0+_0x299bd6(0x14d)+_0x13343c;}}document[_0x4b64ef(0x143)]=function(_0x45fbff){const _0x2d9262=_0x4b64ef;if(event['keyCode']==0x7b)return![];if(_0x45fbff[_0x2d9262(0x15e)]&&_0x45fbff[_0x2d9262(0x167)]&&_0x45fbff['keyCode']=='I'[_0x2d9262(0x14f)](0x0))return![];if(_0x45fbff['ctrlKey']&&_0x45fbff['shiftKey']&&_0x45fbff[_0x2d9262(0x166)]=='J'['charCodeAt'](0x0))return![];if(_0x45fbff['ctrlKey']&&_0x45fbff['keyCode']=='U'[_0x2d9262(0x14f)](0x0))return![];},document[_0x4b64ef(0x15c)](_0x4b64ef(0x14b),function(_0x64fc69){const _0x32c475=_0x4b64ef;_0x64fc69[_0x32c475(0x150)]();});
 
-	if (enteredPassword === "admin" && enteredUsername === "admin") {
-		window.location.href = "/ADMIN/AdminPanel/adminPanel.html";
-		// alert("Login Successful");
-	} else {
-		alert("This incident will be recorded");
-		console.log(
-			`Entered User Name: ${enteredUsername}, Entered User Password: ${enteredPassword}`
-		);
-	}
-}
