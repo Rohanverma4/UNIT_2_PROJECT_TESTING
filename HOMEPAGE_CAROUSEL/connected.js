@@ -58,10 +58,23 @@ $(document).ready(function () {
 });
 
 // WARniNG ADMIN PANEL RELATED CODE..
-  //** FOR KNOWING THE COUNT OF USER..  
-var visitorsCount = JSON.parse(localStorage.getItem("visitors"))||0;
-if (window.location.href.indexOf("first_page.html") > -1){
+//** FOR KNOWING THE COUNT OF USER..
+var visitorsCount = JSON.parse(localStorage.getItem("visitors")) || 0;
+if (window.location.href.indexOf("first_page.html") > -1) {
 	visitorsCount++;
-    //console.log(visitorsCount);
+	//console.log(visitorsCount);
 	localStorage.setItem("visitors", JSON.stringify(visitorsCount));
+}
+//EVENT LISTENER FOR SEARCH BUTTON
+document
+	.querySelector(".search-btn")
+	.addEventListener("click", goToAllProducts);
+function goToAllProducts() {
+	var searchQuery = document.querySelector('input[class="search"]').value;
+
+	if (searchQuery) {
+		searchQuery = searchQuery.toLowerCase();
+	}
+	localStorage.setItem("searchQueryString", searchQuery.toLowerCase());
+	window.location.href = "/allProducts__Section/index.html";
 }

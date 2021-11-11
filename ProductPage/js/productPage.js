@@ -283,12 +283,8 @@ let counterNumber = localStorage.getItem("counter");
 
 setTimeout(() => {
 	let counter = document.getElementById("cartCounter");
-	counter.textContent = addedProductsInDom.length;
-	// if (counterNumber) counter.textContent = counterNumber;
-	// else counter.textContent = 0;
+	counter.textContent = counterNumber;
 }, 10);
-
-console.log(addedProductsInDom);
 
 //Select Tag
 var selectTag = document.getElementById("numProductsSelect");
@@ -368,8 +364,11 @@ document.querySelector(".Addtocart").addEventListener("click", () => {
 });
 function addToCart(something) {
 	addedProductsInDom.push(something);
-
 	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+	//INCREASING COUNTER
+	counterNumber = Number(counterNumber) + 1;
+	localStorage.setItem("counter", counterNumber);
+	document.querySelector("#cartCounter").textContent = counterNumber;
 
 	var noneDisplays = document.querySelectorAll(".noneDisplay");
 	for (let i = 0; i < noneDisplays.length; i++) {
@@ -378,7 +377,6 @@ function addToCart(something) {
 	var addToCartButtons = document.querySelectorAll(".Addtocart");
 	for (let i = 0; i < addToCartButtons.length; i++) {
 		addToCartButtons[i].textContent = "Checkout";
-		// addToCartButtons[i].classList.remove("Addtocart");
 		addToCartButtons[i].classList.add("checkoutClass");
 		document.querySelector(".checkoutClass").addEventListener("click", () => {
 			window.location.href = "/ORDER_SECTION/myOrderPurchased.html";

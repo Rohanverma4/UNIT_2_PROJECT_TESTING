@@ -96,6 +96,8 @@ var products = [
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
 
+//REMOVING CUPON CHECKER
+// localStorage.removeItem("")
 console.log(addedProductsInDom);
 let counterNumberFromLS = localStorage.getItem("counter");
 localStorage.setItem("counter", addedProductsInDom.length);
@@ -137,9 +139,6 @@ function appendProducts(products) {
 		// console.log(flkty);
 	});
 }
-// window.addEventListener("load", () => {
-// 	appendProducts(products);
-// });
 
 $(document).ready(function () {
 	appendProducts(products);

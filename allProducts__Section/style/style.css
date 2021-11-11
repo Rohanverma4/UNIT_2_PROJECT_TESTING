@@ -187,6 +187,22 @@ body {
 	line-height: 1.4rem;
 	border: none;
 }
+.item__box:hover {
+	cursor: pointer;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.item__box {
+	font-family: "Roboto", sans-serif;
+}
+.item__box p {
+	color: rgb(119, 119, 119) !important;
+}
+.item__box h4 {
+	color: rgb(29, 29, 29) !important;
+	margin-bottom: 5px;
+}
 @media only screen and (max-width: 700px) {
 	#contactInfo {
 		display: none;

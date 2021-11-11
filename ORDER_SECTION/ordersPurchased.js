@@ -3,9 +3,14 @@
 let products = JSON.parse(localStorage.getItem("addedProducts")) || [];
 var productDiv = document.getElementById("productDiv");
 var initialPrice = localStorage.getItem("totalItemsPrice") || 0;
+
+if (localStorage.getItem("totalItemsPrice") == 0) {
+	localStorage.removeItem("totalItemsPrice");
+}
 var isChecked = JSON.parse(localStorage.getItem("cuponApplied"));
 
-console.log(initialPrice);
+//CONSOLE HERE
+// console.log(initialPrice);
 
 //Blocking User To Apply More Cupons if isChecked is true
 if (isChecked) {
@@ -58,7 +63,7 @@ function appendProducts(products) {
 		});
 
 		// Delete Icon EVENT LISTENER;
-		deleteIcon.addEventListener("click", () => {
+		deleteIcon.addEventListener("click", (event) => {
 			deleteProduct(item, event);
 		});
 
@@ -127,23 +132,23 @@ document.getElementById("proceed").addEventListener("click", () => {
 });
 
 function addPrices() {
-	if (!initialPrice) {
-		for (let i = 0; i < products.length; i++) {
-			initialPrice += products[i].price * totalElemsCounter[products[i].name];
-		}
-	} else {
-		var deliveryCharges;
-		if (isChecked) {
-			deliveryCharges = 0;
-		} else {
-			deliveryCharges = +initialPrice >= 500 || +initialPrice === 0 ? 0 : 15;
-		}
-		var totalPrice = Number(initialPrice) + deliveryCharges;
-		document.querySelector("#itemsPrice > span").textContent = initialPrice;
-		document.querySelector("#deliveryFees > span").textContent =
-			deliveryCharges;
-		document.querySelector("#totalItemsPrice > span").textContent = totalPrice;
+	let initialPrice = 0;
+
+	for (let i = 0; i < products.length; i++) {
+		initialPrice += products[i].price * totalElemsCounter[products[i].name];
 	}
+
+	var deliveryCharges;
+	if (isChecked) {
+		deliveryCharges = 0;
+	} else {
+		deliveryCharges = +initialPrice >= 500 || +initialPrice === 0 ? 0 : 15;
+	}
+	var totalPrice = Number(initialPrice) + deliveryCharges;
+	document.querySelector("#itemsPrice > span").textContent = initialPrice;
+	document.querySelector("#deliveryFees > span").textContent = deliveryCharges;
+	document.querySelector("#totalItemsPrice > span").textContent = totalPrice;
+
 	localStorage.setItem("totalItemsPrice", initialPrice);
 }
 
@@ -171,10 +176,15 @@ function applyCupon() {
 		);
 	}
 	isChecked = true;
+	document.getElementById("applyCupon").disabled = true;
+	document.getElementById("applyCupon").textContent = "Cupon Applied";
+	document.getElementById(
+		"applyCupon"
+	).style.backgroundColor = `rgb(255, 211, 150)`;
 	localStorage.setItem("cuponApplied", JSON.stringify(isChecked));
 	localStorage.setItem("totalItemsPrice", initialPrice);
+	document.getElementById("myOrdersModal").style.display = "none";
 	addSpecialPrices();
-	window.location.reload();
 }
 addPrices();
 appendProducts(products);
