@@ -95,7 +95,8 @@ var products = [
 //LOCAL STORAGE
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
-
+let userMobileNumber = Number(localStorage.getItem("mobileNumber")) || 0;
+console.log(!userMobileNumber);
 //REMOVING CUPON CHECKER
 // localStorage.removeItem("")
 console.log(addedProductsInDom);

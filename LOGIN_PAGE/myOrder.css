@@ -1,60 +1,147 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html,
-body{
-background-color: #f5f8fa;
-margin:auto;
-font-family: "Roboto", sans-serif;
+body {
+	background-color: #f5f8fa;
+	margin: auto;
+	font-family: "Roboto", sans-serif;
 }
-#heading{
-  width:200px;
-  height:80px;
-  
-  display:flex;
-  flex-direction: row;
-  margin-left:140px;
-  padding-top: 20px;
+#heading {
+	width: 200px;
+	height: 80px;
 
+	display: flex;
+	flex-direction: row;
+	margin-left: 140px;
+	padding-top: 20px;
 }
-#heading>img{
-    width:25%;
-    height:60%;
+#heading > img {
+	width: 25%;
+	height: 60%;
+}
+#heading > div {
+	margin-top: 15px;
+	color: #16ac99;
+	font-size: x-large;
+}
+#heading > img {
+	background-color: #f5f8fa;
+}
+#box {
+	width: 800px;
+	height: 400px;
 
+	text-align: center;
+	margin: auto;
 }
-#heading>div{
-    margin-top:15px;
-    color:
-    #16ac99;
-    font-size: x-large;
-}
-#heading>img{
-    background-color: #f5f8fa;
-}
-#box{
-    width:800px;
-    height:400px;
-
-    text-align:center;
-    margin:auto;
-}
-#boxInBox{
-    display:flex;
-    flex-direction: row;
-    font-size: x-large;
-    margin-left:150px;
-    vertical-align: top;
-   
+#boxInBox {
+	display: flex;
+	flex-direction: row;
+	font-size: x-large;
+	margin-left: 150px;
+	vertical-align: top;
 }
 
-a{
-    text-decoration: none;
+a {
+	text-decoration: none;
 }
-button{
-    margin-left: 540px;
-    background-color: #f9ae42;
-    width:300px;
-    height:60px;
-    border-radius:5px;
-    color:white;
-    border:none;
-    font-size: larger;
+button {
+	margin-left: 540px;
+	background-color: #f9ae42;
+	width: 300px;
+	height: 60px;
+	border-radius: 5px;
+	color: white;
+	border: none;
+	font-size: larger;
+}
+
+/* EXTRA PROPERTY IN CASE PAST ORDERS PRESENT */
+.adressesPresent {
+	border: 1px solid rgb(230, 230, 230);
+	background-color: oldlace;
+	width: 90% !important;
+	display: flex;
+	height: fit-content !important;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 10px;
+
+	gap: 10px;
+}
+.adressesPresent > div {
+	border: 1px solid rgb(228, 228, 228);
+	border-radius: 10px;
+	display: flex;
+	width: 100% !important;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: unset;
+	overflow: scroll;
+	scrollbar-width: none;
+	padding: 5px;
+	gap: 20px;
+}
+
+.adressesPresent > div > ul {
+	list-style-type: none;
+	border: 1px solid rgb(158, 158, 158);
+	border-radius: 5px;
+	padding: 10px;
+	background-color: rgb(240, 240, 240);
+	margin: 0;
+	text-align: left;
+	max-height: 100% !important;
+}
+.adressesPresent > div > ul li {
+	padding: 0 10px;
+	color: grey;
+}
+.adressesPresent > div > ul li:nth-child(1) {
+	color: rgb(29, 29, 29);
+	font-size: 20px;
+	padding: 10px;
+	text-align: left;
+}
+
+.displayProductDiv {
+	border: 1px solid black;
+}
+.productSectionDiv {
+	display: flex;
+	border-radius: 10px;
+	background-color: rgb(236, 235, 235);
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	padding: 10px;
+	gap: 10px;
+}
+
+.productSectionDiv > div p:nth-child(1) {
+	color: rgb(29, 29, 29);
+	font-size: 20px;
+	margin: 10px 0;
+	text-align: left;
+	padding-left: 10px;
+}
+.productSectionDiv > div > p:nth-last-child(1) {
+	color: red !important;
+	font-size: 18px;
+	margin: 10px 0;
+	text-align: left;
+	padding-left: 10px;
+}
+.productSectionDiv > div ul {
+	list-style-type: none;
+	/* border: 1px solid black; */
+	padding-left: 20px;
+	text-align: left;
+	font-size: 15px;
+	color: grey;
+}
+
+.productSectionDiv > img {
+	max-width: 20% !important;
+	height: auto;
 }

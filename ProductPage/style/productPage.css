@@ -146,7 +146,8 @@
 #priceAndAddToCart p {
 	margin: 10px 0;
 }
-.Addtocart {
+.Addtocart,
+.checkoutClass {
 	/* position: absolute;
 	bottom: 10px; */
 	width: 200px;
@@ -163,7 +164,23 @@
 	border-radius: 5px;
 	border: none;
 }
-.Addtocart:hover {
+/* .checkoutClass {
+	width: 200px;
+
+	margin-top: 10px;
+	background-color: rgb(249, 174, 66);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	font-size: 15px;
+	font-weight: 600;
+	color: white;
+	padding: 12px;
+	border-radius: 5px;
+	border: none;
+} */
+.Addtocart:hover,
+.checkoutClass:hover {
 	cursor: pointer;
 }
 #discount {

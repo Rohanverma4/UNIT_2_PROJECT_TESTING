@@ -281,6 +281,13 @@ let addedProductsInDom =
 
 let counterNumber = localStorage.getItem("counter");
 
+//Checkout Class EVENT LISTENER
+document.querySelector(".checkoutClass").addEventListener("click", () => {
+	window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
+});
+
+//MAKING CHECKOUT DISPLAY HIDDEN BY DEFAULT
+document.querySelector(".checkoutClass").style.display = "none";
 setTimeout(() => {
 	let counter = document.getElementById("cartCounter");
 	counter.textContent = counterNumber;
@@ -374,14 +381,15 @@ function addToCart(something) {
 	for (let i = 0; i < noneDisplays.length; i++) {
 		noneDisplays[i].style.setProperty("display", "inline-block", "important");
 	}
-	var addToCartButtons = document.querySelectorAll(".Addtocart");
-	for (let i = 0; i < addToCartButtons.length; i++) {
-		addToCartButtons[i].textContent = "Checkout";
-		addToCartButtons[i].classList.add("checkoutClass");
-		document.querySelector(".checkoutClass").addEventListener("click", () => {
-			window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
-		});
-	}
+	document.querySelector(".Addtocart").style.display = "none";
+	document.querySelector(".checkoutClass").style.display = "block";
+	// var addToCartButtons = document.querySelectorAll(".Addtocart");
+	// // for (let i = 0; i < addToCartButtons.length; i++) {
+	// // 	addToCartButtons[i].textContent = "Checkout";
+	// // 	addToCartButtons[i].classList.add("checkoutClass");
+	// // 	// addToCartButtons[i].classList.remove("Addtocart");
+	// //
+	// // }
 }
 //INVOKING FUNCTION
 //Go button functionality;

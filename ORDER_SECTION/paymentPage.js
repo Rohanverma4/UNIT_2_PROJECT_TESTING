@@ -4,6 +4,7 @@ var initialPrice = Number(localStorage.getItem("totalItemsPrice"));
 var cuponValidator = JSON.parse(localStorage.getItem("cuponApplied"));
 var addedProductsInDom = JSON.parse(localStorage.getItem("addedProducts"));
 var pastOrders = JSON.parse(localStorage.getItem("pastOrdersDetails")) || [];
+var userMobile = Number(JSON.parse(localStorage.getItem("mobileNumber")));
 
 //EVENT LISTENERS FOR PLACING ORDER AND PAYING
 document.querySelector("#placeOrder").addEventListener("click", placeAndPay);
@@ -69,6 +70,7 @@ function placeAndPay() {
 		return;
 	}
 	var orderSaverObj = {
+		userNumber: userMobile,
 		products: addedProductsInDom,
 		productsPrice: initialPrice,
 		totalProductsPrice:

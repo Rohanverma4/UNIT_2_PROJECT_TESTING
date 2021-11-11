@@ -380,6 +380,7 @@ let addedProductsInDom =
 let counterNumberFromLS = localStorage.getItem("counter");
 localStorage.setItem("counter", addedProductsInDom.length);
 var searchQuery = localStorage.getItem("searchQueryString");
+let userMobileNumber = Number(localStorage.getItem("mobileNumber")) || 0;
 
 //SETTING CART COUNTER
 document.getElementById("cartCounter").textContent = counterNumberFromLS;
