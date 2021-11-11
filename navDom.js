@@ -7,6 +7,35 @@ function closeNav() {
 	document.getElementById("mySidepanel").style.width = "0";
 }
 
+var updateName = JSON.parse(localStorage.getItem("userName"));
+
+var updateNumber = JSON.parse(localStorage.getItem("mobileNumber"));
+if (updateName != null) {
+	updateName = updateName.split(" ").join("");
+	var updateInput = `<div id="dropdown">
+						<button id="dropbtn">Hi,${updateName}</button>
+						<div id="dropdown-content">
+		  			    <a href="../LOGIN_PAGE/myProfile.html">My Profile</a>
+						<a href="../LOGIN_PAGE/myOrder.html">My Order</a>
+						<a href="../LOGIN_PAGE/wallet.html">My Wallet</a>
+						<a href="../LOGIN_PAGE/setPassword.html">Change_Password</a>
+						<a class = "logout" href="#">Logout</a>
+						</div>
+					</div>`;
+} else if (updateNumber != null) {
+	var updateInput = `<div id="dropdown">
+						<button id="dropbtn">Hi,${updateNumber}</button>
+						<div id="dropdown-content">
+						<a href="../LOGIN_PAGE/myProfile.html">My Profile</a>
+						<a href="../LOGIN_PAGE/myOrder.html">My Order</a>
+						<a href="../LOGIN_PAGE/wallet.html">My Wallet</a>
+						<a href="../LOGIN_PAGE/setPassword.html">Change_Password</a>
+						<a class = "logout" href="#">Logout</a>
+						</div>
+					</div>`;
+} else {
+	var updateInput = `<a href="../LOGIN_PAGE/login.html">Login/Signup</a>`;
+}
 var myNavbar = `
 <nav id="navbar">
 			<div id="mySidepanel" class="sidepanel">
@@ -15,7 +44,7 @@ var myNavbar = `
 				<h2>Welcome Guest</h2>
 				<a href="../LOGIN_PAGE/login.html"
 					><i class="material-icons">power_settings_new</i
-					><span id="logininsideSidePanel">Login/Signup</span></a
+					><span id="logininsideSidePanel">Login/Signup</span></
 				>
 				<a href="#"><i class="material-icons">lightbulb</i>About Pulse</a>
 				<a href="#">
@@ -141,7 +170,7 @@ var myNavbar = `
 					</div>
 				</li>
 				<li id="loginSignupHref">
-					<a href="../LOGIN_PAGE/login.html">Login/Signup</a>
+  			  	   ${updateInput}
 				</li>
 
 				<li>
@@ -208,3 +237,13 @@ function goToOrdersPage() {
 		window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
 	}
 }
+
+/// UPDATE BY ROHAN
+// logout function...
+
+document.querySelector(".logout").addEventListener("click", function () {
+	window.localStorage.removeItem("userName");
+	window.localStorage.removeItem("mobileNumber");
+	window.localStorage.removeItem("userEmail");
+	location.reload();
+});

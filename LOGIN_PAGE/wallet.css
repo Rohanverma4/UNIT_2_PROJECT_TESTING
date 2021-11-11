@@ -1,0 +1,72 @@
+html,
+body {
+  background-color: whitesmoke;
+}
+#main {
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+}
+#box1 {
+  border: 1px solid rgb(196, 194, 194);
+  height: 90px;
+  width: 60%;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  background-color: white;
+}
+#box2 {
+  border: 1px solid rgb(196, 194, 194);
+  height: 70px;
+  width: 60%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: white;
+}
+img {
+  height: 35px;
+  width: 35px;
+  padding: 30px;
+}
+h2 {
+  font-family: sans-serif;
+  margin-top: 32px;
+  color: rgb(83, 80, 80);
+  font-weight: 100;
+}
+#rupee {
+  font-family: sans-serif;
+  margin-top: 32px;
+  color: rgb(31, 184, 184);
+  font-weight: bold;
+}
+#shop {
+  border: 1px solid white;
+  background-color: rgb(228, 165, 48);
+  height: 50px;
+  width: 200px;
+  margin: auto;
+  margin-top: 6px;
+  display: flex;
+  border-radius: 8px;
+}
+#shop > img {
+  height: 30px;
+  padding: 8px;
+  background-color: rgb(228, 165, 48);
+}
+#shop > button {
+  border: 1px solid rgb(228, 165, 48);
+  height: 45px;
+  width: 25%;
+  margin-top: 5px;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: rgb(228, 165, 48);
+  color: white;
+}
+#btn {
+  border: 1px solid white;
+}

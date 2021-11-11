@@ -146,7 +146,7 @@ consult a doc and lab test section
 	bottom: 10px;
 	margin-left: 14%;
 }
-#navbar > ul {
+ #navbar > ul {
 	display: flex;
 	width: min-content;
 	align-items: center;
@@ -154,7 +154,7 @@ consult a doc and lab test section
 	right: 0;
 	gap: 10px;
 	margin-right: 14%;
-	/* margin: auto; */
+
 }
 
 #loginSignupHref a {
@@ -163,9 +163,12 @@ consult a doc and lab test section
 	letter-spacing: 0.06rem;
 }
 #loginSignupHref a:visited {
-	color: rgb(255, 255, 255);
+	/* color: rgb(255, 255, 255); */
 	text-decoration: none;
+	color: white;
 }
+
+
 #cartAnchor {
 	/* border: 1px solid black; */
 	display: block;
@@ -195,7 +198,47 @@ consult a doc and lab test section
 	font-weight: 600;
 	line-height: 20px;
 }
-
+/*CODED BY ROHAN */
+/* #04AA6D */
+#dropbtn {
+    background-color: #16ac99;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    /* margin-left: 200px; */
+  }
+  
+  #dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	color:#16ac99;
+	
+    /* margin-left: 150px; */
+  }
+  
+  #dropdown-content a {
+    color:#16ac99 !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  #dropdown-content a:hover {background-color: #e5f5f5;}
+  
+  #dropdown:hover #dropdown-content {display: block;}
+  
+  #dropdown:hover #dropbtn {background-color: #16ac99;}
+/* #16ac99 */
 /*Copied Stuff*/
 
 #container {
@@ -431,6 +474,43 @@ body {
 	#search-box {
 		width: 500px;
 	}
+
+	.dropbtn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		margin-left: 200px;
+	  }
+	  
+	  .dropdown {
+		position: relative;
+		display: inline-block;
+	  }
+	  
+	  .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		margin-left: 150px;
+	  }
+	  
+	  .dropdown-content a {
+		color: #16ac99;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  
+	  .dropdown-content a:hover {background-color: #ddd;}
+	  
+	  .dropdown:hover .dropdown-content {display: block;}
+	  
+	  .dropdown:hover .dropbtn {background-color: #16ac99;}
 	/*
 	-
 	-
