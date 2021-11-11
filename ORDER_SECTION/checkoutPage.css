@@ -1,0 +1,196 @@
+main {
+	/* border: 1px solid black; */
+	margin-top: 7%;
+	display: flex;
+	justify-content: space-evenly;
+}
+#deliveryContactNumber {
+	border: 1px solid grey;
+	border-radius: 10px;
+	padding: 10px;
+}
+#cartAnchor {
+	display: none;
+}
+label {
+	color: rgb(31, 31, 31);
+}
+#deliveryHeading {
+	color: rgb(22, 172, 153);
+}
+#addNewAdress {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 10px;
+	gap: 20px;
+	align-items: flex-start;
+	border: 1px solid rgb(201, 201, 201);
+	width: 60%;
+	position: relative;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: rgb(240, 240, 240);
+}
+#addNewAdress input[type="submit"] {
+	background-color: rgb(22, 172, 153);
+	padding: 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	font-weight: 600;
+}
+#addNewAdress input[type="radio"] {
+	-ms-transform: scale(1.5); /* IE 9 */
+	-webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+	transform: scale(1.5);
+	margin: 0 15px;
+}
+
+#name {
+	padding: 10px;
+}
+.maxWidthInputs {
+	width: 100% !important;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid grey;
+}
+
+#deliveryHeading {
+	margin: 5px 0;
+}
+#fullAddress + span input {
+	padding: 10px !important;
+	border-radius: 10px;
+	border: 1px solid grey;
+}
+#applyCupon {
+	background-color: #f9ae42;
+	width: 300px;
+	height: 60px;
+	border-radius: 5px;
+	color: white;
+	border: none;
+	font-size: 20px;
+}
+#proceed {
+	background-color: #57ce57;
+	width: 300px;
+	height: 60px;
+	border-radius: 5px;
+	color: white;
+	border: none;
+	font-size: 20px;
+}
+
+#addNewAdress input[type="submit"]:hover,
+#applyCupon:hover,
+#proceed:hover {
+	cursor: pointer;
+}
+#orderSummary {
+	/* border: 1px solid black; */
+	display: flex;
+	flex-direction: column;
+}
+#orderSummary h3 {
+	text-align: center;
+	margin: 10px 0 0 0;
+	color: rgb(31, 31, 31);
+}
+#orderSummary p {
+	position: relative;
+	padding-left: 40px;
+	font-size: 20px;
+	margin: 10px;
+	color: rgb(29, 29, 29);
+}
+#orderSummary p span {
+	position: absolute;
+	right: 40px;
+	color: rgb(71, 71, 71);
+}
+#additionalNotesAndProceed {
+	/* border: 1px solid black; */
+	height: fit-content;
+	margin-top: 10px;
+}
+#additionalNotesAndProceed textarea {
+	width: 100%;
+	height: 100px;
+	padding: 5px;
+	resize: vertical;
+	font-size: 15px;
+	border-radius: 10px 10px 0 0;
+	border: 1px solid grey;
+}
+
+/* DELIVERY ADRESSES PART */
+#deliveryAdresses div {
+	/* border: 1px solid black; */
+	/* width: 50%; */
+	height: fit-content;
+	padding: 5px;
+	position: relative;
+	background-color: rgb(230, 230, 230);
+	border-radius: 5px;
+}
+
+#deliveryAdresses {
+	border: 1px solid rgb(201, 201, 201);
+	border-radius: 10px;
+	width: 50%;
+	display: grid;
+	gap: 10px;
+	padding: 10px;
+	position: relative;
+	justify-content: stretch;
+	grid-template-columns: auto auto;
+}
+#addMoreAdressButton {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+	font-size: 15px;
+	border: 2px solid rgb(22, 172, 153);
+	border-radius: 5px;
+	color: rgb(22, 172, 153);
+	font-weight: 600;
+}
+#deliveryAdresses div p {
+	/* border: 1px solid black; */
+	display: inline-block;
+	margin: 0;
+	font-size: 20px;
+	width: 90%;
+}
+#deliveryAdresses div ul {
+	/* border: 1px solid red; */
+	margin-bottom: 50px;
+	padding-left: 15px;
+	color: rgb(29, 29, 29);
+}
+#deliveryAdresses div button {
+	padding: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border: none;
+	border-radius: 5px;
+}
+
+#deliveryAdresses div button i {
+	color: red;
+}
+.radioAndAdress {
+	width: 100% !important;
+	display: flex;
+	background-color: rgb(22, 172, 153) !important;
+	color: white;
+	padding: 5px !important;
+	gap: 10px;
+}

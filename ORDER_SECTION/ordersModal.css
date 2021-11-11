@@ -56,18 +56,20 @@
 .ordersModal button.close {
 	color: rgb(255, 255, 255);
 	float: right;
-	font-size: 28px;
+	font-size: 20px;
 	font-weight: bold;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
 	background-color: tomato;
 	border: none;
 	border-radius: 0 0 10px 10px;
+	padding: 5px 0;
 }
 
 .ordersModal .close:hover,
 .ordersModal .close:focus {
-	color: #000;
+	color: rgb(255, 255, 255);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -106,7 +108,10 @@
 	background-color: rgb(22, 172, 153);
 	font-weight: 600;
 	color: white;
+	width: 100%;
+	padding: 10px 0;
 	border: none;
+	font-size: 18px;
 }
 #cuponSelector {
 	/* border: 1px solid black; */

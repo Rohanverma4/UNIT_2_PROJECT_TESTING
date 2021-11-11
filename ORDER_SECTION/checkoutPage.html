@@ -8,69 +8,154 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 		/>
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/modalBox.css" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/navbarSidePanel.css" />
+		<link rel="stylesheet" href="../HOMEPAGE_CAROUSEL/connected.css" />
+		<link rel="stylesheet" href="../GLOBAL_FILES/style/patnar.css" />
+		<link rel="stylesheet" href="../GLOBAL_FILES/style/contact.css" />
+		<link rel="stylesheet" href="checkoutPage.css" />
+		<link rel="stylesheet" href="./ordersModal.css">
+
 		<title>Checkout Page</title>
 	</head>
-	<body>
-		<h1>Delivery Address</h1>
-		<div id="deliveryAdresses"></div>
-		<form id="addNewAdress">
-			<label for="name">Name</label>
-			<input required id="name" type="text" placeholder="Enter Your Name" />
-			<label for="fullAddress"
-				>Flat Number, Building Name, Street/Locality</label
-			>
-			<textarea id="fullAddress" placeholder="Enter Full Adress"></textarea>
-			<label for="pincode">Pincode</label>
-			<input required id="pincode" type="text" placeholder="Enter Pincode" />
-			<label for="city">City</label>
-			<input required id="city" type="text" placeholder="Enter city" />
-			<label for="state">State</label>
-			<input required id="state" type="text" placeholder="Enter State" />
-			<label for="deliveryContactNumber">Delivery Contact Number</label>
-			<input
-				required
-				type="text"
-				id="deliveryContactNumber"
-				placeholder="Enter Contact Number"
-			/>
-			<p>Adress Type</p>
-			<label for="workAdress"
-				>Work<input type="radio" name="adressType" id="workAdress"
-			/></label>
-			<label for="homeAdress"
-				>Home<input type="radio" name="adressType" id="homeAdress"
-			/></label>
-			<label for="otherAdress"
-				>Other<input type="radio" name="adressType" id="otherAdress"
-			/></label>
+	<style>
 
-			<input type="submit" value="Add Adress" />
-		</form>
-		<button id="addAnotherAdress">Add Another Adress</button>
-		<div id="additionalNotesAndProceed">
-			<textarea
-				id="addNotes"
-				placeholder="add additional notes here"
-			></textarea>
-			<!--
+	</style>
+	<body>
+		<div id="navbarDiv"></div>
+		<main>
+			<div id="deliveryAdresses">
+			</div>
+			<form id="addNewAdress">
+				<h2 id="deliveryHeading">Delivery Address</h2>
+				<label for="name">Name </label>
+				<input
+					required
+					id="name"
+					class="maxWidthInputs"
+					type="text"
+					placeholder="Enter Your Name"
+				/>
+				<label for="fullAddress"
+					>Flat Number, Building Name, Street/Locality
+				</label>
+				<textarea
+					id="fullAddress"
+					class="maxWidthInputs"
+					placeholder="Enter Full Adress"
+				></textarea>
+				<span>
+					<span>
+						<label for="pincode">Pincode </label>
+						<input
+							required
+							id="pincode"
+							type="text"
+							placeholder="Enter Pincode"
+						/>
+					</span>
+					<span>
+						<label for="city">City </label>
+						<input required id="city" type="text" placeholder="Enter city" />
+					</span>
+					<span>
+						<label for="state">State </label>
+						<input required id="state" type="text" placeholder="Enter State" />
+					</span>
+				</span>
+
+				<label for="deliveryContactNumber">Delivery Contact Number <input
+					required
+					type="text"
+					id="deliveryContactNumber"
+					placeholder="Enter Contact Number"
+				/></label>
+				
+				<span>
+					<p>Adress Type</p>
+					<label for="workAdress"
+						>Work<input type="radio" name="adressType" id="workAdress"
+					/></label>
+					<label for="homeAdress"
+						>Home<input type="radio" name="adressType" id="homeAdress"
+					/></label>
+					<label for="otherAdress"
+						>Other<input type="radio" name="adressType" id="otherAdress"
+					/></label>
+				</span>
+				<input type="submit" value="Add Adress" />
+			</form>
+			<div id="additionalNotesAndProceed">
+				<textarea
+					id="addNotes"
+					placeholder="add additional notes here"
+				></textarea>
+				<!--
 				--------
 				--------
 				 APPLY CUPON PART
 				--------
 			-------->
-			<hr />
-			<div id="orderSummary">
-				<h3>Order Summary</h3>
-				<p id="itemsPrice">Items <span class="checkoutDivSpan">845</span></p>
-				<p id="deliveryFees">
-					Delivery Fees <span class="checkoutDivSpan">15</span>
-				</p>
-				<p id="totalItemsPrice">
-					Total <span class="checkoutDivSpan">860</span>
-				</p>
+				<hr />
+				<div id="orderSummary">
+					<button id="applyCupon">Apply Cupon</button>
+					<!-- Modal Box Content -->
+					<div id="myOrdersModal" class="ordersModal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<h2>Choose Cupon</h2>
+							</div>
+							<div class="modal-body">
+								<ul id="cuponSelector">
+									<li>
+										<input type="radio" name="radioCupon" id="masai30" />
+										<label for="masai30">MASAI 30 (flat 30% off)</label
+										>
+									</li>
+									<li>
+										<input type="radio" name="radioCupon" id="masai50" />
+										<label for="masai50">MASAI 50 (flat 50% off)</label
+										>
+									</li>
+									<li>
+										<input type="radio" name="radioCupon" id="masai10" />
+										<label for="masai10">MASAI 10 (flat 10% off)</label
+										>
+									</li>
+								</ul>
+								<input
+									type="text"
+									id="inputCupon"
+									placeholder="Enter Your Cupon"
+								/>
+								<button id="applyCuponModal">Apply</button>
+								<button class="close">Close</span>
+							</div>
+						</div>
+					</div>
+					<h3>Order Summary</h3>
+					<p id="itemsPrice">Items <span class="checkoutDivSpan">845</span></p>
+					<p id="deliveryFees">
+						Delivery Fees <span class="checkoutDivSpan">15</span>
+					</p>
+					<p id="totalItemsPrice">
+						Total <span class="checkoutDivSpan">860</span>
+					</p>
+				</div>
+				<button id="proceed">Proceed</button>
 			</div>
-			<button id="proceed">Proceed</button>
-		</div>
+		</main>
+		<footer>
+			<div id="contactInfo"></div>
+			<div id="partnerSection"></div>
+			<div id="aboutPara"></div>
+		</footer>
 	</body>
 </html>
 <script src="checkoutPage.js"></script>
+<script src="../GLOBAL_FILES/js/navDom.js"></script>
+<script src="../GLOBAL_FILES/js/about.js"></script>
+<script src="../GLOBAL_FILES/js/contact.js"></script>
+<script src="../GLOBAL_FILES/js/patnar.js"></script>
+<script src="./ordersModalScript.js"></script>

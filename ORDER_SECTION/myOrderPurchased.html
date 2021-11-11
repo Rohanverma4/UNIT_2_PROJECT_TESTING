@@ -93,7 +93,7 @@
 			border-radius: 5px;
 		}
 		#checkoutDiv {
-			border: 1px solid rgb(199, 199, 199);
+			/* border: 1px solid rgb(199, 199, 199); */
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -131,6 +131,55 @@
 		#cartAnchor {
 			display: none;
 		}
+		#applyCupon {
+			background-color: #f9ae42;
+			width: 300px;
+			height: 60px;
+			border-radius: 5px;
+			color: white;
+			border: none;
+			font-size: 20px;
+		}
+		#proceed {
+			background-color: #57ce57;
+			width: 300px;
+			height: 60px;
+			border-radius: 5px;
+			color: white;
+			border: none;
+			font-size: 20px;
+		}
+		#orderSummary {
+			/* border: 1px solid black; */
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+		}
+		#orderSummary p {
+			position: relative;
+			padding-left: 40px;
+			font-size: 20px;
+			margin: 10px;
+			color: rgb(29, 29, 29);
+			/* width: 100%; */
+			/* border: 1px solid black; */
+		}
+		#orderSummary p span {
+			position: absolute;
+			right: 40px;
+			color: rgb(71, 71, 71);
+		}
+		#orderSummary h3 {
+			text-align: center;
+			margin: 10px 0 0 0;
+			color: rgb(31, 31, 31);
+		}
+
+		#addNewAdress input[type="submit"]:hover,
+		#applyCupon:hover,
+		#proceed:hover {
+			cursor: pointer;
+		}
 	</style>
 	<body>
 		<div id="navbarDiv"></div>
@@ -151,18 +200,15 @@
 								<ul id="cuponSelector">
 									<li>
 										<input type="radio" name="radioCupon" id="masai30" />
-										<label for="masai30">MASAI 30 (flat 30% off)</label
-										>
+										<label for="masai30">MASAI 30 (flat 30% off)</label>
 									</li>
 									<li>
 										<input type="radio" name="radioCupon" id="masai50" />
-										<label for="masai50">MASAI 50 (flat 50% off)</label
-										>
+										<label for="masai50">MASAI 50 (flat 50% off)</label>
 									</li>
 									<li>
 										<input type="radio" name="radioCupon" id="masai10" />
-										<label for="masai10">MASAI 10 (flat 10% off)</label
-										>
+										<label for="masai10">MASAI 10 (flat 10% off)</label>
 									</li>
 								</ul>
 								<input
@@ -171,7 +217,7 @@
 									placeholder="Enter Your Cupon"
 								/>
 								<button id="applyCuponModal">Apply</button>
-								<button class="close">Close</span>
+								<button class="close">Close</button>
 							</div>
 						</div>
 					</div>
@@ -200,134 +246,10 @@
 		</footer>
 	</body>
 </html>
-<script>
-	let products = JSON.parse(localStorage.getItem("addedProducts")) || [];
-	var productDiv = document.getElementById("productDiv");
-
-	// KEEPING IT GLOBALLY
-	let totalElemsCounter = {};
-	for (let elem of products) {
-		totalElemsCounter[elem.name] = totalElemsCounter[elem.name]
-			? totalElemsCounter[elem.name] + 1
-			: 1;
-	}
-
-	//FILTERING OUT UNIQUE VALUES
-	products = Array.from(new Set(products.map((a) => a.name))).map((name) => {
-		return products.find((a) => a.name === name);
-	});
-
-	let initialPrice = 0;
-	for (let i = 0; i < products.length; i++) {
-		initialPrice += products[i].price * totalElemsCounter[products[i].name];
-	}
-	localStorage.setItem("totalItemsPrice", initialPrice);
-
-	function appendProducts(products) {
-		//Total Number Of Elements
-
-		//Appending Prices
-		var itemPrice = document.querySelector("#itemsPrice > span");
-		var deliveryFees = document.querySelector("#deliveryFees > span");
-		var totalPrice = document.querySelector("#totalItemsPrice > span");
-		itemPrice.textContent = initialPrice;
-		deliveryFees.textContent = initialPrice >= 500 ? 0 : 15;
-		totalPrice.textContent = initialPrice + Number(deliveryFees.textContent);
-
-		//Products Mapping
-		products.map((item) => {
-			var mainDiv = document.createElement("div");
-			var textDiv = document.createElement("div");
-			var h4Tag = document.createElement("h4");
-			var priceTag = document.createElement("p");
-			var imgTag = document.createElement("img");
-			var counterDiv = document.createElement("p");
-			var deleteIcon = document.createElement("i");
-			var selectTag = document.createElement("select");
-
-			//VALUES INSIDE SELECT TAG
-			selectTag.innerHTML += `<option>Add More</option>`;
-			for (let i = 0; i < 100; i++) {
-				selectTag.innerHTML += `<option value="${i}">${i}</option>`;
-			}
-			//Select Tag event listener
-			selectTag.addEventListener("change", () => {
-				selectTagFunction(item, event);
-			});
-
-			// Delete Icon EVENT LISTENER;
-			deleteIcon.addEventListener("click", () => {
-				deleteProduct(item, event);
-			});
-
-			//set attributes
-			selectTag.setAttribute("class", "selectTag");
-			deleteIcon.setAttribute("class", "material-icons");
-			deleteIcon.innerText += "delete";
-			counterDiv.textContent = `Total items: ${totalElemsCounter[item.name]}`;
-			counterDiv.setAttribute("id", "numOfItems");
-			imgTag.setAttribute("src", item.img_src);
-			imgTag.setAttribute("class", "galleryCellImg");
-			h4Tag.textContent = item.name;
-			priceTag.textContent = `Price: ${item.price}`;
-			textDiv.setAttribute("class", "galleryTextDiv");
-
-			mainDiv.setAttribute("class", "insideProductDiv");
-			textDiv.append(h4Tag, priceTag);
-			mainDiv.append(imgTag, textDiv, counterDiv, selectTag, deleteIcon);
-			productDiv.append(mainDiv);
-
-			// console.log(flkty);
-		});
-	}
-	//SELECT TAG EVENT FUNCTION
-	function selectTagFunction(item, event) {
-		let selectTagValue = event.target.value;
-		if (selectTagValue === "Add More") return;
-		if (selectTagValue == 0) {
-			let newProducts = products.filter((c) => c.name !== item.name);
-			localStorage.setItem("addedProducts", JSON.stringify(newProducts));
-			window.location.reload();
-		} else {
-			event.target.parentNode.childNodes[2].textContent = `Total items: ${selectTagValue}`;
-			totalElemsCounter[item.name] = +selectTagValue;
-			initialPrice = 0;
-			for (let i = 0; i < products.length; i++) {
-				initialPrice += products[i].price * totalElemsCounter[products[i].name];
-			}
-			document.querySelector("#itemsPrice > span").textContent = initialPrice;
-			document.querySelector("#deliveryFees > span").textContent =
-				initialPrice >= 500 ? 0 : 15;
-			document.querySelector("#totalItemsPrice > span").textContent =
-				initialPrice +
-				Number(document.querySelector("#deliveryFees > span").textContent);
-		}
-		localStorage.setItem("totalItemsPrice", initialPrice);
-	}
-
-	//DELETE ICON EVENT FUNCTION
-	function deleteProduct(item, event) {
-		// event.target.parentNode.remove();
-		let newProducts = products.filter((c) => c.name !== item.name);
-		console.log(`logger`);
-		console.log(products);
-		console.log(newProducts);
-		localStorage.setItem("addedProducts", JSON.stringify(newProducts));
-		// productDiv.innerHTML = "";
-		// setTimeout(() => {
-		// 	appendProducts(newProducts);
-		// }, 10);
-		window.location.reload();
-	}
-	document.getElementById("proceed").addEventListener("click", () => {
-		window.location.href = "/ORDER_SECTION/checkoutPage.html";
-	})
-	appendProducts(products);
-
-	console.log(products);
-</script>
+<script></script>
 <script src="../GLOBAL_FILES/js/navDom.js"></script>
 <script src="../GLOBAL_FILES/js/about.js"></script>
 <script src="../GLOBAL_FILES/js/contact.js"></script>
 <script src="../GLOBAL_FILES/js/patnar.js"></script>
 <script src="ordersModalScript.js"></script>
+<script src="ordersPurchased.js"></script>
