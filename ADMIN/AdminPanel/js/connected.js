@@ -1,3 +1,116 @@
+//LOCALSTORAGES
+var feedBackArray = JSON.parse(localStorage.getItem("feedBacks")) || [];
+console.log(feedBackArray);
+
+// FUNCTIONS FOR DEFINING REVIEW DATA
+function firstTimeUsers(feedBackArray) {
+	var fTimeUsers = 0;
+	var lTimeUsers = 0;
+	for (let i = 0; i < feedBackArray.length; i++) {
+		if (feedBackArray[i].firstTime) {
+			fTimeUsers += 1;
+		} else {
+			lTimeUsers += 1;
+		}
+	}
+	let firstPercentage = (fTimeUsers * 100) / (fTimeUsers + lTimeUsers);
+	let lastPercentage = (lTimeUsers * 100) / (fTimeUsers + lTimeUsers);
+	document.querySelector(
+		"#firstTimeUsers > span"
+	).textContent = `${firstPercentage}%`;
+	document.querySelector(
+		"#returningUsers > span"
+	).textContent = `${lastPercentage}%`;
+}
+
+function usersNavViews(feedBackArray) {
+	var veryEasy = 0;
+	var easy = 0;
+	var med = 0;
+	var hard = 0;
+	var vHard = 0;
+
+	for (let i = 0; i < feedBackArray.length; i++) {
+		switch (feedBackArray[i].easiValue) {
+			case "veryEasy":
+				veryEasy++;
+				break;
+			case "easy":
+				easy++;
+				break;
+			case "medium":
+				med++;
+				break;
+			case "hard":
+				hard++;
+				break;
+			case "veryHard":
+				vHard++;
+				break;
+		}
+	}
+	var vEasyPer = (veryEasy * 100) / (veryEasy + easy + med + hard + vHard);
+	var easyPer = (easy * 100) / (veryEasy + easy + med + hard + vHard);
+	var medPer = (med * 100) / (veryEasy + easy + med + hard + vHard);
+	var hardPer = (hard * 100) / (veryEasy + easy + med + hard + vHard);
+	var vHardPer = (vHard * 100) / (veryEasy + easy + med + hard + vHard);
+
+	document.querySelector("#veryEasy > span").textContent = `${vEasyPer}%`;
+	document.querySelector("#easy > span").textContent = `${easyPer}%`;
+	document.querySelector("#medium > span").textContent = `${medPer}%`;
+	document.querySelector("#hard > span").textContent = `${hardPer}%`;
+	document.querySelector("#veryHard > span").textContent = `${vHardPer}%`;
+}
+
+function recentUsersReviews(feedBackArray) {
+	if (feedBackArray.length > 10) {
+		for (let i = 0; i < 10; i++) {
+			var userNameTag = document.createElement("td");
+			var reasonTag = document.createElement("td");
+			var returningOrNew = document.createElement("td");
+			var productsNotFoundTag = document.createElement("td");
+			var trTag = document.createElement("tr");
+
+			//SETTING ATTRIBUTES AND TEXTCONTENTS
+
+			var object = feedBackArray[i]; //SHORTHAND
+
+			userNameTag.textContent = object.name || "Not Provided";
+			reasonTag.textContent = object.reason;
+			returningOrNew.textContent = object.firstTime
+				? "First Time"
+				: "Returning User";
+			productsNotFoundTag.textContent =
+				object.productsNotFound || "Not Provided";
+
+			//Appending to Divs
+			trTag.append(userNameTag, reasonTag, returningOrNew, productsNotFoundTag);
+			document.querySelector("#dashBoardTable > tbody").append(trTag);
+		}
+	} else {
+		feedBackArray.map((object) => {
+			// CREATING TAGS
+			var userNameTag = document.createElement("td");
+			var reasonTag = document.createElement("td");
+			var returningOrNew = document.createElement("td");
+			var productsNotFoundTag = document.createElement("td");
+			var trTag = document.createElement("tr");
+
+			//SETTING ATTRIBUTES AND TEXTCONTENTS
+			userNameTag.textContent = object.name || "Not Provided";
+			reasonTag.textContent = object.reason;
+			returningOrNew.textContent = object.firstTime
+				? "First Time"
+				: "Returning User";
+			productsNotFoundTag.textContent =
+				object.productsNotFound || "Not Provided";
+
+			//Appending to Divs
+			trTag.append(userNameTag, reasonTag, returningOrNew, productsNotFoundTag);
+			document.querySelector("#dashBoardTable > tbody").append(trTag);
+		});
+	}
+}
 var myPanelTemplate = `
 <h2 id="overviewH2">Website Overview</h2>
 			<div id="detailsContainer">
@@ -31,23 +144,36 @@ var myPanelTemplate = `
 				</div>
 			</div>
 			<div id="dashboardTableDiv">
-				<h4>Recent Users</h4>
+				<h4>Users Feedback Details</h4>
+				<div id="feedBackInsights">
+					<div id="firstTimeUsersDiv">
+						<h4>Users Percentage</h4>
+						<p id="firstTimeUsers">First Time Users: <span>0</span></p>
+						<p id="returningUsers">Returning Users: <span>0</span></p>
+					</div>
+					<div id="easyReview">
+						<h4>Users view on navigation</h4>
+						<ul id="allEasyLevels">
+							<li id="veryEasy">Very Easy: <span>0</span></li>
+							<li id="easy">Easy: <span>0</span></li>
+							<li id="medium">Medium: <span>0</span></li>
+							<li id="hard">Hard: <span>0</span></li>
+							<li id="veryHard">Very Hard: <span>0</span></li>
+						</ul>
+					</div>
+				</div>
+				<h3>Recent Users Feedback</h3>
 				<table id="dashBoardTable">
 					<thead>
 						<tr>
 							<th>User Name</th>
-							<th>User Number</th>
-							<th>Date of Joining</th>
-							<th>Order Details</th>
+							<th>Reason for Visiting</th>
+							<th>Returning Or New User</th>
+							<th>Add Feedback</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Aman</td>
-							<td>12221</td>
-							<td>3/Nov/2021</td>
-							<td>nil</td>
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>
@@ -181,20 +307,19 @@ document.getElementById("container").innerHTML = myPanelTemplate;
 var myDashboardHref = document.getElementById("dashBoard");
 myDashboardHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
-	document.getElementById("container").innerHTML = myPanelTemplate;
-
+	window.location.reload();
 });
-
-
 
 var myProductsHref = document.getElementById("productsBoard");
 myProductsHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
 	document.getElementById("container").innerHTML = myFormTemplate;
 	//console.log(1)
-	document.getElementById("submitDetails").addEventListener("click", function () {
-		addProductDetails();
-	})
+	document
+		.getElementById("submitDetails")
+		.addEventListener("click", function () {
+			addProductDetails();
+		});
 });
 
 var myUserDetailsHref = document.getElementById("allUsers");
@@ -213,32 +338,33 @@ myAdminProfileHref.addEventListener("click", () => {
 	var beforeProfile = JSON.parse(localStorage.getItem("adminProfile")) || [];
 	// GETTING IMAGE AND NAME
 	if (beforeProfile.length >= 1) {
-			var beforeName = (beforeProfile[beforeProfile.length - 1].nameOfAdmin)
-			var beforeImage = (beforeProfile[beforeProfile.length - 1].adminImageUrl)
-			// console.log(beforeImage,beforeName)
-			var img = document.createElement("img");
-			img.setAttribute("src", beforeImage);
-			img.setAttribute("alt", "profile image");
+		var beforeName = beforeProfile[beforeProfile.length - 1].nameOfAdmin;
+		var beforeImage = beforeProfile[beforeProfile.length - 1].adminImageUrl;
+		// console.log(beforeImage,beforeName)
+		var img = document.createElement("img");
+		img.setAttribute("src", beforeImage);
+		img.setAttribute("alt", "profile image");
 
-			var name = document.createElement("h2");
-			name.setAttribute("id", "adminName");
-			name.textContent = `Hi, ${beforeName}`;
+		var name = document.createElement("h2");
+		name.setAttribute("id", "adminName");
+		name.textContent = `Hi, ${beforeName}`;
 
-			beforeUpdateDetails.append(img, name);
-	// //END
+		beforeUpdateDetails.append(img, name);
+		// //END
 	}
-	document.getElementById("submitAdminDetails").addEventListener("click", function () {
-		adminDetails();
-        location.href = "/ADMIN/AdminPanel/adminPanel.html";
-	})
+	document
+		.getElementById("submitAdminDetails")
+		.addEventListener("click", function () {
+			adminDetails();
+			location.href = "/ADMIN/AdminPanel/adminPanel.html";
+		});
 });
 
 var logOutHref = document.getElementById("logout");
 logOutHref.addEventListener("click", () => {
-	window.localStorage.removeItem("UserDetails")
-	window.location.href="/ADMIN/AdminLogin/admin.html";
+	window.localStorage.removeItem("UserDetails");
+	window.location.href = "/ADMIN/AdminLogin/admin.html";
 });
-
 
 //  PUTTING PRODUCT DATA INTO DOM
 var productArr = JSON.parse(localStorage.getItem("productInfo")) || [];
@@ -249,8 +375,11 @@ function addProductDetails() {
 	var product_price = document.getElementById("productPrice").value;
 	var product_details = document.getElementById("productDetails").value;
 	var product_description = document.getElementById("productDesc").value;
-	var product_image = document.getElementById("productUrl").value;	var product_avaliability = document.getElementById("productAvaliability").value;
-	// CREATING OBJECT FOR ARRAY..  
+	var product_image = document.getElementById("productUrl").value;
+	var product_avaliability = document.getElementById(
+		"productAvaliability"
+	).value;
+	// CREATING OBJECT FOR ARRAY..
 	var productData = {
 		nameOfProduct: product_name,
 		price: product_price,
@@ -258,7 +387,7 @@ function addProductDetails() {
 		description: product_description,
 		image_url: product_image,
 		avaliability: product_avaliability,
-	}
+	};
 	// ALERT FOR EMPTY ENTRY
 	var count = 0;
 	for (var input in productData) {
@@ -273,16 +402,13 @@ function addProductDetails() {
 	if (count == Object.keys(productData).length) {
 		productArr.push(productData);
 		localStorage.setItem("productInfo", JSON.stringify(productArr));
-
 	}
 }
-
-
 
 //  PUTTING ADMIN DATA INTO DOM
 var adminInfoArr = JSON.parse(localStorage.getItem("adminProfile")) || [];
 
-// FUNCTION FOR INPUT ADMIN 
+// FUNCTION FOR INPUT ADMIN
 function adminDetails() {
 	//console.log(1)
 	var adminUser_name = document.getElementById("adminUserName").value;
@@ -292,15 +418,15 @@ function adminDetails() {
 
 	if (admin_password != confirm_password) {
 		alert("Password and Confirm password is not matched");
-	} else if (admin_password.length < 6){
-		alert("Password most contain 6 digits")
+	} else if (admin_password.length < 6) {
+		alert("Password most contain 6 digits");
 	} else {
-		// CREATING OBJECT FOR ARRAY..  
+		// CREATING OBJECT FOR ARRAY..
 		var adminData = {
 			nameOfAdmin: adminUser_name,
 			passwordOfAdmin: admin_password,
 			adminImageUrl: admin_image,
-		}
+		};
 		// ALERT FOR EMPTY ENTRY
 		var count = 0;
 		for (var input in adminData) {
@@ -316,54 +442,49 @@ function adminDetails() {
 			adminInfoArr.pop();
 			adminInfoArr.push(adminData);
 			localStorage.setItem("adminProfile", JSON.stringify(adminInfoArr));
-			alert ("Updated Successfully!!");
+			alert("Updated Successfully!!");
 		}
-
 	}
 }
 
 // SECURITY REASONS PLEASE DON'T ACCESS THE CODE..
 if (window.localStorage.getItem("UserDetails") == null) {
-	location.href = '/ADMIN/AdminLogin/admin.html';
-}
-else {
+	location.href = "/ADMIN/AdminLogin/admin.html";
+} else {
 	var SavedUser = window.localStorage.getItem("UserDetails");
 	try {
 		SavedUser = JSON.parse(SavedUser);
-		if (SavedUser.user != 'admin' || SavedUser.pass != 'admin') {
-			location.href = '/ADMIN/AdminLogin/admin.html';
+		if (SavedUser.user != "admin" || SavedUser.pass != "admin") {
+			location.href = "/ADMIN/AdminLogin/admin.html";
 		}
 	} catch (error) {
-		location.href = '/ADMIN/AdminLogin/admin.html';
+		location.href = "/ADMIN/AdminLogin/admin.html";
 	}
-
 }
 
 // DYNAMIC ADMIN PANEL FRONT..
- // ** products
+// ** products
 var adminPanelProducts = JSON.parse(localStorage.getItem("productInfo")) || [];
 var lengthProducts = adminPanelProducts.length;
 document.getElementById("productP").innerHTML = lengthProducts;
 
 // ** visitors
-  var numOfVisitors = JSON.parse(localStorage.getItem("visitors"))||0; 
-  document.getElementById("visitorsP").innerHTML = numOfVisitors;
-
-
-
-
-
-
-
+var numOfVisitors = JSON.parse(localStorage.getItem("visitors")) || 0;
+document.getElementById("visitorsP").innerHTML = numOfVisitors;
 
 // var headDiv = document.getElementById("imgAndName");
 
-			// var img = document.createElement("img");
-			// img.setAttribute("src", admin_image);
-			// img.setAttribute("alt","profile image");
+// var img = document.createElement("img");
+// img.setAttribute("src", admin_image);
+// img.setAttribute("alt","profile image");
 
-			// var name = document.createElement("h2");
-			// name.setAttribute("id", "adminName");
-			// name.textContent = `Hi, ${adminUser_name}`;
+// var name = document.createElement("h2");
+// name.setAttribute("id", "adminName");
+// name.textContent = `Hi, ${adminUser_name}`;
 
-			// headDiv.append(img,name);
+// headDiv.append(img,name);
+
+//INVOKING REVIEWS FUNCTION
+usersNavViews(feedBackArray);
+firstTimeUsers(feedBackArray);
+recentUsersReviews(feedBackArray);

@@ -24,5 +24,28 @@ function addFeedBack(event) {
 			easiValue = easiness[i].id;
 		}
 	}
-	easiValue = easiValue == "veryEasy";
+
+	var returnToSite = document.querySelectorAll(`input[name="visitAgain"]`);
+	var returnValue;
+	for (let i = 0; i < returnToSite.length; i++) {
+		if (returnToSite[i].checked) {
+			returnValue = returnToSite[i].id;
+		}
+	}
+	var adnFeedBackeasiValue = document.querySelector("#addFeedback").value;
+	var feedBackObj = {
+		name: fdName,
+		email: fdEmail,
+		firstTime: firstTimeUser,
+		foundWhatNeeded: findWhatNeeded,
+		reason: primaryReason,
+		productsNotFound,
+		easiValue,
+		returnValue,
+		adnFeedBackeasiValue,
+	};
+	feedBackArray.push(feedBackObj);
+	localStorage.setItem("feedBacks", JSON.stringify(feedBackArray));
+	alert("Thank You For Your Valuable Feedback");
+	window.location.href = "/HOMEPAGE_CAROUSEL/first_page.html";
 }

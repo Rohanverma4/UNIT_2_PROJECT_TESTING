@@ -38,6 +38,7 @@
 							type="radio"
 							name="firstTimeRadio"
 							class="firstTimeClass"
+							required
 						/>
 						<label for="firstNo">No</label>
 						<input
@@ -55,6 +56,7 @@
 							type="radio"
 							name="findNeededRadio"
 							class="findProductClass"
+							required
 						/>
 						<label for="needNo">No</label>
 						<input
@@ -68,11 +70,11 @@
 				<span id="primaryReasonAndNotFound">
 					<span>
 						<p>What is the primary reason you visited this site?</p>
-						<textarea id="primaryReasonTA"></textarea>
+						<textarea id="primaryReasonTA" required></textarea>
 					</span>
 					<span>
 						<p>Please tell us what product you were not able to find?</p>
-						<textarea id="notFoundTA"></textarea>
+						<textarea id="notFoundTA" required></textarea>
 					</span>
 				</span>
 				<span id="easinessAndReturn">
@@ -80,8 +82,12 @@
 						<p>How easy it is to find information in this site?</p>
 
 						<label for="veryEasy">
-							<input id="veryEasy" type="radio" name="easinessRadio" />Very
-							Easy</label
+							<input
+								id="veryEasy"
+								type="radio"
+								name="easinessRadio"
+								required
+							/>Very Easy</label
 						>
 
 						<label for="easy">
@@ -109,8 +115,12 @@
 						<p>What is the likelihood that you will return to this site</p>
 
 						<label for="extLikely">
-							<input type="radio" id="extLikely" name="visitAgain" />Extremely
-							Likely</label
+							<input
+								type="radio"
+								id="extLikely"
+								name="visitAgain"
+								required
+							/>Extremely Likely</label
 						>
 
 						<label for="likely">
