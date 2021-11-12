@@ -1,4 +1,4 @@
-<H1>Pulse➕ Pharmacy-Clone🚀🚀🚀</H1>
+<H1>Pulse Pharmacy-Clone🚀🚀🚀</H1>
 <hr>
 
 
