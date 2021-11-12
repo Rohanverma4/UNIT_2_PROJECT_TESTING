@@ -12,7 +12,7 @@ var isChecked = JSON.parse(localStorage.getItem("cuponApplied"));
 //Blocking User To Apply More Cupons if isChecked is true
 if (isChecked) {
 	document.getElementById("applyCupon").disabled = true;
-	document.getElementById("applyCupon").textContent = "Cupon Applied";
+	document.getElementById("applyCupon").textContent = "Coupon Applied";
 	document.getElementById(
 		"applyCupon"
 	).style.backgroundColor = `rgb(255, 211, 150)`;

@@ -25,7 +25,7 @@ function displayAdress(obj) {
 
 	mainDiv.setAttribute("id", "givenAdress");
 	ulAdressTag.setAttribute("id", "adressUl");
-	adressHeading.textContent = `Adress:`;
+	adressHeading.textContent = `Address:`;
 	adressHeading.setAttribute("id", "adressHeading");
 	adressTag.textContent = obj.adress;
 	cityTag.textContent = obj.city;
@@ -92,8 +92,7 @@ function placeAndPay() {
 	// FIELD TO BE CHANGED!
 	// FIELD TO BE CHANGED!
 	// FIELD TO BE CHANGED!
-	alert("Thank You For Shopping With Us");
-	window.location.href = "/HOMEPAGE_CAROUSEL/first_page.html";
+	window.location.href = "/endingPage/congr.html";
 	// FIELD TO BE CHANGED!
 	// FIELD TO BE CHANGED!
 	// FIELD TO BE CHANGED!
