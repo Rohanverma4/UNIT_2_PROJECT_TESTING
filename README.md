@@ -25,4 +25,23 @@
 <br>
 <hr>
 
-<p></>
+<p>Product Details Page</p>
+<img src="./website_sneak_peak/product_details.png" alt="landing_page">
+
+<br>
+<hr>
+
+<p>Cart Section</p>
+<img src="./website_sneak_peak/cart_section.png" alt="landing_page">
+
+<br>
+<hr>
+
+<p>Address Section</p>
+<img src="./website_sneak_peak/checkOutPage.png" alt="landing_page">
+
+<br>
+<hr>
+
+<p>Payment Page</p>
+<img src="./website_sneak_peak/paymentPage.png" alt="landing_page">
