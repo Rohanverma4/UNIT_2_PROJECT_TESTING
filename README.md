@@ -18,3 +18,11 @@
 
 <h2>Sneak Peak</h2>
 <hr>
+
+<p>Landing Page</p>
+<img src="./website_sneak_peak/landing page.png" alt="landing_page">
+
+<br>
+<hr>
+
+<p></>
