@@ -3,7 +3,7 @@ var products = [
 		name: "Novy Pain Oil",
 		img_src: "../IMAGES/PRODUCT_IMAGES/novy_oil.jpg",
 		price: 99,
-		oldPrice: 120,
+		lineThroughMRP: 120,
 		discountPercent: 10,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -26,7 +26,7 @@ var products = [
 		name: "Conarcs Diabetic Ointment",
 		img_src: "../IMAGES/PRODUCT_IMAGES/conarcs.jpg",
 		price: 140,
-		oldPrice: 148,
+		lineThroughMRP: 148,
 		discountPercent: 5,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -50,7 +50,7 @@ var products = [
 		name: "Shigaa Anti Lice & Dandruff Oil",
 		img_src: "../IMAGES/PRODUCT_IMAGES/shigaa.png",
 		price: 110,
-		oldPrice: 130,
+		lineThroughMRP: 130,
 		discountPercent: 15,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -73,7 +73,7 @@ var products = [
 		name: "Pankajakasthuri Orthoherb Tablet 30'S",
 		img_src: "../IMAGES/PRODUCT_IMAGES/pankajakasthuri.jpg",
 		price: 145,
-		oldPrice: 150,
+		lineThroughMRP: 150,
 		discountPercent: 3,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -97,7 +97,7 @@ var products = [
 		name: "Acera Capsule",
 		img_src: "https://www.pulseplus.in/content/images/form/form-capsule-1.png",
 		price: 61.84,
-		oldPrice: 82.45,
+		lineThroughMRP: 82.45,
 		discountPercent: 15,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -123,7 +123,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/becadexamin-capsule-container-pc-2652",
 		price: 31.65,
-		oldPrice: 42.2,
+		lineThroughMRP: 42.2,
 		discountPercent: 4,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -148,7 +148,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/calaptin-40-mg-tablet-pc-5332",
 		price: 18.75,
-		oldPrice: 25,
+		lineThroughMRP: 25,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -170,7 +170,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/d-rise-sachet-1-gm-pc-8665",
 		price: 32.8,
-		oldPrice: 41,
+		lineThroughMRP: 41,
 		discountPercent: 20,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -193,7 +193,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/ecosprin-150-mg-tablet-pc-10595",
 		price: 6.75,
-		oldPrice: 9,
+		lineThroughMRP: 9,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -217,7 +217,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/febuget-40-mg-tablet-pc-11160",
 		price: 133.88,
-		oldPrice: 178.5,
+		lineThroughMRP: 178.5,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -240,7 +240,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/gabantin-100-mg-capsule-pc-13488",
 		price: 60,
-		oldPrice: 80,
+		lineThroughMRP: 80,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -263,7 +263,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/hcqs-200-mg-tablet-pc-16288",
 		price: 74.47,
-		oldPrice: 99.29,
+		lineThroughMRP: 99.29,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -286,7 +286,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/insugen-30-70-40iu-injection-pc-16019",
 		price: 118.5,
-		oldPrice: 158,
+		lineThroughMRP: 158,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -310,7 +310,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/jalra-m-50-500-mg-tablet-pc-19056",
 		price: 243.75,
-		oldPrice: 325,
+		lineThroughMRP: 325,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -333,7 +333,7 @@ var products = [
 		img_src:
 			"https://res.cloudinary.com/pulse-pharmacy/image/upload/product/janumet-50-1000-mg-tablet-pc-18985",
 		price: 311.25,
-		oldPrice: 415,
+		lineThroughMRP: 415,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -355,7 +355,7 @@ var products = [
 		name: "Jostel AM Tablet",
 		img_src: "https://www.pulseplus.in/content/images/form/form-tablet-1.png",
 		price: 52.5,
-		oldPrice: 70,
+		lineThroughMRP: 70,
 		discountPercent: 25,
 		quantity: "15 Tablets / Strip",
 		features: [
@@ -380,7 +380,7 @@ let addedProductsInDom =
 let counterNumberFromLS = localStorage.getItem("counter");
 localStorage.setItem("counter", addedProductsInDom.length);
 var searchQuery = localStorage.getItem("searchQueryString");
-let userMobileNumber = Number(localStorage.getItem("mobileNumber")) || 0;
+let userMobileNumber = localStorage.getItem("mobileNumber") || 0;
 
 //SETTING CART COUNTER
 document.getElementById("cartCounter").textContent = counterNumberFromLS;
@@ -416,7 +416,7 @@ function mapProducts(products) {
 
 		//child of productPrice div
 		var priceTag = document.createElement("p");
-		priceTag.innerHTML = `<p> <span class= "oldPrice"> ₹ ${product.oldPrice}</span> ₹ ${product.price} </p>`;
+		priceTag.innerHTML = `<p> <span class= "lineThroughMRP"> ₹ ${product.lineThroughMRP}</span> ₹ ${product.price} </p>`;
 
 		var addBtn = document.createElement("button");
 		addBtn.innerHTML = "ADD";
@@ -440,14 +440,20 @@ function mapProducts(products) {
 }
 
 //FUNCTION TO ADD PRODUCT TO CART
+var notLoggedIn = !userMobileNumber;
 
 function addToCartItem(obj, event) {
-	let counter = document.getElementById("cartCounter");
+	if (notLoggedIn) {
+		alert("Please Log In To Add Items To Your Cart");
+		window.location.href = "/LOGIN_PAGE/login.html";
+	} else {
+		let counter = document.getElementById("cartCounter");
 
-	counter.textContent = +counter.textContent + 1;
-	localStorage.setItem("counter", counter.textContent);
-	addedProductsInDom.push(obj);
-	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+		counter.textContent = +counter.textContent + 1;
+		localStorage.setItem("counter", counter.textContent);
+		addedProductsInDom.push(obj);
+		localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+	}
 }
 
 //REDIRECTING TO CART PAGE

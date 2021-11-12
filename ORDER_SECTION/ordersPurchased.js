@@ -141,11 +141,12 @@ function addPrices() {
 			}
 
 			var totalPrice = Number(initialPrice) + deliveryCharges;
-			document.querySelector("#itemsPrice > span").textContent = initialPrice;
+			document.querySelector("#itemsPrice > span").textContent =
+				parseInt(initialPrice);
 			document.querySelector("#deliveryFees > span").textContent =
-				deliveryCharges;
+				parseInt(deliveryCharges);
 			document.querySelector("#totalItemsPrice > span").textContent =
-				totalPrice;
+				parseInt(totalPrice);
 
 			localStorage.setItem("totalItemsPrice", initialPrice);
 		}

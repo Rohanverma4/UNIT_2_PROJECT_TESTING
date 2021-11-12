@@ -12,7 +12,6 @@ document.querySelector("#placeOrder").addEventListener("click", placeAndPay);
 //function to Load Adress to adress div
 function displayAdress(obj) {
 	var adressDiv = document.getElementById("adressDiv");
-
 	//CREATING ELEMENTS
 	var ulAdressTag = document.createElement("ul");
 	var nameTag = document.createElement("li");
@@ -69,6 +68,8 @@ function placeAndPay() {
 		alert("Please Check Any One of Payment Methods");
 		return;
 	}
+	//Defining date
+	var date = new Date();
 	var orderSaverObj = {
 		userNumber: userMobile,
 		products: addedProductsInDom,
@@ -78,6 +79,7 @@ function placeAndPay() {
 			Number(document.querySelector("#totalItemsPrice > span").textContent),
 		adress: providedAdress,
 		userName: null,
+		date: date.toDateString(),
 	};
 	pastOrders.push(orderSaverObj);
 	localStorage.setItem("pastOrdersDetails", JSON.stringify(pastOrders));

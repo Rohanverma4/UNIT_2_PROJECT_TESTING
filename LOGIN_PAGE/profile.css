@@ -16,7 +16,7 @@ h2 {
 	margin-left: 100px;
 
 	display: flex;
-	flex-direction: row;
+	gap: 10px;
 }
 #boxLeft {
 	width: 550px;
@@ -39,7 +39,7 @@ h2 {
 	width: 90%;
 	height: 40px;
 	border-radius: 5px;
-	border: none;
+	border: 1px solid grey;
 }
 #inputLable {
 	margin-top: 20px;
@@ -58,12 +58,16 @@ h2 {
 }
 #btn:hover {
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	cursor: pointer;
 }
-
+/* input {
+	border: 1px solid rgb(202, 202, 202);
+	border-radius: 5px;
+} */
 /*-------------------- css required for DOM ------------------*/
-.inputDom{
+.inputDom {
 	width: 120px;
-    margin-left: 60px;
+	margin-left: 60px;
 	font-size: large;
 	color: rgb(144, 110, 110);
 	border: none;
@@ -71,22 +75,20 @@ h2 {
 }
 
 .massageDiv {
-	background-color:  rgb(16, 204, 16);
+	background-color: rgb(16, 204, 16);
 	width: 33%;
 	height: 38px;
-    margin-left:75%;
+	margin-left: 75%;
 	margin-top: 10px;
 	/* padding: 1px; */
-
-
 }
-.massage{
-    color: white;
+.massage {
+	color: white;
 	padding: 10px;
-	
 }
 
-#inputEmail,#inputName{
+#inputEmail,
+#inputName {
 	font-size: large;
 	background-color: #f5f8fa;
 	padding: 3px;

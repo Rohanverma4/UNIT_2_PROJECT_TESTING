@@ -110,177 +110,194 @@ var footerSection = `
 				</div>
 			</div>
 `;
+
+//COPIED CODE
+var updateName = JSON.parse(localStorage.getItem("userName"));
+
+var updateNumber = JSON.parse(localStorage.getItem("mobileNumber"));
+if (updateName != null) {
+	updateName = updateName.split(" ").join("");
+	var updateInput = `<div id="dropdown">
+						<button id="dropbtn">Hi,${updateName}</button>
+						<div id="dropdown-content">
+		  			    <a href="../LOGIN_PAGE/myProfile.html">My Profile</a>
+						<a href="../LOGIN_PAGE/myOrder.html">My Order</a>
+						<a href="../LOGIN_PAGE/wallet.html">My Wallet</a>
+						<a href="../LOGIN_PAGE/setPassword.html">Change_Password</a>
+						<a class = "logout" href="#">Logout</a>
+						</div>
+					</div>`;
+} else if (updateNumber != null) {
+	var updateInput = `<div id="dropdown">
+						<button id="dropbtn">Hi,${updateNumber}</button>
+						<div id="dropdown-content">
+						<a href="../LOGIN_PAGE/myProfile.html">My Profile</a>
+						<a href="../LOGIN_PAGE/myOrder.html">My Order</a>
+						<a href="../LOGIN_PAGE/wallet.html">My Wallet</a>
+						<a href="../LOGIN_PAGE/setPassword.html">Change_Password</a>
+						<a class = "logout" href="#">Logout</a>
+						</div>
+					</div>`;
+} else {
+	var updateInput = `<a href="../LOGIN_PAGE/login.html">Login/Signup</a>`;
+}
+//
 var myNavbar = `
 <nav id="navbar">
-				<div id="mySidepanel" class="sidepanel">
-					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-						>×</a
-					>
+			<div id="mySidepanel" class="sidepanel">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
-					<h2>Welcome Guest</h2>
-					<a href="../LOGIN_PAGE/login.html"
-						><i class="material-icons">power_settings_new</i
-						><span id="logininsideSidePanel">Login/Signup</span></a
-					>
-					<a href="#"><i class="material-icons">lightbulb</i>About Pulse</a>
-					<a href="#">
-						<i class="material-icons">undo</i>Returns & refund Policy</a
-					>
-					<a href="#"> <i class="material-icons">lock</i>Privacy Policy</a>
-					<a href="#">
-						<i class="material-icons">local_shipping</i>Shipping Policy</a
-					>
-					<a href="#">
-						<i class="material-icons">description</i>Terms & Condition</a
-					>
-					<a href="#"> <i class="material-icons">search</i>Browse by A-Z</a>
-				</div>
-				<button class="openbtn" onclick="openNav()">☰</button>
+				<h2>Welcome Guest</h2>
+				<a href="../LOGIN_PAGE/login.html"
+					><i class="material-icons">power_settings_new</i
+					><span id="logininsideSidePanel">Login/Signup</span></
+				>
+				<a href="#"><i class="material-icons">lightbulb</i>About Pulse</a>
+				<a href="#">
+					<i class="material-icons">undo</i>Returns & refund Policy</a
+				>
+				<a href="#"> <i class="material-icons">lock</i>Privacy Policy</a>
+				<a href="#">
+					<i class="material-icons">local_shipping</i>Shipping Policy</a
+				>
+				<a href="#">
+					<i class="material-icons">description</i>Terms & Condition</a
+				>
+				<a href="#"> <i class="material-icons">search</i>Browse by A-Z</a>
+			</div>
+			<button class="openbtn" onclick="openNav()">☰</button>
 
-				<img
-					id="plusPlusImg"
-					src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
-				/>
-				<div id="search-box">
-					<input
-						type="text"
-						class="search"
-						placeholder="Search medicines.E.g.amlong,dolo,etc"
-					/>
-					<button type="submit" class="search-btn">
-						<i id="searchIcon" class="material-icons">search</i>
+			<img
+				src="https://www.pulseplus.in/content/images/icons/logo-pulse-pharmacy-trans.png"
+			/>
+			<!-- COLLAPSE SIDE PANEL TESTING -->
+			<!-- COLLAPSE SIDE PANEL TESTING -->
+			<ul>
+				<li>
+					<button id="myBtn">
+						<i class="material-icons">location_on</i><span>Location</span>
 					</button>
-				</div>
-				<!-- COLLAPSE SIDE PANEL TESTING -->
-				<!-- COLLAPSE SIDE PANEL TESTING -->
-				<ul>
-					<li>
-						<button id="myBtn">
-							<i class="material-icons">location_on</i><span>Location</span>
-						</button>
 
-						<!-- The Modal -->
-						<div id="myModal" class="modal">
-							<!-- Modal content -->
-							<div class="modal-content">
-								<div class="modal-header">
-									<span class="close">&times;</span>
-									<img src="../IMAGES/select-city-header.png" />
-								</div>
-								<div class="modal-body">
-									<form id="modalForm">
-										<input type="text" placeholder="Enter your city" />
-										<label for="nd">
-											<input
-												id="nd"
-												type="radio"
-												name="location"
-												value="New Delhi"
-											/>
-											New Delhi
-										</label>
-
-										<label for="mumbai">
-											<input
-												id="mumbai"
-												type="radio"
-												name="location"
-												value="Mumbai"
-											/>
-											Mumbai
-										</label>
-
-										<label for="bengaluru">
-											<input
-												id="bengaluru"
-												type="radio"
-												name="location"
-												value="Bengaluru"
-											/>
-											Bengaluru
-										</label>
-
-										<label for="kolkata">
-											<input
-												id="kolkata"
-												type="radio"
-												name="location"
-												value="Kolkata"
-											/>
-											Kolkata
-										</label>
-
-										<label for="chennai">
-											<input
-												d="chennai"
-												type="radio"
-												name="location"
-												value="Chennai"
-											/>
-											Chennai
-										</label>
-
-										<label for="noida">
-											<input
-												id="noida"
-												type="radio"
-												name="location"
-												value="Noida"
-											/>
-											Noida
-										</label>
-
-										<label for="pune">
-											<input
-												id="pune"
-												type="radio"
-												name="location"
-												value="Pune"
-											/>
-											Pune
-										</label>
-
-										<label for="hyderabad">
-											<input
-												id="hyderabad"
-												type="radio"
-												name="location"
-												value="Hyderabad"
-											/>
-											Hyderabad
-										</label>
-
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<span class="close">&times;</span>
+								<img src="../IMAGES/select-city-header.png" />
+							</div>
+							<div class="modal-body">
+								<form id="modalForm">
+									<input type="text" placeholder="Enter your city"/>
+									<label for="nd">
 										<input
-											type="submit"
-											id="applyModalLocation"
-											value="Apply"
+											id="nd"
+											type="radio"
+											name="location"
+											value="New Delhi"
 										/>
-									</form>
-								</div>
+										New Delhi
+									</label>
+
+									<label for="mumbai">
+										<input
+											id="mumbai"
+											type="radio"
+											name="location"
+											value="Mumbai"
+										/>
+										Mumbai
+									</label>
+
+									<label for="bengaluru">
+										<input
+											id="bengaluru"
+											type="radio"
+											name="location"
+											value="Bengaluru"
+										/>
+										Bengaluru
+									</label>
+
+									<label for="kolkata">
+										<input
+											id="kolkata"
+											type="radio"
+											name="location"
+											value="Kolkata"
+										/>
+										Kolkata
+									</label>
+
+									<label for="chennai">
+										<input
+											d="chennai"
+											type="radio"
+											name="location"
+											value="Chennai"
+										/>
+										Chennai
+									</label>
+
+									<label for="noida">
+										<input
+											id="noida"
+											type="radio"
+											name="location"
+											value="Noida"
+										/>
+										Noida
+									</label>
+
+									<label for="pune">
+										<input
+											id="pune"
+											type="radio"
+											name="location"
+											value="Pune"
+										/>
+										Pune
+									</label>
+
+									<label for="hyderabad">
+										<input
+											id="hyderabad"
+											type="radio"
+											name="location"
+											value="Hyderabad"
+										/>
+										Hyderabad
+									</label>
+
+									<input type="submit" id="applyModalLocation" value="Apply" />
+								</form>
 							</div>
 						</div>
-					</li>
-					<li id="loginSignupHref">
-						<a href="../LOGIN_PAGE/login.html">Login/Signup</a>
-					</li>
+					</div>
+				</li>
+				<li id="loginSignupHref">
+  			  	   ${updateInput}
+				</li>
 
-					<li>
-						<a id="cartAnchor" href="#" onclick="goToOrdersPage()">
-							<span id="cartCounter">0</span>
-							<i id="cartIcon" class="material-icons">shopping_bag</i>
-						</a>
-					</li>
-				</ul>
-			</nav>
+				<li>
+					<a id="cartAnchor" href="#" onclick="goToOrdersPage()">
+						<span id="cartCounter">0</span>
+						<i id="cartIcon" class="material-icons">shopping_bag</i>
+					</a>
+				</li>
+			</ul>
+		</nav>
 `;
 
 //Local Storages
 var toBeViewedProduct = JSON.parse(localStorage.getItem("viewSingleProduct"));
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
-
+let userMobileNumber = localStorage.getItem("mobileNumber") || 0;
 let counterNumber = localStorage.getItem("counter");
 
+//DELETING STRING QUERY
+localStorage.removeItem("searchQueryString");
 //Checkout Class EVENT LISTENER
 document.querySelector(".checkoutClass").addEventListener("click", () => {
 	window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
@@ -302,7 +319,7 @@ for (let i = 0; i <= 100; i++) {
 //Select Tag Event listener
 selectTag.addEventListener("change", numItemsInCart);
 function numItemsInCart() {
-	let selectValue = selectTag.value;
+	let selectValue = Number(selectTag.value);
 	for (let i = 0; i < selectValue; i++) {
 		addedProductsInDom.push(toBeViewedProduct);
 	}
@@ -369,27 +386,29 @@ function displayProduct(product) {
 document.querySelector(".Addtocart").addEventListener("click", () => {
 	addToCart(toBeViewedProduct);
 });
-function addToCart(something) {
-	addedProductsInDom.push(something);
-	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
-	//INCREASING COUNTER
-	counterNumber = Number(counterNumber) + 1;
-	localStorage.setItem("counter", counterNumber);
-	document.querySelector("#cartCounter").textContent = counterNumber;
 
-	var noneDisplays = document.querySelectorAll(".noneDisplay");
-	for (let i = 0; i < noneDisplays.length; i++) {
-		noneDisplays[i].style.setProperty("display", "inline-block", "important");
+var notLoggedIn = !userMobileNumber;
+console.log(notLoggedIn);
+
+function addToCart(something) {
+	if (notLoggedIn) {
+		alert("Please Log In To Add Items To Your Cart");
+		window.location.href = "/LOGIN_PAGE/login.html";
+	} else {
+		addedProductsInDom.push(something);
+		localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+		//INCREASING COUNTER
+		counterNumber = Number(counterNumber) + 1;
+		localStorage.setItem("counter", counterNumber);
+		document.querySelector("#cartCounter").textContent = counterNumber;
+
+		var noneDisplays = document.querySelectorAll(".noneDisplay");
+		for (let i = 0; i < noneDisplays.length; i++) {
+			noneDisplays[i].style.setProperty("display", "inline-block", "important");
+		}
+		document.querySelector(".Addtocart").style.display = "none";
+		document.querySelector(".checkoutClass").style.display = "block";
 	}
-	document.querySelector(".Addtocart").style.display = "none";
-	document.querySelector(".checkoutClass").style.display = "block";
-	// var addToCartButtons = document.querySelectorAll(".Addtocart");
-	// // for (let i = 0; i < addToCartButtons.length; i++) {
-	// // 	addToCartButtons[i].textContent = "Checkout";
-	// // 	addToCartButtons[i].classList.add("checkoutClass");
-	// // 	// addToCartButtons[i].classList.remove("Addtocart");
-	// //
-	// // }
 }
 //INVOKING FUNCTION
 //Go button functionality;
@@ -419,3 +438,8 @@ function goToOrdersPage() {
 		window.location.href = "/ORDER_SECTION/myOrderPurchased.html";
 	}
 }
+
+//ADD MORE BUTTON EVENT LISTENER
+document.querySelector(".addMoreButton").addEventListener("click", () => {
+	window.location.href = "/allProducts__Section/index.html";
+});

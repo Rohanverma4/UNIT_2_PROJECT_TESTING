@@ -1,5 +1,6 @@
 //LOCAL STORAGES =>
 
+//PRODUCTS TO BE SHOWN IN LANDING PAGE ONLY
 var products = [
 	{
 		name: "Novy Pain Oil",
@@ -95,8 +96,8 @@ var products = [
 //LOCAL STORAGE
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
-let userMobileNumber = Number(localStorage.getItem("mobileNumber")) || 0;
-console.log(!userMobileNumber);
+let userMobileNumber = localStorage.getItem("mobileNumber") || 0;
+
 //REMOVING CUPON CHECKER
 // localStorage.removeItem("")
 console.log(addedProductsInDom);
@@ -150,13 +151,19 @@ $(document).ready(function () {
 	});
 });
 
+var notLoggedIn = !userMobileNumber;
+console.log(notLoggedIn);
 function increaseCart(item) {
-	let counter = document.getElementById("cartCounter");
-
-	counter.textContent = +counter.textContent + 1;
-	localStorage.setItem("counter", counter.textContent);
-	addedProductsInDom.push(item);
-	localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+	if (notLoggedIn) {
+		alert("Please Log In To Add Items To Your Cart");
+		window.location.href = "/LOGIN_PAGE/login.html";
+	} else {
+		let counter = document.getElementById("cartCounter");
+		counter.textContent = +counter.textContent + 1;
+		localStorage.setItem("counter", counter.textContent);
+		addedProductsInDom.push(item);
+		localStorage.setItem("addedProducts", JSON.stringify(addedProductsInDom));
+	}
 }
 
 function goToProductPage(item) {

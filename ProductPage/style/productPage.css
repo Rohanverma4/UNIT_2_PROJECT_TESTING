@@ -179,6 +179,10 @@
 	border-radius: 5px;
 	border: none;
 } */
+
+.addMoreButton:hover {
+	cursor: pointer;
+}
 .Addtocart:hover,
 .checkoutClass:hover {
 	cursor: pointer;

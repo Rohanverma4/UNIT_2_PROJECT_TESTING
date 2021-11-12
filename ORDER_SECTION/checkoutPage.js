@@ -176,6 +176,7 @@ function applyCupon() {
 		);
 	}
 	isChecked = true;
+	localStorage.setItem("totalItemsPrice", initialPrice);
 	localStorage.setItem("cuponApplied", JSON.stringify(isChecked));
 	addSpecialPrices();
 	window.location.reload();

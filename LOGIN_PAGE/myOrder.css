@@ -61,10 +61,13 @@ button {
 	background-color: oldlace;
 	width: 90% !important;
 	display: flex;
+	flex-direction: column;
 	height: fit-content !important;
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: 10px;
+	overflow-y: scroll;
+	scrollbar-width: none;
 
 	gap: 10px;
 }
@@ -83,21 +86,31 @@ button {
 	gap: 20px;
 }
 
-.adressesPresent > div > ul {
+.ulDivTag {
+	/* border: 1px solid black; */
+	width: 300px !important;
+	/* border: 1px solid black; */
+	margin: 0;
+}
+.ulDivTag ul {
 	list-style-type: none;
 	border: 1px solid rgb(158, 158, 158);
-	border-radius: 5px;
-	padding: 10px;
+	border-radius: 10px;
+	/* padding: 10px 50px 20px 10px; */
+	/* padding-right: 50px; */
+
 	background-color: rgb(240, 240, 240);
 	margin: 0;
 	text-align: left;
-	max-height: 100% !important;
+	padding: 0;
+	height: fit-content !important;
+	width: 300px;
 }
-.adressesPresent > div > ul li {
+.ulDivTag ul li {
 	padding: 0 10px;
 	color: grey;
 }
-.adressesPresent > div > ul li:nth-child(1) {
+.ulDivTag ul li:nth-child(1) {
 	color: rgb(29, 29, 29);
 	font-size: 20px;
 	padding: 10px;
@@ -105,43 +118,60 @@ button {
 }
 
 .displayProductDiv {
-	border: 1px solid black;
+	/* border: 1px solid black; */
+	padding: 5px;
+	margin-left: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	align-items: center;
+	/* height: 200px !important; */
 }
 .productSectionDiv {
 	display: flex;
 	border-radius: 10px;
-	background-color: rgb(236, 235, 235);
+	/* background-color: rgb(236, 235, 235); */
 	justify-content: center;
+	border: 1px solid rgb(158, 158, 158);
 	align-items: center;
 	width: 300px;
+	height: 150px;
 	padding: 10px;
 	gap: 10px;
 }
 
 .productSectionDiv > div p:nth-child(1) {
 	color: rgb(29, 29, 29);
-	font-size: 20px;
-	margin: 10px 0;
+	font-size: 18px;
+	margin: 0;
+	margin-bottom: 5px;
 	text-align: left;
 	padding-left: 10px;
 }
 .productSectionDiv > div > p:nth-last-child(1) {
 	color: red !important;
-	font-size: 18px;
-	margin: 10px 0;
+	font-size: 15px;
+	margin: 0;
+	margin-top: 5px;
 	text-align: left;
-	padding-left: 10px;
 }
 .productSectionDiv > div ul {
 	list-style-type: none;
 	/* border: 1px solid black; */
 	padding-left: 20px;
 	text-align: left;
-	font-size: 15px;
+	font-size: 14px;
+	/* border: 1px solid black; */
+	margin: 0;
 	color: grey;
 }
 
 .productSectionDiv > img {
 	max-width: 20% !important;
 	height: auto;
+}
+.dateTag {
+	color: tomato !important;
+	font-size: 15px;
+	padding: 10px !important;
 }
