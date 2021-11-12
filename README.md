@@ -66,7 +66,7 @@
 <ul>
   <li>Github: Shyamal90</li>
   <li>Github Link: <a href= "https://github.com/Shyamal90" >https://github.com/Shyamal90</a></li>
-  <li>Email:<a href="shyamalsardar90@gmail.com">shyamalsardar90@gmail.com</a> </li>
+  <li>Email:shyamalsardar90@gmail.com </li>
   <li>LinkedIn: <a href="https://www.linkedin.com/in/shyamal-sardar-335521176/">https://www.linkedin.com/in/shyamal-sardar-335521176/ </a></li>
 </ul>
 
