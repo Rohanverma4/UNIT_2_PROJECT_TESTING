@@ -8,13 +8,16 @@
 	/* border: 1px solid red; */
 	border-radius: 20px;
 	position: relative;
-	padding: 10px;
+	/* padding: 10px; */
 	width: 400px;
 	margin: 0;
 	position: relative;
 	background-color: rgb(240, 240, 240);
 }
-#productForm input,
+#productForm input[type="text"],
+#productPrice,
+#discountPercent,
+#oldPrice,
 select {
 	margin-left: 10px;
 	position: absolute;
@@ -29,22 +32,40 @@ select {
 	font-size: 13px;
 	color: rgb(29, 29, 29);
 }
-
+label {
+	margin-left: 10px;
+}
 #productForm select {
 	width: 190px;
 }
 /* #productForm select; */
-input[type="submit"] {
-	position: static;
-	bottom: 10px;
-	left: 30%;
-	width: 120px;
+#submitDetails {
+	/* position: static; */
+	width: 50% !important;
 	background-color: greenyellow;
 	border: none !important;
 	padding: 10px !important;
 	text-align: center !important;
 	font-weight: 600;
+	bottom: 0;
+	border-radius: 0 0 0 20px;
+	left: 0;
 }
 input[type="submit"]:hover {
 	cursor: pointer;
+}
+
+#goToProductsPage {
+	width: 50%;
+	height: 40px;
+	border: none;
+	background-color: tomato;
+	color: white;
+	font-weight: 600;
+	border-radius: 0 0 20px 0;
+}
+
+#twoButtons {
+	display: flex;
+	width: 100%;
 }

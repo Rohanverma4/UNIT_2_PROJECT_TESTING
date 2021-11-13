@@ -131,7 +131,7 @@ var myPanelTemplate = `
 				<div id="numUsers" class="websiteDetails">
 					<i class="material-icons">people_alt</i>
 					<div class="webSiteDetailsText">
-						<h2 id="usersP">120</h2>
+						<h2 id="usersP"></h2>
 						<p>Users</p>
 					</div>
 				</div>
@@ -185,38 +185,101 @@ var myFormTemplate = `
 				<label for="productName"
 					>Product Name:
 					<input
+						required
 						type="text"
 						id="productName"
 						placeholder="Enter Product Name"
 					/>
 				</label>
+				<label for="vendorName">
+					Vendor Name:
+					<input
+						required
+						type="text"
+						id="vendorName"
+						placeholder="Enter vendor name"
+					/>
+				</label>
 				<label for="productPrice"
 					>Product Price:
 					<input
+						required
 						type="number"
 						id="productPrice"
 						placeholder="Enter Product Price"
 					/>
 				</label>
-				<label for="productDetails"
-					>Product Details:
+				<label for="discountPercent"
+					>Discount Percentage:
 					<input
+						required
+						type="number"
+						id="discountPercent"
+						placeholder="Enter Discount Percentage"
+					/>
+				</label>
+				<label for="oldPrice"
+					>Old Price:
+					<input
+						required
+						type="number"
+						id="oldPrice"
+						placeholder="Enter Old Price"
+					/>
+				</label>
+				<label for="productFeatures"
+					>Product Features:
+					<input
+						required
 						type="text"
-						id="productDetails"
-						placeholder="Enter product Details"
+						id="productFeatures"
+						placeholder="Enter product Features"
+					/>
+				</label>
+				<label for="productSKU"
+					>Product SKU:
+					<input
+						required
+						type="text"
+						id="productSKU"
+						placeholder="Enter product SKU"
 					/>
 				</label>
 				<label for="productDesc"
 					>Product Description:
 					<input
+						required
 						type="text"
 						id="productDesc"
 						placeholder="Enter product Description"
 					/>
 				</label>
+				<label for="productPacking"
+					>Product Packing:
+					<input
+						required
+						type="text"
+						id="productPacking"
+						placeholder="Enter product Packing"
+					/>
+				</label>
+				<label for="productCondition"
+					>Product Condition:
+					<input
+						required
+						type="text"
+						id="productCondition"
+						placeholder="Enter product Condition"
+					/>
+				</label>
 				<label for="productUrl"
 					>Product Image:
-					<input type="text" id="productUrl" placeholder="Enter product Url" />
+					<input
+						required
+						type="text"
+						id="productUrl"
+						placeholder="Enter product Url"
+					/>
 				</label>
 
 				<label for="productAvaliability"
@@ -227,7 +290,12 @@ var myFormTemplate = `
 						<option value="no">no</option>
 					</select>
 				</label>
-				<input id="submitDetails" type="submit" value="Submit Details" />
+				<span id="twoButtons">
+					<input id="submitDetails" type="button" value="Submit Details" onclick="addProductDetails()" />
+					<button id="goToProductsPage" onclick="goToProductsPageFunc()">
+						Go To Products Page
+					</button>
+				</span>
 			</form>
 		
 `;
@@ -239,17 +307,12 @@ var myUserDetails = `
 						<tr>
 							<th>Name</th>
 							<th>User Id</th>
-							<th>Date of Joining</th>
-							<th>Orders</th>
+							<th>Date of purchasing</th>
+							<th>Order from</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Aman</td>
-							<td>12221</td>
-							<td>3/Nov/2021</td>
-							<td>nil</td>
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>
@@ -307,7 +370,7 @@ document.getElementById("container").innerHTML = myPanelTemplate;
 var myDashboardHref = document.getElementById("dashBoard");
 myDashboardHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
-	window.location.reload();
+	document.getElementById("container").innerHTML = myPanelTemplate;
 });
 
 var myProductsHref = document.getElementById("productsBoard");
@@ -315,17 +378,21 @@ myProductsHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
 	document.getElementById("container").innerHTML = myFormTemplate;
 	//console.log(1)
-	document
-		.getElementById("submitDetails")
-		.addEventListener("click", function () {
-			addProductDetails();
-		});
+
+	// document.getElementById("goToProductPage")
+	// 	.addEventListener("click", function () {
+	// 		location.href = "/ProductPage/productPage.html";
+	// 	});
 });
+// document
+// 	.getElementById("submitDetails")
+// 	.addEventListener("click", addProductDetails);
 
 var myUserDetailsHref = document.getElementById("allUsers");
 myUserDetailsHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
 	document.getElementById("container").innerHTML = myUserDetails;
+	addDetails();
 });
 
 var myAdminProfileHref = document.getElementById("adminHref");
@@ -368,41 +435,48 @@ logOutHref.addEventListener("click", () => {
 
 //  PUTTING PRODUCT DATA INTO DOM
 var productArr = JSON.parse(localStorage.getItem("productInfo")) || [];
+var value = true;
 
+var productsINDOM = JSON.parse(localStorage.getItem("ALL_PRODUCTS"));
 // FUNCTION FOR ADDING PRODUCT
 function addProductDetails() {
 	var product_name = document.getElementById("productName").value;
 	var product_price = document.getElementById("productPrice").value;
-	var product_details = document.getElementById("productDetails").value;
+	var productFeatures = document.getElementById("productFeatures").value;
+	var productSKU = document.getElementById("productSKU").value;
+	var productPacking = document.getElementById("productPacking").value;
+	var productCond = document.getElementById("productCondition").value;
 	var product_description = document.getElementById("productDesc").value;
 	var product_image = document.getElementById("productUrl").value;
 	var product_avaliability = document.getElementById(
 		"productAvaliability"
 	).value;
-	// CREATING OBJECT FOR ARRAY..
-	var productData = {
-		nameOfProduct: product_name,
+	var vendorName = document.getElementById("vendorName").value;
+	var discountPercent = document.getElementById("discountPercent").value;
+	var oldPrice = document.getElementById("oldPrice").value;
+
+	productFeatures = productFeatures.split(",");
+	var singleProduct = {
+		name: product_name,
+		vendorName: vendorName,
+		img_src: product_image,
+		discountPercent: discountPercent,
+		lineThroughMRP: oldPrice,
 		price: product_price,
-		details: product_details,
-		description: product_description,
-		image_url: product_image,
-		avaliability: product_avaliability,
+		features: productFeatures,
+		quantity: "15 Tablets / Strip",
+		available: product_avaliability,
+		details: {
+			SKU: productSKU,
+			"Product Description": product_description,
+			Packing: productPacking,
+			Condition: productCond,
+			"Sold By": "Pulse Pharmacy India Pvt. Ltd.",
+			vendorName: vendorName,
+		},
 	};
-	// ALERT FOR EMPTY ENTRY
-	var count = 0;
-	for (var input in productData) {
-		if (productData[input] == "") {
-			alert(`Please input the product ${input}`);
-			break;
-		} else {
-			count++;
-		}
-	}
-	// CHECKING ENTRY IS FULL OR NOT
-	if (count == Object.keys(productData).length) {
-		productArr.push(productData);
-		localStorage.setItem("productInfo", JSON.stringify(productArr));
-	}
+	productsINDOM.push(singleProduct);
+	localStorage.setItem("ALL_PRODUCTS", JSON.stringify(productsINDOM));
 }
 
 //  PUTTING ADMIN DATA INTO DOM
@@ -466,25 +540,110 @@ if (window.localStorage.getItem("UserDetails") == null) {
 // ** products
 var adminPanelProducts = JSON.parse(localStorage.getItem("productInfo")) || [];
 var lengthProducts = adminPanelProducts.length;
-document.getElementById("productP").innerHTML = lengthProducts;
+// document.getElementById("productP").innerHTML = lengthProducts;
 
 // ** visitors
 var numOfVisitors = JSON.parse(localStorage.getItem("visitors")) || 0;
 document.getElementById("visitorsP").innerHTML = numOfVisitors;
 
-// var headDiv = document.getElementById("imgAndName");
-
-// var img = document.createElement("img");
-// img.setAttribute("src", admin_image);
-// img.setAttribute("alt","profile image");
-
-// var name = document.createElement("h2");
-// name.setAttribute("id", "adminName");
-// name.textContent = `Hi, ${adminUser_name}`;
-
-// headDiv.append(img,name);
+// ** USERS
+var countOfUser = JSON.parse(localStorage.getItem("userCount")) || 0;
+document.getElementById("usersP").innerHTML = countOfUser;
 
 //INVOKING REVIEWS FUNCTION
 usersNavViews(feedBackArray);
 firstTimeUsers(feedBackArray);
 recentUsersReviews(feedBackArray);
+
+// RECENT USERS DETAILS
+var detailsArr = JSON.parse(localStorage.getItem("adressArray")) || []; //checkedAdress;
+function addDetails() {
+	for (var i = 0; i < detailsArr.length; i++) {
+		var bodyUsers = document.querySelector("#userTable");
+
+		var detailsRow = document.createElement("tr");
+
+		var userName = document.createElement("td");
+		userName.textContent = detailsArr[i].name;
+
+		var userMobileNumber = document.createElement("td");
+		userMobileNumber.textContent = detailsArr[i].contact;
+
+		var orderDate = document.createElement("td");
+		orderDate.textContent = detailsArr[i].dateOfOrder;
+
+		var orderDetails = document.createElement("td");
+		orderDetails.textContent = detailsArr[i].adress;
+
+		detailsRow.append(userName, userMobileNumber, orderDate, orderDetails);
+		bodyUsers.append(detailsRow);
+	}
+}
+
+// document.querySelector("#goToProduct").addEventListener("click",function(){
+// 	location.href = "/ProductPage/productPage.html";
+// })
+// document
+// 	.getElementById("goToProductsPage")
+// 	.addEventListener("click", goToProductsPageFunc);
+
+function goToProductsPageFunc() {
+	var product_name = document.getElementById("productName").value;
+	var product_price = document.getElementById("productPrice").value;
+	var productFeatures = document.getElementById("productFeatures").value;
+	var productSKU = document.getElementById("productSKU").value;
+	var productPacking = document.getElementById("productPacking").value;
+	var productCond = document.getElementById("productCondition").value;
+	var product_description = document.getElementById("productDesc").value;
+	var product_image = document.getElementById("productUrl").value;
+	var product_avaliability = document.getElementById(
+		"productAvaliability"
+	).value;
+	var vendorName = document.getElementById("vendorName").value;
+	var discountPercent = document.getElementById("discountPercent").value;
+	var oldPrice = document.getElementById("oldPrice").value;
+
+	productFeatures = productFeatures.split(",");
+	var singleProduct = {
+		name: product_name,
+		vendorName: vendorName,
+		img_src: product_image,
+		discountPercent: discountPercent,
+		lineThroughMRP: oldPrice,
+		price: product_price,
+		features: productFeatures,
+		available: product_avaliability,
+		details: {
+			SKU: productSKU,
+			"Product Description": product_description,
+			Packing: productPacking,
+			Condition: productCond,
+			"Sold By": "Pulse Pharmacy India Pvt. Ltd.",
+		},
+	};
+	localStorage.setItem("viewSingleProduct", JSON.stringify(singleProduct));
+	window.location.href = "/ProductPage/productPage.html";
+}
+
+// {
+// 		name: "Novy Pain Oil",
+// 		vendorName: "Pugle Pharma",
+// 		img_src: "../IMAGES/PRODUCT_IMAGES/novy_oil.jpg",
+// 		discountPercent: 5,
+// 		lineThroughMRP: 148,
+// 		price: 99,
+// 		features: [
+// 			"100% Freshly Handpicked Herbs",
+// 			"Relief for Arthritis, Knee/Back Pain",
+// 			"Headache, Cold, Sinus",
+// 			"Ayurveda | No Side Effects",
+// 		],
+// 		available: true,
+// 		details: {
+// 			SKU: "PC-41766",
+// 			"Product Description": "Novy Pain Oil is manufactured by Fugle Pharma",
+// 			Packing: "Bottle",
+// 			Condition: "New",
+// 			"Sold by": "Pulse Pharmacy India Pvt. Ltd.",
+// 		},
+// 	},

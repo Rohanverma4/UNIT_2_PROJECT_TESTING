@@ -1,4 +1,4 @@
-var products = [
+var _products = [
 	{
 		name: "Novy Pain Oil",
 		img_src: "../IMAGES/PRODUCT_IMAGES/novy_oil.jpg",
@@ -374,11 +374,22 @@ var products = [
 		},
 	},
 ];
+
+var products = JSON.parse(localStorage.getItem("ALL_PRODUCTS")) || [];
+
+if (products.length < 1) {
+	products = [..._products];
+	localStorage.setItem("ALL_PRODUCTS", JSON.stringify(products));
+}
+
 //LOCAL STORAGES
 let addedProductsInDom =
 	JSON.parse(localStorage.getItem("addedProducts")) || [];
+
 let counterNumberFromLS = localStorage.getItem("counter");
+
 localStorage.setItem("counter", addedProductsInDom.length);
+
 var searchQuery = localStorage.getItem("searchQueryString");
 let userMobileNumber = localStorage.getItem("mobileNumber") || 0;
 
