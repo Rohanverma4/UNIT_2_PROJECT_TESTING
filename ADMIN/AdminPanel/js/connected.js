@@ -15,12 +15,12 @@ function firstTimeUsers(feedBackArray) {
 	}
 	let firstPercentage = (fTimeUsers * 100) / (fTimeUsers + lTimeUsers);
 	let lastPercentage = (lTimeUsers * 100) / (fTimeUsers + lTimeUsers);
-	document.querySelector(
-		"#firstTimeUsers > span"
-	).textContent = `${firstPercentage}%`;
-	document.querySelector(
-		"#returningUsers > span"
-	).textContent = `${lastPercentage}%`;
+	document.querySelector("#firstTimeUsers > span").textContent = `${
+		firstPercentage || 0
+	}%`;
+	document.querySelector("#returningUsers > span").textContent = `${
+		lastPercentage || 0
+	}%`;
 }
 
 function usersNavViews(feedBackArray) {
@@ -55,11 +55,11 @@ function usersNavViews(feedBackArray) {
 	var hardPer = (hard * 100) / (veryEasy + easy + med + hard + vHard);
 	var vHardPer = (vHard * 100) / (veryEasy + easy + med + hard + vHard);
 
-	document.querySelector("#veryEasy > span").textContent = `${vEasyPer}%`;
-	document.querySelector("#easy > span").textContent = `${easyPer}%`;
-	document.querySelector("#medium > span").textContent = `${medPer}%`;
-	document.querySelector("#hard > span").textContent = `${hardPer}%`;
-	document.querySelector("#veryHard > span").textContent = `${vHardPer}%`;
+	document.querySelector("#veryEasy > span").textContent = `${vEasyPer || 0}%`;
+	document.querySelector("#easy > span").textContent = `${easyPer || 0}%`;
+	document.querySelector("#medium > span").textContent = `${medPer || 0}%`;
+	document.querySelector("#hard > span").textContent = `${hardPer || 0}%`;
+	document.querySelector("#veryHard > span").textContent = `${vHardPer || 0}%`;
 }
 
 function recentUsersReviews(feedBackArray) {
@@ -169,7 +169,7 @@ var myPanelTemplate = `
 							<th>User Name</th>
 							<th>Reason for Visiting</th>
 							<th>Returning Or New User</th>
-							<th>Add Feedback</th>
+							<th>Any Missing Products</th>
 						</tr>
 					</thead>
 					<tbody>
