@@ -54,6 +54,8 @@ function displayPrices() {
 	document.querySelector("#totalItemsPrice > span").textContent = totalPrice;
 }
 
+//Count of users
+let numUserCount = Number(JSON.parse(localStorage.getItem("userCount"))) || 0;
 function placeAndPay() {
 	var paymentModeRadios = document.querySelectorAll(
 		`input[name="paymentRadios"]`
@@ -69,6 +71,7 @@ function placeAndPay() {
 		return;
 	}
 	//Defining date
+
 	var date = new Date();
 	var orderSaverObj = {
 		userNumber: userMobile,
@@ -82,6 +85,8 @@ function placeAndPay() {
 		date: date.toDateString(),
 	};
 	pastOrders.push(orderSaverObj);
+	numUserCount++;
+	localStorage.setItem("userCount", numUserCount);
 	localStorage.setItem("pastOrdersDetails", JSON.stringify(pastOrders));
 	localStorage.removeItem("addedProducts");
 	localStorage.removeItem("counter");

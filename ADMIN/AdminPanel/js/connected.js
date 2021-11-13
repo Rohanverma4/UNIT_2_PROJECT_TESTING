@@ -370,7 +370,8 @@ document.getElementById("container").innerHTML = myPanelTemplate;
 var myDashboardHref = document.getElementById("dashBoard");
 myDashboardHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
-	document.getElementById("container").innerHTML = myPanelTemplate;
+	// document.getElementById("container").innerHTML = myPanelTemplate;
+	window.location.reload();
 });
 
 var myProductsHref = document.getElementById("productsBoard");
@@ -538,16 +539,17 @@ if (window.localStorage.getItem("UserDetails") == null) {
 
 // DYNAMIC ADMIN PANEL FRONT..
 // ** products
-var adminPanelProducts = JSON.parse(localStorage.getItem("productInfo")) || [];
-var lengthProducts = adminPanelProducts.length;
-// document.getElementById("productP").innerHTML = lengthProducts;
+// var adminPanelProducts = JSON.parse(localStorage.getItem("productInfo")) || [];
+// var lengthProducts = adminPanelProducts.length;
+document.getElementById("productP").innerHTML = productsINDOM.length;
 
 // ** visitors
 var numOfVisitors = JSON.parse(localStorage.getItem("visitors")) || 0;
 document.getElementById("visitorsP").innerHTML = numOfVisitors;
 
 // ** USERS
-var countOfUser = JSON.parse(localStorage.getItem("userCount")) || 0;
+
+var countOfUser = Number(JSON.parse(localStorage.getItem("userCount"))) || 0;
 document.getElementById("usersP").innerHTML = countOfUser;
 
 //INVOKING REVIEWS FUNCTION
