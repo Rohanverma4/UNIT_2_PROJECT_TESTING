@@ -32,7 +32,7 @@
 <hr>
 
 <p>Cart Section</p>
-<img src="./website_sneak_peak/cart_section.png" alt="landing_page">
+<img src="./website_sneak_peak/cart section.png" alt="landing_page">
 
 <br>
 <hr>
