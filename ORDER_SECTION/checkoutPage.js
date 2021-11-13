@@ -6,7 +6,7 @@ var isChecked = JSON.parse(localStorage.getItem("cuponApplied"));
 //Blocking User To Apply More Cupons if isChecked is true
 if (isChecked) {
 	document.getElementById("applyCupon").disabled = true;
-	document.getElementById("applyCupon").textContent = "Cupon Applied";
+	document.getElementById("applyCupon").textContent = "Coupon Applied";
 	document.getElementById(
 		"applyCupon"
 	).style.backgroundColor = `rgb(255, 211, 150)`;
@@ -23,14 +23,14 @@ document
 document.querySelector("#proceed").addEventListener("click", () => {
 	//
 	var adressSelectorCheck = document.querySelectorAll(
-		'input[name="allAdressesRadio"'
+		'input[name="allAdressesRadio"]'
 	);
 	var adressSelected = false;
 	for (let i = 0; i < adressSelectorCheck.length; i++) {
 		if (adressSelectorCheck[i].checked) adressSelected = true;
 	}
 	if (!adressSelected) {
-		alert("Please Select an adress to proceed");
+		alert("Please Select an address to proceed");
 		return;
 	}
 	window.location.href = "/ORDER_SECTION/paymentPage.html";

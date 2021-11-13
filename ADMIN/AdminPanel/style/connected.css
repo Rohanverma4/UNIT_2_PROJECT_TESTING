@@ -1,10 +1,11 @@
 #container {
-	border: 1px solid rgb(255, 255, 255);
+	border: 1px solid rgb(214, 200, 200);
 	background-color: rgb(237, 241, 241);
+
 	border-radius: 20px;
 	width: max-content;
 	margin: auto;
-	height: 450px;
+	height: fit-content;
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
 		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -74,6 +75,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	padding-bottom: 30px;
 }
 #dashboardTableDiv > h4 {
 	width: 100%;
@@ -95,4 +97,56 @@
 	background-color: greenyellow;
 	border: none;
 	border-radius: 10px 10px 0 0;
+}
+
+/* FEEDBACK INSIGHTS */
+#feedBackInsights {
+	border: 1px solid rgb(230, 230, 230);
+	width: 100% !important;
+	height: fit-content !important;
+	padding: 5px 0;
+	gap: 20px;
+}
+
+#feedBackInsights > div {
+	border: 1px solid rgb(182, 135, 135);
+	border-radius: 5px;
+}
+
+#firstTimeUsersDiv > h4 {
+	margin: 0;
+	padding: 10px;
+	background-color: royalblue;
+	color: white;
+	border-radius: 5px 5px 0 0;
+	font-size: 20px;
+}
+#firstTimeUsersDiv > p {
+	margin: 22px 0;
+	font-size: 18px;
+	padding: 0 5px;
+}
+#firstTimeUsersDiv > p span {
+	color: green;
+}
+#firstTimeUsersDiv > p:nth-last-child(1) span {
+	color: tomato;
+}
+#easyReview > h4 {
+	margin: 0;
+	padding: 10px;
+	background-color: rgb(40, 197, 61);
+	color: white;
+	border-radius: 5px 5px 0 0;
+	font-size: 18px;
+}
+#easyReview > ul {
+	padding: 0 10px;
+	margin: 10px;
+}
+#easyReview li {
+	list-style-type: none;
+}
+#easyReview li span {
+	color: rgb(255, 0, 0);
 }
