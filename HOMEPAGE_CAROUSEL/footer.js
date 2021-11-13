@@ -55,12 +55,12 @@ var myFooter = `
 				<div class="insidecontactInfo">
 					<img
 						src="https://www.pulseplus.in/content/images/icons/facebook.png"
-						alt="facebook icon"
+						alt="facebook icon" onclick="goTofaceBookHandler()"
 					/>
 
-					<img src="https://www.pulseplus.in/content/images/icons/insta.png" />
+					<img src="https://www.pulseplus.in/content/images/icons/insta.png" onclick="goToInstaHandler()" />
 					<img
-						src="https://www.pulseplus.in/content/images/icons/twitter.png"
+						src="https://www.pulseplus.in/content/images/icons/twitter.png" onclick="goToTwitterHandler()"
 					/>
 				</div>
 			</div>
@@ -111,3 +111,13 @@ var myFooter = `
 		</footer>
 `;
 document.getElementById("downFooter").innerHTML = myFooter;
+
+function goTofaceBookHandler() {
+	window.location.href = "https://www.facebook.com/PulsePlusOfficial";
+}
+function goToInstaHandler() {
+	window.location.href = "https://www.instagram.com/pulsepharmacy/?hl=en";
+}
+function goToTwitterHandler() {
+	window.location.href = "https://twitter.com/pulsepharm";
+}

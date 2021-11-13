@@ -247,4 +247,7 @@ setTimeout(() => {
 		window.localStorage.removeItem("userEmail");
 		location.reload();
 	});
+	document.getElementById("bookFreeCon").addEventListener("click", () => {
+		window.location.href = "/lab test page/Lab test.html";
+	});
 }, 10);

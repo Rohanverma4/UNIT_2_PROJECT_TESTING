@@ -27,15 +27,25 @@ var contactSection = `
 				<div class="insidecontactInfo">
 					<img
 						src="https://www.pulseplus.in/content/images/icons/facebook.png"
-						alt="facebook icon"
+						alt="facebook icon" onclick="goTofaceBookHandler()"
 					/>
 
-					<img src="https://www.pulseplus.in/content/images/icons/insta.png" />
+					<img src="https://www.pulseplus.in/content/images/icons/insta.png" onclick="goToInstaHandler()"/>
 					<img
-						src="https://www.pulseplus.in/content/images/icons/twitter.png"
+						src="https://www.pulseplus.in/content/images/icons/twitter.png" onclick="goToTwitterHandler()"
 					/>
 				</div>
  `;
 
- var contactDiv = document.getElementById("contactInfo");
- contactDiv.innerHTML = contactSection;
+var contactDiv = document.getElementById("contactInfo");
+contactDiv.innerHTML = contactSection;
+
+function goTofaceBookHandler() {
+	window.location.href = "https://www.facebook.com/PulsePlusOfficial";
+}
+function goToInstaHandler() {
+	window.location.href = "https://www.instagram.com/pulsepharmacy/?hl=en";
+}
+function goToTwitterHandler() {
+	window.location.href = "https://twitter.com/pulsepharm";
+}
