@@ -32,7 +32,7 @@
 <hr>
 
 <p>Cart Section</p>
-<img src="./website_sneak_peak/cart_section.png" alt="landing_page">
+<img src="./website_sneak_peak/cart section.png" alt="landing_page">
 
 <br>
 <hr>
@@ -56,7 +56,7 @@
 <ul>
   <li>Github: isharaman8</li>
   <li>Github Link: <a href= "https://github.com/isharaman8" >https://github.com/isharaman8</a></li>
-  <li>Email: </li>
+  <li>Email: jacobreynolds4207@gmail.com</li>
   <li>LinkedIn: <a href="https://www.linkedin.com/in/aman-kumar-71b655158/"> https://www.linkedin.com/in/aman-kumar-71b655158/</a></li>
 </ul>
 
