@@ -69,3 +69,7 @@ input[type="submit"]:hover {
 	display: flex;
 	width: 100%;
 }
+#twoButtons > input:hover,
+#twoButtons button:hover {
+	cursor: pointer;
+}
