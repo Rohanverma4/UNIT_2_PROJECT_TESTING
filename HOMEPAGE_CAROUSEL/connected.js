@@ -27,10 +27,7 @@ function appendOffers(images) {
 	});
 }
 function goToOfferSection(singleImg) {
-	let imgName = singleImg.split("/")[2];
-	if (imgName === "20flatoff-banner.jpg") {
-		window.location.href = "../OFFER_Section/index.html";
-	}
+	window.location.href = "../OFFER_Section/index.html";
 
 	// window.location.href = "../OFFER_Section/index.html";
 }

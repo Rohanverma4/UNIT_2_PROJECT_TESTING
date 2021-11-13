@@ -291,12 +291,10 @@ var myFormTemplate = `
 					</select>
 				</label>
 				<span id="twoButtons">
-					<input id="submitDetails" type="button" value="Submit Details" onclick="addProductDetails()" />
-					<button id="goToProductsPage" onclick="goToProductsPageFunc()">
-						Go To Products Page
-					</button>
+					<input id="submitDetails" type="submit" value="Submit Details" onclick="addProductDetails(event)"/>
 				</span>
 			</form>
+			<button id="goToProductsPage" onclick="goToProductsPageFunc()">Go To Products Page</button>
 		
 `;
 var myUserDetails = `
@@ -378,16 +376,7 @@ var myProductsHref = document.getElementById("productsBoard");
 myProductsHref.addEventListener("click", () => {
 	document.getElementById("container").innerHTML = "";
 	document.getElementById("container").innerHTML = myFormTemplate;
-	//console.log(1)
-
-	// document.getElementById("goToProductPage")
-	// 	.addEventListener("click", function () {
-	// 		location.href = "/ProductPage/productPage.html";
-	// 	});
 });
-// document
-// 	.getElementById("submitDetails")
-// 	.addEventListener("click", addProductDetails);
 
 var myUserDetailsHref = document.getElementById("allUsers");
 myUserDetailsHref.addEventListener("click", () => {
@@ -438,9 +427,16 @@ logOutHref.addEventListener("click", () => {
 var productArr = JSON.parse(localStorage.getItem("productInfo")) || [];
 var value = true;
 
-var productsINDOM = JSON.parse(localStorage.getItem("ALL_PRODUCTS"));
+var productsINDOM = JSON.parse(localStorage.getItem("ALL_PRODUCTS")) || [];
 // FUNCTION FOR ADDING PRODUCT
-function addProductDetails() {
+if (document.getElementById("submitDetails")) {
+	document
+		.getElementById("submitDetails")
+		.addEventListener("submit", addProductDetails);
+}
+
+function addProductDetails(event) {
+	event.preventDefault();
 	var product_name = document.getElementById("productName").value;
 	var product_price = document.getElementById("productPrice").value;
 	var productFeatures = document.getElementById("productFeatures").value;
@@ -476,6 +472,8 @@ function addProductDetails() {
 			vendorName: vendorName,
 		},
 	};
+	console.log("product added");
+	alert("Product Added Successfully");
 	productsINDOM.push(singleProduct);
 	localStorage.setItem("ALL_PRODUCTS", JSON.stringify(productsINDOM));
 }
@@ -538,10 +536,8 @@ if (window.localStorage.getItem("UserDetails") == null) {
 }
 
 // DYNAMIC ADMIN PANEL FRONT..
-// ** products
-// var adminPanelProducts = JSON.parse(localStorage.getItem("productInfo")) || [];
-// var lengthProducts = adminPanelProducts.length;
-document.getElementById("productP").innerHTML = productsINDOM.length;
+
+document.getElementById("productP").innerHTML = productsINDOM.length || 16;
 
 // ** visitors
 var numOfVisitors = JSON.parse(localStorage.getItem("visitors")) || 0;
@@ -562,6 +558,8 @@ var detailsArr = JSON.parse(localStorage.getItem("adressArray")) || []; //checke
 function addDetails() {
 	for (var i = 0; i < detailsArr.length; i++) {
 		var bodyUsers = document.querySelector("#userTable");
+		let numUserCount =
+			Number(JSON.parse(localStorage.getItem("userCount"))) || 0;
 
 		var detailsRow = document.createElement("tr");
 
@@ -581,13 +579,6 @@ function addDetails() {
 		bodyUsers.append(detailsRow);
 	}
 }
-
-// document.querySelector("#goToProduct").addEventListener("click",function(){
-// 	location.href = "/ProductPage/productPage.html";
-// })
-// document
-// 	.getElementById("goToProductsPage")
-// 	.addEventListener("click", goToProductsPageFunc);
 
 function goToProductsPageFunc() {
 	var product_name = document.getElementById("productName").value;
@@ -624,28 +615,7 @@ function goToProductsPageFunc() {
 		},
 	};
 	localStorage.setItem("viewSingleProduct", JSON.stringify(singleProduct));
-	window.location.href = "/ProductPage/productPage.html";
+	setTimeout(() => {
+		window.location.replace("/ProductPage/productPage.html");
+	}, 200);
 }
-
-// {
-// 		name: "Novy Pain Oil",
-// 		vendorName: "Pugle Pharma",
-// 		img_src: "../IMAGES/PRODUCT_IMAGES/novy_oil.jpg",
-// 		discountPercent: 5,
-// 		lineThroughMRP: 148,
-// 		price: 99,
-// 		features: [
-// 			"100% Freshly Handpicked Herbs",
-// 			"Relief for Arthritis, Knee/Back Pain",
-// 			"Headache, Cold, Sinus",
-// 			"Ayurveda | No Side Effects",
-// 		],
-// 		available: true,
-// 		details: {
-// 			SKU: "PC-41766",
-// 			"Product Description": "Novy Pain Oil is manufactured by Fugle Pharma",
-// 			Packing: "Bottle",
-// 			Condition: "New",
-// 			"Sold by": "Pulse Pharmacy India Pvt. Ltd.",
-// 		},
-// 	},

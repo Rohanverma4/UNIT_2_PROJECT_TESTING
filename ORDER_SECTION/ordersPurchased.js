@@ -100,7 +100,8 @@ function selectTagFunction(item, event) {
 		for (let i = 0; i < products.length; i++) {
 			initialPrice += products[i].price * totalElemsCounter[products[i].name];
 		}
-		document.querySelector("#itemsPrice > span").textContent = initialPrice;
+		document.querySelector("#itemsPrice > span").textContent =
+			initialPrice.toFixed(2);
 		document.querySelector("#deliveryFees > span").textContent =
 			initialPrice >= 500 ? 0 : 15;
 		document.querySelector("#totalItemsPrice > span").textContent =

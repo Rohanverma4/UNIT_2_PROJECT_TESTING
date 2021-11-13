@@ -41,14 +41,14 @@ label {
 /* #productForm select; */
 #submitDetails {
 	/* position: static; */
-	width: 50% !important;
+	width: 100% !important;
 	background-color: greenyellow;
 	border: none !important;
 	padding: 10px !important;
 	text-align: center !important;
 	font-weight: 600;
 	bottom: 0;
-	border-radius: 0 0 0 20px;
+	border-radius: 0 !important;
 	left: 0;
 }
 input[type="submit"]:hover {
@@ -56,13 +56,13 @@ input[type="submit"]:hover {
 }
 
 #goToProductsPage {
-	width: 50%;
+	width: 100%;
 	height: 40px;
 	border: none;
 	background-color: tomato;
 	color: white;
 	font-weight: 600;
-	border-radius: 0 0 20px 0;
+	border-radius: 0 0 20px 20px;
 }
 
 #twoButtons {
@@ -70,6 +70,6 @@ input[type="submit"]:hover {
 	width: 100%;
 }
 #twoButtons > input:hover,
-#twoButtons button:hover {
+button:hover {
 	cursor: pointer;
 }
