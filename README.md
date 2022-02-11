@@ -2,7 +2,12 @@
 <hr>
 
 
-<h3>We have cloned the Pluse Pharmacy Website <a href="https://www.pulseplus.in/" target="_blank">https://www.pulseplus.in/</a> . This is a pharmacy website where customers can easily get the medicine they need at very low prices and they can easily buy medicine here.</h3>
+<h3>In this Masai School construct week project We have cloned the Pulse Plus Pharmacy Website <a href="https://www.pulseplus.in/" target="_blank">https://www.pulseplus.in/</a> . Pulse plus is a pharmacuitical e-commerce website where customers can easily get the medicine they need at very low prices and they can also book consultation from certified doctor.We built it in 7 days with the team of 6 collaborators. Some features of our Projects-
+  1- A secure Admin panel for controlling website, watching details and view user feedbacks for websites.
+  2- Sign-in/Sign-up for user.
+  3- Location-based medicine delivery.
+  4- User-friendly easy and secure purchasing system. 
+</h3>
 <hr>
 
 <h4>Language used :</h4>
