@@ -91,8 +91,8 @@
 <ul>
   <li>Github: Shiva-fighter</li>
   <li>Github Link: <a href= "https://github.com/Shiva-fighter" >https://github.com/Shiva-fighter</a></li>
-  <li>Email: </li>
-  <li>LinkedIn: <a href=""> </a></li>
+  <li>Email:   shiva.kashyap0008@gmail.com </li>
+  <li>LinkedIn: <a href="https://www.linkedin.com/in/shiva-kashyap-28b029212/"> https://www.linkedin.com/in/shiva-kashyap-28b029212/</a></li>
 </ul>
 
 <br>
@@ -101,7 +101,7 @@
 <ul>
   <li>Github: praveen106</li>
   <li>Github Link: <a href= "https://github.com/praveen106" >https://github.com/praveen106</a></li>
-  <li>Email: </li>
+  <li>Email:         </li>
   <li>LinkedIn: <a href=""> </a></li>
 </ul>
 
